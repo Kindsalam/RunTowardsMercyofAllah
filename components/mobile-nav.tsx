@@ -6,11 +6,10 @@ import { useState } from "react";
 
 import { FontSizeControl } from "@/components/font-size-control";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { TransliterationToggle } from "@/components/transliteration-toggle";
 import type { JourneyLink } from "@/lib/types";
 
 type MobileNavProps = {
-  links: Array<{ href: string; label: string }>;
+  links: Array<{ href: string; label: string; aliases?: string[] }>;
   featuredLinks: JourneyLink[];
 };
 
@@ -19,7 +18,7 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
@@ -31,10 +30,11 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
       </button>
 
       {open ? (
-        <div className="absolute inset-x-0 top-full z-50 mt-3 rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.14)]">
+        <div className="absolute right-0 top-full z-50 mt-3 w-[min(24rem,calc(100vw-2rem))] rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.14)]">
           <nav className="grid gap-2">
             {links.map((link) => {
-              const active = pathname === link.href;
+              const active =
+                pathname === link.href || link.aliases?.includes(pathname) === true;
 
               return (
                 <Link
@@ -44,7 +44,7 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
                   className={`rounded-2xl px-4 py-3 text-sm ${
                     active
                       ? "bg-[var(--accent-soft)] text-[var(--foreground)]"
-                      : "text-[var(--muted)]"
+                      : "text-[var(--muted)] hover:bg-[var(--background)]"
                   }`}
                 >
                   {link.label}
@@ -55,9 +55,8 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
 
           <div className="mt-4 grid gap-3 rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-4">
             <p className="eyebrow">Reading controls</p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-col items-start gap-2">
               <ThemeToggle />
-              <TransliterationToggle />
               <FontSizeControl />
             </div>
           </div>

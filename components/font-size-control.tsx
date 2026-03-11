@@ -12,7 +12,7 @@ export function FontSizeControl() {
   const { fontScale, setFontScale } = useSiteSettings();
 
   return (
-    <div className="inline-flex items-center rounded-full border border-[var(--border-soft)] bg-[var(--surface)] p-1">
+    <div className="inline-flex h-12 min-w-[11rem] items-center rounded-full border border-[var(--border-soft)] bg-[var(--surface)] p-1">
       {options.map((option) => {
         const active = option.value === fontScale;
 
@@ -21,7 +21,7 @@ export function FontSizeControl() {
             key={option.value}
             type="button"
             onClick={() => setFontScale(option.value)}
-            className={`rounded-full px-3 py-2 text-sm transition ${
+            className={`flex-1 rounded-full px-3 py-2 text-sm transition ${
               active
                 ? "bg-[var(--accent-soft)] text-[var(--foreground)]"
                 : "text-[var(--muted)] hover:text-[var(--foreground)]"

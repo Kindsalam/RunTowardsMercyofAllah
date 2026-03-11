@@ -31,6 +31,9 @@ export function Footer() {
             Please verify and review all sacred text carefully before public
             sharing.
           </p>
+          <p className="text-sm leading-7 text-[var(--muted)]">
+            Prompt-Engineered by Salam Khan, built using AI, for Sadaqah Jariah.
+          </p>
         </div>
       </div>
     </footer>

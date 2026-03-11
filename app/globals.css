@@ -98,9 +98,15 @@ button {
 
   .arabic-text {
     font-family: var(--font-arabic), serif;
+    direction: rtl;
+    unicode-bidi: isolate;
+    text-wrap: pretty;
   }
 
   .urdu-text {
     font-family: var(--font-arabic), serif;
+    direction: rtl;
+    unicode-bidi: isolate;
+    text-wrap: pretty;
   }
 }

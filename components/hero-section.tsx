@@ -65,7 +65,11 @@ export function HeroSection() {
               </div>
               <div className="rounded-[22px] border border-white/15 bg-black/10 p-5">
                 <div className="mb-4 h-10 w-10 rounded-full border border-white/20 bg-white/10" />
-                <p className="arabic-text text-right text-3xl leading-[1.9] text-white">
+                <p
+                  dir="rtl"
+                  lang="ar"
+                  className="arabic-text text-right text-3xl leading-[1.9] text-white"
+                >
                   اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
                 </p>
               </div>

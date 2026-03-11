@@ -1,5 +1,7 @@
 import type { DuaItem } from "@/lib/types";
 
+// Starter set only. Keep this file easy to review and expand as the verified
+// last ten nights collection is finalized.
 export const lastTenNights: DuaItem[] = [
   {
     id: "laylatul-qadr-dua",
@@ -14,7 +16,7 @@ export const lastTenNights: DuaItem[] = [
     urdu:
       "اے اللہ، بے شک تو بہت معاف کرنے والا ہے اور معاف کرنا پسند کرتا ہے، پس مجھے معاف فرما دے۔",
     sourceType: "hadith",
-    sourceReference: "Sunan al-Tirmidhi 3513",
+    sourceReference: "Sunan Ibn Majah 3850",
     repetition:
       "Read it often in the last 10 nights, especially the odd nights.",
     authenticity: "sahih",
@@ -31,9 +33,9 @@ export const lastTenNights: DuaItem[] = [
     transliteration:
       "Rabbana la tuakhidhna in nasina aw akhtana, Rabbana wa la tahmil alayna isran kama hamaltahu ala alladhina min qablina, Rabbana wa la tuhammilna ma la taqata lana bih, wa'fu anna, waghfir lana, warhamna.",
     english:
-      'Sample translation: "Our Lord, do not hold us accountable if we forget or err. Do not place on us a burden we cannot bear. Pardon us, forgive us, and have mercy on us."',
+      "Our Lord, do not hold us accountable if we forget or err. Do not place on us a burden we cannot bear. Pardon us, forgive us, and have mercy on us.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! اگر ہم بھول جائیں یا غلطی کریں تو ہم سے مؤاخذہ نہ فرما۔ ہم پر ایسا بوجھ نہ ڈال جس کی طاقت ہم میں نہ ہو۔ ہمیں معاف فرما، بخش دے، اور ہم پر رحم فرما۔"',
+      "اے ہمارے رب! اگر ہم بھول جائیں یا غلطی کریں تو ہم سے مؤاخذہ نہ فرما۔ ہم پر ایسا بوجھ نہ ڈال جس کی طاقت ہم میں نہ ہو۔ ہمیں معاف فرما، بخش دے، اور ہم پر رحم فرما۔",
     sourceType: "quran",
     sourceReference: "Qur'an 2:286",
     authenticity: "quran",
@@ -49,9 +51,9 @@ export const lastTenNights: DuaItem[] = [
     transliteration:
       "Rabbana atina fi d-dunya hasanatan wa fi l-akhirati hasanatan wa qina adhaba n-nar.",
     english:
-      'Sample translation: "Our Lord, grant us the good of this world and the Hereafter, and protect us from the punishment of the Fire."',
+      "Our Lord, grant us the good of this world and the Hereafter, and protect us from the punishment of the Fire.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! ہمیں دنیا میں بھلائی عطا فرما، آخرت میں بھی بھلائی عطا فرما، اور ہمیں آگ کے عذاب سے بچا۔"',
+      "اے ہمارے رب! ہمیں دنیا میں بھلائی عطا فرما، آخرت میں بھی بھلائی عطا فرما، اور ہمیں آگ کے عذاب سے بچا۔",
     sourceType: "quran",
     sourceReference: "Qur'an 2:201",
     authenticity: "quran",
@@ -67,9 +69,9 @@ export const lastTenNights: DuaItem[] = [
     transliteration:
       "Rabbana la tuzigh qulubana bada idh hadaytana wa hab lana min ladunka rahmah, innaka anta l-Wahhab.",
     english:
-      'Sample translation: "Our Lord, do not let our hearts deviate after You have guided us. Grant us mercy from Yourself. Surely You are the Ever-Giving."',
+      "Our Lord, do not let our hearts deviate after You have guided us. Grant us mercy from Yourself. Surely You are the Ever-Giving.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! ہمیں ہدایت دینے کے بعد ہمارے دلوں کو ٹیڑھا نہ کر، اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی بہت عطا فرمانے والا ہے۔"',
+      "اے ہمارے رب! ہمیں ہدایت دینے کے بعد ہمارے دلوں کو ٹیڑھا نہ کر، اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی بہت عطا فرمانے والا ہے۔",
     sourceType: "quran",
     sourceReference: "Qur'an 3:8",
     authenticity: "quran",
@@ -85,9 +87,9 @@ export const lastTenNights: DuaItem[] = [
     transliteration:
       "Rabbana hab lana min azwajina wa dhurriyyatina qurrata ayunin wajalna lil-muttaqina imama.",
     english:
-      'Sample translation: "Our Lord, bless us with spouses and children who are the joy of our hearts, and make us leaders for the righteous."',
+      "Our Lord, bless us with spouses and children who are the joy of our hearts, and make us leaders for the righteous.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما، اور ہمیں متقیوں کا پیشوا بنا دے۔"',
+      "اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما، اور ہمیں متقیوں کا پیشوا بنا دے۔",
     sourceType: "quran",
     sourceReference: "Qur'an 25:74",
     authenticity: "quran",

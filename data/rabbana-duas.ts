@@ -31,9 +31,9 @@ export const rabbanaDuas: DuaItem[] = [
     transliteration:
       "Rabbana la tuzigh qulubana ba‘da idh hadaytana wa hab lana min ladunka rahmah, innaka anta l-Wahhab",
     english:
-      'Sample translation: "Our Lord, do not let our hearts deviate after You have guided us. Grant us mercy from Yourself. Surely You are the Ever-Giving."',
+      "Our Lord, do not let our hearts deviate after You have guided us. Grant us mercy from Yourself. Surely You are the Ever-Giving.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! ہمیں ہدایت دینے کے بعد ہمارے دلوں کو ٹیڑھا نہ کر، اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی بہت عطا فرمانے والا ہے۔"',
+      "اے ہمارے رب! ہمیں ہدایت دینے کے بعد ہمارے دلوں کو ٹیڑھا نہ کر، اور ہمیں اپنے پاس سے رحمت عطا فرما، بے شک تو ہی بہت عطا فرمانے والا ہے۔",
     sourceType: "quran",
     sourceReference: "Surah Ali 'Imran 3:8",
     authenticity: "quran",
@@ -48,9 +48,9 @@ export const rabbanaDuas: DuaItem[] = [
     transliteration:
       "Rabbana zalamna anfusana wa il-lam taghfir lana wa tarhamna lanakunanna mina l-khasirin",
     english:
-      'Sample translation: "Our Lord, we have wronged ourselves. If You do not forgive us and have mercy on us, we will surely be among the losers."',
+      "Our Lord, we have wronged ourselves. If You do not forgive us and have mercy on us, we will surely be among the losers.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اور اگر تو ہمیں نہ بخشے اور ہم پر رحم نہ فرمائے تو ہم یقیناً خسارہ پانے والوں میں ہو جائیں گے۔"',
+      "اے ہمارے رب! ہم نے اپنی جانوں پر ظلم کیا، اور اگر تو ہمیں نہ بخشے اور ہم پر رحم نہ فرمائے تو ہم یقیناً خسارہ پانے والوں میں ہو جائیں گے۔",
     sourceType: "quran",
     sourceReference: "Surah Al-A'raf 7:23",
     authenticity: "quran",
@@ -65,9 +65,9 @@ export const rabbanaDuas: DuaItem[] = [
     transliteration:
       "Rabbana afrigh alayna sabran wa thabbit aqdamana wansurna ala l-qawmi l-kafirin",
     english:
-      'Sample translation: "Our Lord, pour upon us patience, make our steps firm, and grant us victory over the disbelieving people."',
+      "Our Lord, pour upon us patience, make our steps firm, and grant us victory over the disbelieving people.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! ہم پر صبر انڈیل دے، ہمارے قدم جما دے، اور کافر قوم کے مقابلے میں ہماری مدد فرما۔"',
+      "اے ہمارے رب! ہم پر صبر انڈیل دے، ہمارے قدم جما دے، اور کافر قوم کے مقابلے میں ہماری مدد فرما۔",
     sourceType: "quran",
     sourceReference: "Surah Al-Baqarah 2:250",
     authenticity: "quran",
@@ -82,9 +82,9 @@ export const rabbanaDuas: DuaItem[] = [
     transliteration:
       "Rabbana hab lana min azwajina wa dhurriyyatina qurrata ayunin waj‘alna lil-muttaqina imama",
     english:
-      'Sample translation: "Our Lord, grant us joy in our spouses and offspring, and make us an example for the righteous."',
+      "Our Lord, grant us joy in our spouses and offspring, and make us an example for the righteous.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما، اور ہمیں متقیوں کا پیشوا بنا دے۔"',
+      "اے ہمارے رب! ہمیں ہماری بیویوں اور اولاد سے آنکھوں کی ٹھنڈک عطا فرما، اور ہمیں متقیوں کا پیشوا بنا دے۔",
     sourceType: "quran",
     sourceReference: "Surah Al-Furqan 25:74",
     authenticity: "quran",

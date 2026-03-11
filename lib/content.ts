@@ -37,10 +37,24 @@ export const journeyLinks: JourneyLink[] = [
 
 export const siteLinks = [
   { href: "/", label: "Home" },
-  { href: "/rabbana-duas", label: "Rabbana Duas" },
-  { href: "/morning-adhkar", label: "Morning Adhkar" },
-  { href: "/evening-adhkar", label: "Evening Adhkar" },
-  { href: "/last-ten-nights", label: "Last 10 Nights" },
+  {
+    href: "/last-ten-nights",
+    label: "Last 10 Nights",
+  },
+  {
+    href: "/rabbana-duas",
+    label: "Rabbana Duas",
+  },
+  {
+    href: "/morning-adhkar",
+    label: "Morning Adhkar",
+    aliases: ["/morning-azkar"],
+  },
+  {
+    href: "/evening-adhkar",
+    label: "Evening Adhkar",
+    aliases: ["/evening-azkar"],
+  },
   { href: "/sources", label: "Sources" },
 ];
 
@@ -71,9 +85,9 @@ export const sourceReferences = [
     note: "Sample supplication for pardon, forgiveness, and mercy.",
   },
   {
-    label: "Sunnah.com: Jami` at-Tirmidhi 3513",
-    href: "https://sunnah.com/tirmidhi:3513",
-    note: "Featured Laylatul Qadr dua.",
+    label: "Sunnah.com: Sunan Ibn Majah 3850",
+    href: "https://sunnah.com/ibnmajah:3850",
+    note: "Featured Laylatul Qadr dua with the wording shown on the site.",
   },
   {
     label: "Sunnah.com: Sahih Muslim 2723a",

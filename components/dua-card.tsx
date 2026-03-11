@@ -29,25 +29,24 @@ export function DuaCard({
     item.category === "rabbana"
       ? "Qur’anic dua"
       : item.category === "morning"
-        ? "Morning dhikr"
+        ? "Morning Adhkar"
         : item.category === "evening"
-          ? "Evening dhikr"
+          ? "Evening Adhkar"
           : "Last ten nights";
+  const shareText = [
+    item.title,
+    item.arabic,
+    item.transliteration ? `Transliteration: ${item.transliteration}` : null,
+    `English: ${item.english}`,
+    `Urdu: ${item.urdu}`,
+    `Source: ${item.sourceReference}`,
+  ]
+    .filter(Boolean)
+    .join("\n\n");
 
   async function handleCopy() {
-    const text = [
-      item.title,
-      item.arabic,
-      item.transliteration ? `Transliteration: ${item.transliteration}` : null,
-      `English: ${item.english}`,
-      `Urdu: ${item.urdu}`,
-      `Source: ${item.sourceReference}`,
-    ]
-      .filter(Boolean)
-      .join("\n\n");
-
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(shareText);
       setCopyLabel("Copied");
       window.setTimeout(() => setCopyLabel(copyButtonLabel), 1600);
     } catch {
@@ -63,11 +62,11 @@ export function DuaCard({
       if (navigator.share) {
         await navigator.share({
           title: item.title,
-          text: item.english,
+          text: shareText,
           url: shareUrl,
         });
       } else {
-        await navigator.clipboard.writeText(shareUrl);
+        await navigator.clipboard.writeText(`${shareText}\n\n${shareUrl}`);
       }
 
       setShareLabel("Shared");
@@ -113,7 +112,11 @@ export function DuaCard({
 
       <div className="mt-6 grid gap-5">
         <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--panel-strong)] p-5 sm:p-6">
-          <p className="arabic-text text-right text-[calc(2rem*var(--dua-scale))] leading-[1.95] text-[var(--foreground)]">
+          <p
+            dir="rtl"
+            lang="ar"
+            className="arabic-text text-right text-[calc(2rem*var(--dua-scale))] leading-[1.95] text-[var(--foreground)]"
+          >
             {item.arabic}
           </p>
         </div>
@@ -136,7 +139,11 @@ export function DuaCard({
           </div>
           <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--background)] p-5">
             <p className="eyebrow mb-3">Urdu</p>
-            <p className="urdu-text text-right text-base leading-8 text-[var(--foreground)]">
+            <p
+              dir="rtl"
+              lang="ur"
+              className="urdu-text text-right text-base leading-8 text-[var(--foreground)]"
+            >
               {item.urdu}
             </p>
           </div>

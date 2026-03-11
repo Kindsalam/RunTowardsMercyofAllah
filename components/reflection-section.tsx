@@ -14,7 +14,11 @@ export function ReflectionSection() {
         </div>
         <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-[28px] border border-[var(--border-soft)] bg-[var(--panel-strong)] p-5 sm:p-7">
-            <p className="arabic-text text-right text-[calc(1.95rem*var(--dua-scale))] leading-[1.9] text-[var(--foreground)]">
+            <p
+              dir="rtl"
+              lang="ar"
+              className="arabic-text text-right text-[calc(1.95rem*var(--dua-scale))] leading-[1.9] text-[var(--foreground)]"
+            >
               وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ
             </p>
           </div>
@@ -28,7 +32,11 @@ export function ReflectionSection() {
             </div>
             <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5">
               <p className="eyebrow mb-3">Urdu meaning</p>
-              <p className="urdu-text text-right text-base leading-9 text-[var(--foreground)]">
+              <p
+                dir="rtl"
+                lang="ur"
+                className="urdu-text text-right text-base leading-9 text-[var(--foreground)]"
+              >
                 اور جب میرے بندے آپ سے میرے بارے میں پوچھیں تو بے شک میں قریب
                 ہوں۔ جب کوئی پکارنے والا مجھے پکارتا ہے تو میں اس کی دعا قبول
                 کرتا ہوں۔

@@ -30,9 +30,9 @@ export const eveningAdhkar: DuaItem[] = [
     transliteration:
       "Amsayna wa amsa l-mulku lillah wal-hamdu lillah, la ilaha illa Allah wahdahu la sharika lah, lahu l-mulku wa lahu l-hamd wa huwa ‘ala kulli shay’in qadir. Allahumma as’aluka khayra hadhihi l-laylah wa khayra ma ba‘daha, wa a‘udhu bika min sharri hadhihi l-laylah wa sharri ma ba‘daha. Allahumma inni a‘udhu bika mina l-kasali wa su’il-kibar, Allahumma inni a‘udhu bika min ‘adhabin fin-nar wa ‘adhabin fil-qabr",
     english:
-      'Sample translation: "We enter the evening and the dominion belongs to Allah, and all praise belongs to Allah... O Allah, I ask You for the good of this night and the good that comes after it, and I seek refuge in You from the evil of this night and the evil that comes after it."',
+      "We enter the evening and the dominion belongs to Allah, and all praise belongs to Allah... O Allah, I ask You for the good of this night and the good that comes after it, and I seek refuge in You from the evil of this night and the evil that comes after it.",
     urdu:
-      'نمونہ اردو ترجمہ: "ہم نے شام کی اور تمام بادشاہی اللہ ہی کی ہے، اور سب تعریف اللہ کے لیے ہے... اے اللہ! میں تجھ سے اس رات اور اس کے بعد کی بھلائی مانگتا ہوں، اور اس رات اور اس کے بعد کے شر سے تیری پناہ چاہتا ہوں۔"',
+      "ہم نے شام کی اور تمام بادشاہی اللہ ہی کی ہے، اور سب تعریف اللہ کے لیے ہے... اے اللہ! میں تجھ سے اس رات اور اس کے بعد کی بھلائی مانگتا ہوں، اور اس رات اور اس کے بعد کے شر سے تیری پناہ چاہتا ہوں۔",
     sourceType: "hadith",
     sourceReference: "Sahih Muslim 2723a",
     repetition: "Read once in the evening",
@@ -48,9 +48,9 @@ export const eveningAdhkar: DuaItem[] = [
     transliteration:
       "Allahumma bika amsaina, wa bika asbahna, wa bika nahya, wa bika namutu, wa ilayka n-nushur",
     english:
-      'Sample translation: "O Allah, by You we enter the evening, by You we enter the morning, by You we live, by You we die, and to You is the resurrection."',
+      "O Allah, by You we enter the evening, by You we enter the morning, by You we live, by You we die, and to You is the resurrection.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے اللہ! تیری ہی مدد سے ہم شام کرتے ہیں، تیری ہی مدد سے ہم صبح کرتے ہیں، تیرے ہی ذریعے ہم زندہ ہیں اور مرتے ہیں، اور تیری ہی طرف دوبارہ اٹھایا جانا ہے۔"',
+      "اے اللہ! تیری ہی مدد سے ہم شام کرتے ہیں، تیری ہی مدد سے ہم صبح کرتے ہیں، تیرے ہی ذریعے ہم زندہ ہیں اور مرتے ہیں، اور تیری ہی طرف دوبارہ اٹھایا جانا ہے۔",
     sourceType: "hadith",
     sourceReference: "Jami` at-Tirmidhi 3391",
     repetition: "Read once in the evening",
@@ -66,9 +66,9 @@ export const eveningAdhkar: DuaItem[] = [
     transliteration:
       "Allahumma ma amsa bi min ni‘matin aw bi ahadin min khalqik, faminka wahdaka la sharika lak, falaka l-hamdu wa laka sh-shukr",
     english:
-      'Sample translation: "O Allah, whatever blessing has come to me this evening, or to any of Your creation, is from You alone without partner. So all praise belongs to You, and all thanks belong to You."',
+      "O Allah, whatever blessing has come to me this evening, or to any of Your creation, is from You alone without partner. So all praise belongs to You, and all thanks belong to You.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے اللہ! شام کے وقت مجھ پر یا تیری مخلوق میں سے کسی پر جو بھی نعمت آئی ہے وہ صرف تیری طرف سے ہے، تیرا کوئی شریک نہیں، پس تمام تعریف اور شکر تیرے ہی لیے ہے۔"',
+      "اے اللہ! شام کے وقت مجھ پر یا تیری مخلوق میں سے کسی پر جو بھی نعمت آئی ہے وہ صرف تیری طرف سے ہے، تیرا کوئی شریک نہیں، پس تمام تعریف اور شکر تیرے ہی لیے ہے۔",
     sourceType: "hadith",
     sourceReference: "Sunan Abi Dawud 5073",
     repetition: "Read once in the evening",
@@ -83,9 +83,9 @@ export const eveningAdhkar: DuaItem[] = [
     transliteration:
       "Bismillahi lladhi la yadurru ma‘a ismihi shay’un fil-ardi wa la fis-sama’, wa huwa s-Sami‘u l-‘Alim",
     english:
-      'Sample translation: "In the name of Allah, with whose name nothing on earth or in the sky can cause harm, and He is the All-Hearing, the All-Knowing."',
+      "In the name of Allah, with whose name nothing on earth or in the sky can cause harm, and He is the All-Hearing, the All-Knowing.",
     urdu:
-      'نمونہ اردو ترجمہ: "اللہ کے نام کے ساتھ، جس کے نام کے ہوتے ہوئے نہ زمین میں کوئی چیز نقصان پہنچا سکتی ہے اور نہ آسمان میں، اور وہ خوب سننے والا، خوب جاننے والا ہے۔"',
+      "اللہ کے نام کے ساتھ، جس کے نام کے ہوتے ہوئے نہ زمین میں کوئی چیز نقصان پہنچا سکتی ہے اور نہ آسمان میں، اور وہ خوب سننے والا، خوب جاننے والا ہے۔",
     sourceType: "hadith",
     sourceReference: "Sunan Abi Dawud 5088",
     repetition: "Read three times in the evening",
