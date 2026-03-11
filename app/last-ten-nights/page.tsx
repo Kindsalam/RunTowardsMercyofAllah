@@ -176,8 +176,8 @@ export default function LastTenNightsPage() {
               text={featuredCopyText}
               label="Copy the Laylatul Qadr dua"
             />
-            <Link href="/evening-azkar" className="button-secondary">
-              Open Evening Azkar
+            <Link href="/evening-adhkar" className="button-secondary">
+              Open Evening Adhkar
             </Link>
           </div>
         </div>

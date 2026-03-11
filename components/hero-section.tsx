@@ -32,7 +32,7 @@ export function HeroSection() {
             </h1>
             <p className="max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
               A simple and beautiful place to read Qur’anic Rabbana duas,
-              authentic morning and evening azkar, and the most important duas
+              authentic morning and evening adhkar, and the most important duas
               for the last ashra and Laylatul Qadr. Arabic is shown with full
               harakat, with English and Urdu translation for easy reading and
               understanding.

@@ -8,7 +8,7 @@ export function Footer() {
       <div className="page-shell grid gap-8 py-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="space-y-3">
           <p className="font-display text-3xl text-[var(--foreground)]">
-            Ramadan Duas and Azkar
+            Ramadan Duas and Adhkar
           </p>
           <p className="max-w-xl text-sm leading-7 text-[var(--muted)]">
             A simple mobile-friendly space for Qur&apos;anic duas and authentic

@@ -18,28 +18,28 @@ export const journeyLinks: JourneyLink[] = [
     buttonLabel: "Read Rabbana Duas",
   },
   {
-    href: "/morning-azkar",
-    title: "Morning Azkar",
+    href: "/morning-adhkar",
+    title: "Morning Adhkar",
     eyebrow: "Start the day",
     description:
       "Start your day with authentic remembrance, protection, gratitude, and trust in Allah.",
-    buttonLabel: "Open Morning Azkar",
+    buttonLabel: "Open Morning Adhkar",
   },
   {
-    href: "/evening-azkar",
-    title: "Evening Azkar",
+    href: "/evening-adhkar",
+    title: "Evening Adhkar",
     eyebrow: "Close the day",
     description:
       "End your day with calm, protection, repentance, and remembrance before the night closes.",
-    buttonLabel: "Open Evening Azkar",
+    buttonLabel: "Open Evening Adhkar",
   },
 ];
 
 export const siteLinks = [
   { href: "/", label: "Home" },
   { href: "/rabbana-duas", label: "Rabbana Duas" },
-  { href: "/morning-azkar", label: "Morning Azkar" },
-  { href: "/evening-azkar", label: "Evening Azkar" },
+  { href: "/morning-adhkar", label: "Morning Adhkar" },
+  { href: "/evening-adhkar", label: "Evening Adhkar" },
   { href: "/last-ten-nights", label: "Last 10 Nights" },
   { href: "/sources", label: "Sources" },
 ];

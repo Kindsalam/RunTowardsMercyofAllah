@@ -1,32 +1,29 @@
 import Link from "next/link";
 
 import { DuaCard } from "@/components/dua-card";
-import { rabbanaDuas } from "@/data/rabbana-duas";
+import { morningAdhkar } from "@/data/morning-adhkar";
 
-const themeChips = [
-  "Forgiveness",
-  "Mercy",
-  "Guidance",
-  "Protection",
-  "Patience",
-  "Dunya and Akhirah",
-  "Family and Offspring",
+const benefitCards = [
+  {
+    title: "Protection",
+    text: "Begin the day asking Allah to keep you safe from harm and loss.",
+  },
+  {
+    title: "Gratitude",
+    text: "Start the morning by remembering the One who gave you life, time, and another day.",
+  },
+  {
+    title: "Steadiness",
+    text: "Anchor your heart before the noise of the day begins.",
+  },
 ];
 
-const whyTheseDuasMatter = [
-  "forgiveness when we fall short",
-  "mercy when we are weak",
-  "guidance when we are lost",
-  "patience when life becomes heavy",
-  "protection from harm and punishment",
-  "goodness in both dunya and akhirah",
-];
-
-export default function RabbanaDuasPage() {
-  const featuredDua = rabbanaDuas.find((item) => item.featured) ?? rabbanaDuas[0];
-  const remainingDuas = rabbanaDuas.filter((item) => item.id !== featuredDua.id);
-  const firstGroup = remainingDuas.slice(0, 2);
-  const secondGroup = remainingDuas.slice(2);
+export function MorningAdhkarPage() {
+  const featuredItem =
+    morningAdhkar.find((item) => item.featured) ?? morningAdhkar[0];
+  const remainingItems = morningAdhkar.filter((item) => item.id !== featuredItem.id);
+  const firstGroup = remainingItems.slice(0, 2);
+  const secondGroup = remainingItems.slice(2);
 
   return (
     <div className="page-shell space-y-12 py-6 pb-16 sm:space-y-16 sm:py-8">
@@ -34,15 +31,15 @@ export default function RabbanaDuasPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,171,103,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(16,77,57,0.09)_0%,_transparent_36%)]" />
         <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-3xl space-y-4">
-            <p className="eyebrow">Qur’anic Supplications</p>
+            <p className="eyebrow">Authentic Daily Remembrance</p>
             <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
-              Rabbana duas from the Qur’an
+              Morning Adhkar
             </h1>
             <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-              These are among the most powerful supplications a believer can
-              make. They are words that Allah placed in His Book, teaching us
-              how to ask for guidance, mercy, forgiveness, patience,
-              protection, and success in this life and the next.
+              Begin your day with remembrance, protection, gratitude, and trust
+              in Allah. Read authentic morning adhkar in Arabic with full
+              harakat, along with English and Urdu translation, in a calm and
+              easy mobile-friendly layout.
             </p>
           </div>
 
@@ -51,13 +48,13 @@ export default function RabbanaDuasPage() {
             <div className="relative mx-auto max-w-sm rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_20px_70px_rgba(8,24,19,0.06)]">
               <div className="space-y-4">
                 <div className="h-11 w-11 rounded-full border border-[var(--border-soft)] bg-[var(--accent-soft)]" />
-                <p className="arabic-text text-right text-[2rem] leading-[1.95] text-[var(--foreground)]">
-                  رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ
-                  حَسَنَةً وَقِنَا عَذَابَ النَّارِ
+                <p className="arabic-text text-right text-[1.85rem] leading-[1.95] text-[var(--foreground)]">
+                  أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلَامِ، وَعَلَى كَلِمَةِ
+                  الْإِخْلَاصِ
                 </p>
                 <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--background)] p-4 text-sm leading-7 text-[var(--muted)]">
-                  Let the Rabbana duas stay close to the tongue and the heart,
-                  not only in Ramadan but beyond it.
+                  Let the first words of the day draw the heart back to
+                  gratitude, reliance, and calm.
                 </div>
               </div>
             </div>
@@ -69,95 +66,97 @@ export default function RabbanaDuasPage() {
         <div className="max-w-3xl space-y-4">
           <p className="eyebrow">Intro reflection</p>
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
-            Words taught by Allah
+            Start the day with what benefits the heart
           </h2>
           <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            The Rabbana duas are special because they are not just beautiful
-            words. They are words chosen by Allah and preserved in the Qur’an.
-            They teach us what to ask for, how to ask, and what truly matters
-            most.
+            The morning is the start of your day, your work, your plans, and
+            your worries. Beginning it with remembrance of Allah brings
+            protection, steadiness, gratitude, and peace. Even a few sincere
+            moments each morning can shape the rest of the day.
           </p>
           <p className="text-sm font-medium leading-7 text-[var(--foreground)]">
-            Read them slowly, understand their meaning, and make them part of
-            your daily life.
+            Read a little with consistency rather than rushing through a lot
+            without presence.
           </p>
         </div>
       </section>
 
-      <section className="space-y-5">
-        <div className="max-w-3xl space-y-3">
-          <p className="eyebrow">Themes</p>
-          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            Common themes running through these duas
-          </h2>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {themeChips.map((chip) => (
-            <span
-              key={chip}
-              className="rounded-full border border-[var(--border-soft)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)] shadow-[0_12px_34px_rgba(8,24,19,0.04)]"
-            >
-              {chip}
-            </span>
-          ))}
-        </div>
+      <section className="grid gap-4 md:grid-cols-3">
+        {benefitCards.map((card) => (
+          <article
+            key={card.title}
+            className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]"
+          >
+            <p className="eyebrow mb-3">Morning benefit</p>
+            <h2 className="text-xl font-semibold text-[var(--foreground)]">
+              {card.title}
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+              {card.text}
+            </p>
+          </article>
+        ))}
       </section>
 
       <section className="space-y-6">
         <div className="max-w-3xl space-y-3">
-          <p className="eyebrow">Main dua list</p>
+          <p className="eyebrow">Main adhkar list</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            Keep these supplications close
+            Morning words to keep close
           </h2>
           <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
             This starter page is intentionally seeded with five structured
-            entries only, so the full verified Rabbana collection can be added
-            later without changing the layout or card system.
+            sample entries only, so the full verified morning adhkar set can be
+            added later without changing the page design.
           </p>
         </div>
 
         <div className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_82%,rgba(201,171,103,0.12)_18%),var(--surface))] p-1 shadow-[0_24px_90px_rgba(8,24,19,0.08)]">
           <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(201,171,103,0.22)_0%,_transparent_70%)]" />
           <div className="relative">
-            <DuaCard item={featuredDua} />
+            <DuaCard
+              item={featuredItem}
+              allowCompletion
+              completionStorageKey={`morning-read:${featuredItem.id}`}
+            />
           </div>
         </div>
 
         <div className="grid gap-6">
           {firstGroup.map((item) => (
-            <DuaCard key={item.id} item={item} />
+            <DuaCard
+              key={item.id}
+              item={item}
+              allowCompletion
+              completionStorageKey={`morning-read:${item.id}`}
+            />
           ))}
         </div>
       </section>
 
       <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_80px_rgba(8,24,19,0.07)] sm:px-8">
-        <div className="space-y-6">
-          <div className="max-w-3xl space-y-3">
-            <p className="eyebrow">Why these duas matter</p>
-            <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              These duas ask for what really matters
-            </h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {whyTheseDuasMatter.map((point) => (
-              <div
-                key={point}
-                className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]"
-              >
-                {point}
-              </div>
-            ))}
-          </div>
+        <div className="max-w-3xl space-y-4">
+          <p className="eyebrow">Reflection</p>
+          <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
+            Small words, repeated with sincerity
+          </h2>
           <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            A believer does not only ask for relief. A believer asks for what
-            brings nearness to Allah and lasting success.
+            Morning adhkar are not long for the sake of length. Their value is
+            in truthfulness, consistency, and presence of heart. A believer
+            begins the day by remembering Allah, asking for good, and seeking
+            protection before stepping into the duties of life.
           </p>
         </div>
       </section>
 
       <section className="grid gap-6">
         {secondGroup.map((item) => (
-          <DuaCard key={item.id} item={item} />
+          <DuaCard
+            key={item.id}
+            item={item}
+            allowCompletion
+            completionStorageKey={`morning-read:${item.id}`}
+          />
         ))}
       </section>
 
@@ -166,20 +165,20 @@ export default function RabbanaDuasPage() {
           <div className="space-y-4">
             <p className="eyebrow">Next step</p>
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
-              Take these words with you every day
+              Carry remembrance into the rest of your day
             </h2>
             <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-              Do not leave the Rabbana duas only for Ramadan. Read them often,
-              understand them deeply, and return to them in times of ease and
-              in times of difficulty.
+              Return to these words every morning and let them become part of
+              your routine. What begins with remembrance is more likely to stay
+              grounded, grateful, and protected.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-            <Link href="/morning-adhkar" className="button-primary">
-              Open Morning Adhkar
+            <Link href="/evening-adhkar" className="button-primary">
+              Open Evening Adhkar
             </Link>
-            <Link href="/last-ten-nights" className="button-secondary">
-              Return to Last 10 Nights
+            <Link href="/rabbana-duas" className="button-secondary">
+              Read Rabbana Duas
             </Link>
           </div>
         </div>

@@ -6,7 +6,7 @@ export default function EveningAzkarPage() {
     <div className="page-shell space-y-8 py-6 pb-16 sm:py-8">
       <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 sm:px-8">
         <div className="max-w-3xl space-y-4">
-          <p className="eyebrow">Evening Azkar</p>
+          <p className="eyebrow">Evening Adhkar</p>
           <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl">
             Let the day close with dhikr, gratitude, and refuge in Allah.
           </h1>
