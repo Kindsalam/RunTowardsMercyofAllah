@@ -76,7 +76,7 @@ export function HeroSection() {
           <h1 className="font-display text-4xl leading-[0.96] sm:text-5xl lg:text-[3.7rem]">
             Remember Allah with authentic duas and adhkar
           </h1>
-          <p className="max-w-md text-sm leading-7 text-white/82 sm:text-base">
+          <p className="reading-copy max-w-md text-white/82">
             Read Qur’anic duas and authentic adhkar in Arabic, English, and Urdu.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -90,7 +90,7 @@ export function HeroSection() {
               Read Rabbana Duas
             </Link>
           </div>
-          <p className="text-sm leading-6 text-white/74">
+          <p className="reading-copy-compact text-white/74">
             Qur’an and authentic Sunnah only.
           </p>
         </div>
@@ -116,11 +116,11 @@ export function HeroSection() {
                   <p
                     dir="rtl"
                     lang="ar"
-                    className="arabic-text text-right text-[calc(1.9rem*var(--dua-scale))] leading-[1.85] text-white sm:text-[calc(2.15rem*var(--dua-scale))]"
+                    className="arabic-text reading-arabic-hero text-right text-white"
                   >
                     {activeDua.item.arabic}
                   </p>
-                  <p className="text-sm leading-7 text-white/78">
+                  <p className="reading-copy text-white/78">
                     {activeDua.item.english}
                   </p>
                 </div>

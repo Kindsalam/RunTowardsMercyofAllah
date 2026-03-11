@@ -15,12 +15,12 @@ export function CorrectionNote({ plain = false }: CorrectionNoteProps) {
     >
       <div className="max-w-3xl space-y-3">
         <p className="eyebrow">Corrections and review</p>
-        <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+        <p className="reading-copy text-[var(--muted)]">
           This project was built carefully using AI tools and human review. If
           you notice any mistakes in Arabic text, translation, or references,
           please contact us so it can be corrected.
         </p>
-        <p className="text-sm font-medium leading-7 text-[var(--foreground)] sm:text-base">
+        <p className="reading-copy font-medium text-[var(--foreground)]">
           {correctionContact}
         </p>
       </div>

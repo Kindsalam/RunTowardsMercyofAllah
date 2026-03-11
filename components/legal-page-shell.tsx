@@ -28,7 +28,7 @@ export function LegalPageShell({
         title={title}
         description={description}
         aside={
-          <div className="border-l-2 border-[var(--border-soft)] pl-5 text-sm leading-7 text-[var(--foreground)]">
+          <div className="reading-copy border-l-2 border-[var(--border-soft)] pl-5 text-[var(--foreground)]">
             This page is written to keep the project transparent, careful, and
             easy to understand.
           </div>
@@ -46,7 +46,7 @@ export function LegalPageShell({
               <h2 className="text-2xl font-semibold text-[var(--foreground)]">
                 {section.title}
               </h2>
-              <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+              <p className="reading-copy text-[var(--muted)]">
                 {section.body}
               </p>
             </div>

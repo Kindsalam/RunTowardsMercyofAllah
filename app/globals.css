@@ -13,6 +13,7 @@
   --accent-green-soft: rgba(31, 106, 80, 0.1);
   --border-soft: rgba(20, 49, 38, 0.12);
   --border-strong: rgba(20, 49, 38, 0.24);
+  --reading-scale: 1;
   --dua-scale: 1;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -35,14 +36,17 @@
 }
 
 html[data-font-scale="sm"] {
+  --reading-scale: 0.94;
   --dua-scale: 0.94;
 }
 
 html[data-font-scale="md"] {
+  --reading-scale: 1;
   --dua-scale: 1;
 }
 
 html[data-font-scale="lg"] {
+  --reading-scale: 1.12;
   --dua-scale: 1.12;
 }
 
@@ -101,6 +105,59 @@ button {
 
   .font-display {
     font-family: var(--font-display), serif;
+  }
+
+  .reading-copy {
+    font-size: calc(0.98rem * var(--reading-scale));
+    line-height: 1.9;
+  }
+
+  .reading-copy-compact {
+    font-size: calc(0.92rem * var(--reading-scale));
+    line-height: 1.85;
+  }
+
+  .reading-urdu {
+    font-size: calc(1rem * var(--reading-scale));
+    line-height: 2;
+  }
+
+  .reading-arabic-sm {
+    font-size: calc(1.85rem * var(--reading-scale));
+    line-height: 1.95;
+  }
+
+  .reading-arabic-md {
+    font-size: calc(1.95rem * var(--reading-scale));
+    line-height: 1.9;
+  }
+
+  .reading-arabic-lg {
+    font-size: calc(2rem * var(--reading-scale));
+    line-height: 1.95;
+  }
+
+  .reading-arabic-hero {
+    font-size: calc(1.9rem * var(--reading-scale));
+    line-height: 1.85;
+  }
+
+  @media (min-width: 640px) {
+    .reading-copy {
+      font-size: calc(1.05rem * var(--reading-scale));
+    }
+
+    .reading-copy-compact {
+      font-size: calc(0.98rem * var(--reading-scale));
+    }
+
+    .reading-urdu {
+      font-size: calc(1.08rem * var(--reading-scale));
+    }
+
+    .reading-arabic-hero {
+      font-size: calc(2.15rem * var(--reading-scale));
+    }
   }
 
   .arabic-text {

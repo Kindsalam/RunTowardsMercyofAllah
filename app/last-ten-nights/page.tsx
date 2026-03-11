@@ -56,7 +56,7 @@ export default function LastTenNightsPage() {
             <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
               Make these nights count
             </h1>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               These are the nights of mercy, forgiveness, dua, and hope. Begin
               with the most important supplications and reminders for the last
               10 nights and Laylatul Qadr, presented in Arabic with full
@@ -78,8 +78,8 @@ export default function LastTenNightsPage() {
               <div className="space-y-3">
                 {laylatulQadrFocus.map((item) => (
                   <div key={item.title} className="space-y-1">
-                    <p className="text-sm font-medium text-[var(--foreground)]">{item.title}</p>
-                    <p className="text-sm leading-7 text-[var(--muted)]">{item.text}</p>
+                    <p className="reading-copy-compact font-medium text-[var(--foreground)]">{item.title}</p>
+                    <p className="reading-copy text-[var(--muted)]">{item.text}</p>
                   </div>
                 ))}
               </div>
@@ -88,7 +88,7 @@ export default function LastTenNightsPage() {
               <p className="eyebrow mb-3 text-white/70">Worship priorities</p>
               <div className="space-y-3">
                 {worshipPriorities.map((item) => (
-                  <p key={item} className="text-sm leading-7 text-white/86">
+                  <p key={item} className="reading-copy text-white/86">
                     {item}
                   </p>
                 ))}
@@ -104,7 +104,7 @@ export default function LastTenNightsPage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             Dua for Laylatul Qadr
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             This is one of the most important duas for Laylatul Qadr.
           </p>
         </div>
@@ -127,7 +127,7 @@ export default function LastTenNightsPage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             Words to keep close in these nights
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             Use this section for a small set of high-priority sample duas and
             adhkar relevant to the last 10 nights. Keep the structure ready for
             verified content population later.
@@ -147,7 +147,7 @@ export default function LastTenNightsPage() {
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
             A few sincere moments can carry great weight
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             Not every person can do long worship every night. But every
             person can turn back to Allah with sincerity. A few honest
             minutes of dua, istighfar, dhikr, and Qur’an in these nights may
@@ -168,7 +168,7 @@ export default function LastTenNightsPage() {
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
               Do not leave these nights empty
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               Stay with authentic words, keep your tongue busy, and ask Allah
               for forgiveness, mercy, and the best of this world and the next.
             </p>

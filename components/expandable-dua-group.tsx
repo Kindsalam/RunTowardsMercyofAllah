@@ -43,7 +43,7 @@ export function ExpandableDuaGroup({
           {title}
         </h2>
         {description ? (
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             {description}
           </p>
         ) : null}

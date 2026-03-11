@@ -21,7 +21,7 @@ export function PageHero({
           <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy max-w-2xl text-[var(--muted)]">
             {description}
           </p>
         </div>

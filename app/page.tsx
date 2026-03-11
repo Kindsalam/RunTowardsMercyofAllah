@@ -38,7 +38,7 @@ export default function HomePage() {
     <div className="page-shell space-y-16 py-6 pb-16 sm:space-y-20 sm:py-8">
       <HeroSection />
 
-      <section className="-mt-8 rounded-[24px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_78%,transparent)] px-5 py-3 text-center text-sm leading-7 text-[var(--muted)] sm:px-6">
+      <section className="reading-copy -mt-8 rounded-[24px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_78%,transparent)] px-5 py-3 text-center text-[var(--muted)] sm:px-6">
         <span>
           This is a Sadaqah Jariah project built to spread beneficial
           remembrance, reflection, and peace.
@@ -60,7 +60,7 @@ export default function HomePage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             Give the last 10 nights special attention
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             This website helps with duas and adhkar all year, but the last 10
             nights of Ramadan deserve special focus. In them is Laylatul Qadr,
             the night better than a thousand months, so this is the time to
@@ -76,7 +76,7 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold text-[var(--foreground)]">
                 {card.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+              <p className="reading-copy mt-3 text-[var(--muted)]">
                 {card.text}
               </p>
             </article>
@@ -90,7 +90,7 @@ export default function HomePage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             Choose where to begin
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             Start with the Ramadan section you need most, or return to the
             duas and adhkar you want to keep close every day.
           </p>
@@ -111,7 +111,7 @@ export default function HomePage() {
             <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
               A dua to keep close in the last 10 nights
             </h2>
-            <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy text-[var(--muted)]">
               This is one of the most important duas to repeat in the search
               for Laylatul Qadr.
             </p>
@@ -130,7 +130,7 @@ export default function HomePage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             Duas that help you in this life and the next
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             The best duas do not pull you away from life. They help you live it
             properly. They ask Allah for goodness, protection, mercy, guidance,
             patience, forgiveness, and success in the akhirah. The Rabbana duas
@@ -143,7 +143,7 @@ export default function HomePage() {
           <h3 className="text-2xl font-semibold text-[var(--foreground)]">
             Benefit for your dunya
           </h3>
-          <ul className="mt-4 grid gap-3 text-sm leading-7 text-[var(--muted)]">
+          <ul className="reading-copy mt-4 grid gap-3 text-[var(--muted)]">
             {dunyaBenefits.map((item) => (
               <li key={item} className="rounded-2xl bg-[var(--background)] px-4 py-3">
                 {item}
@@ -156,7 +156,7 @@ export default function HomePage() {
           <h3 className="text-2xl font-semibold text-[var(--foreground)]">
             Benefit for your akhirah
           </h3>
-          <ul className="mt-4 grid gap-3 text-sm leading-7 text-[var(--muted)]">
+          <ul className="reading-copy mt-4 grid gap-3 text-[var(--muted)]">
             {akhirahBenefits.map((item) => (
               <li key={item} className="rounded-2xl bg-[var(--background)] px-4 py-3">
                 {item}
@@ -165,7 +165,7 @@ export default function HomePage() {
           </ul>
         </div>
         </div>
-        <p className="text-center text-sm leading-7 text-[var(--muted)] sm:text-base">
+        <p className="reading-copy text-center text-[var(--muted)]">
           A believer asks Allah for both. Islam teaches balance, not neglect.
         </p>
       </section>
@@ -177,7 +177,7 @@ export default function HomePage() {
             <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
               Clear, trusted, and easy to read
             </h2>
-            <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy text-[var(--muted)]">
               This website focuses on Qur’anic Rabbana duas and authentic
               adhkar from reliable hadith sources. Arabic is shown with full
               harakat to help non-Arab readers. English and Urdu translations
@@ -190,7 +190,7 @@ export default function HomePage() {
             {authenticityPoints.map((point) => (
               <div
                 key={point}
-                className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]"
+                className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-[var(--foreground)]"
               >
                 {point}
               </div>
@@ -206,13 +206,13 @@ export default function HomePage() {
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
               Keep returning to words that matter in these days and nights
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               Return often with a few sincere minutes of dua, dhikr, and
               reflection. In Ramadan especially, keep your tongue busy with
               what is authentic and ask Allah for the best of this world and
               the next.
             </p>
-            <p className="text-sm leading-7 text-[var(--muted)]">
+            <p className="reading-copy text-[var(--muted)]">
               A few honest moments of remembrance may carry great weight.
             </p>
           </div>

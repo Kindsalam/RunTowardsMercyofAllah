@@ -8,7 +8,7 @@ export function Footer() {
       <div className="page-shell flex flex-col gap-5 py-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="space-y-2">
           <p className="text-sm leading-7 text-[var(--muted)]">
-            Run Towards Allah&apos;s Mercy. Please verify and review all sacred
+            Run towards Mercy of Allah. Please verify and review all sacred
             text carefully before public sharing.
           </p>
           <p className="text-sm leading-7 text-[var(--muted)]">

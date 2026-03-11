@@ -79,7 +79,7 @@ export function AdhkarPage() {
             <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
               Morning and evening adhkar
             </h1>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               Read authentic daily adhkar in Arabic with full harakat, with
               English and Urdu translation, in one calm mobile-friendly space
               for morning and evening remembrance.
@@ -99,7 +99,7 @@ export function AdhkarPage() {
               <p className="eyebrow mb-3">Morning benefits</p>
               <div className="space-y-3">
                 {morningBenefits.map((item) => (
-                  <p key={item} className="text-sm leading-7 text-[var(--foreground)]">
+                  <p key={item} className="reading-copy text-[var(--foreground)]">
                     {item}
                   </p>
                 ))}
@@ -109,7 +109,7 @@ export function AdhkarPage() {
               <p className="eyebrow mb-3 text-white/70">Evening benefits</p>
               <div className="space-y-3">
                 {eveningBenefits.map((item) => (
-                  <p key={item} className="text-sm leading-7 text-white/88">
+                  <p key={item} className="reading-copy text-white/88">
                     {item}
                   </p>
                 ))}
@@ -127,7 +127,7 @@ export function AdhkarPage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             Begin the day with remembrance
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             Start the morning with remembrance, gratitude, protection, and trust
             in Allah.
           </p>
@@ -170,7 +170,7 @@ export function AdhkarPage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             End the day with remembrance
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             Close the day with calm, gratitude, protection, repentance, and trust
             in Allah.
           </p>

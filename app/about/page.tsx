@@ -24,7 +24,7 @@ export default function AboutPage() {
         title="A long-term Sadaqah Jariah project"
         description="This website exists to help people remember Allah, read authentic duas and adhkar, reflect on the guidance of the Qur’an and Sunnah, and keep benefiting from beneficial knowledge over time."
         aside={
-          <div className="border-l-2 border-[var(--border-soft)] pl-5 text-sm leading-7 text-[var(--foreground)]">
+          <div className="reading-copy border-l-2 border-[var(--border-soft)] pl-5 text-[var(--foreground)]">
             Created by Salam Khan as a Sadaqah Jariah initiative so people can
             keep benefiting from remembrance, dua, and reflection even after
             the creator has passed away.
@@ -38,20 +38,20 @@ export default function AboutPage() {
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
             Built to remain beneficial after the creator passes away
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             This site was created as a Sadaqah Jariah project so that people
             can continue benefiting from it even after the creator passes away.
             The intention is to spread beneficial knowledge, encourage ibadah
             and reflection, and help people remember Allah through authentic
             duas and adhkar.
           </p>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             The idea for this website had been in the making for many years.
             Alhamdulillah, on Wednesday, March 11, 2026, Allah helped this
             project begin properly, and subhan Allah helped the creator choose
             this domain name as well.
           </p>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             The prayer behind this work is that the reward of this website and
             the duas on it may reach all the Muslimeen from Adam عليه السلام to
             the last human being, in sha Allah. Ameen.
@@ -71,7 +71,7 @@ export default function AboutPage() {
             <p
               dir="rtl"
               lang="ar"
-              className="arabic-text text-right text-[calc(1.85rem*var(--dua-scale))] leading-[1.95] text-[var(--foreground)]"
+              className="arabic-text reading-arabic-sm text-right text-[var(--foreground)]"
             >
               إِذَا مَاتَ ابْنُ آدَمَ انْقَطَعَ عَمَلُهُ إِلَّا مِنْ ثَلَاثٍ:
               صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ
@@ -79,7 +79,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
-            <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
+            <p className="reading-copy text-[var(--foreground)]">
               When a person dies, their deeds come to an end except for three:
               ongoing charity, beneficial knowledge, or a righteous child who
               prays for them.
@@ -108,13 +108,13 @@ export default function AboutPage() {
             <p
               dir="rtl"
               lang="ar"
-              className="arabic-text text-right text-[calc(2rem*var(--dua-scale))] leading-[1.95] text-[var(--foreground)]"
+              className="arabic-text reading-arabic-lg text-right text-[var(--foreground)]"
             >
               وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ
             </p>
           </div>
           <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
-            <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
+            <p className="reading-copy text-[var(--foreground)]">
               Help one another in righteousness and piety.
             </p>
             <Link
@@ -135,7 +135,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold text-[var(--foreground)]">
             Built collaboratively with modern AI tools
           </h2>
-          <p className="mt-3 text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy mt-3 text-[var(--muted)]">
             This website was built using modern AI tools in collaboration with a
             human creator. The process is guided by intention, review, and a
             commitment to clarity rather than automation for its own sake.
@@ -144,7 +144,7 @@ export default function AboutPage() {
             {technologyPoints.map((point) => (
               <div
                 key={point}
-                className="border-b border-[var(--border-soft)] pb-3 text-sm leading-7 text-[var(--foreground)]"
+                className="reading-copy border-b border-[var(--border-soft)] pb-3 text-[var(--foreground)]"
               >
                 {point}
               </div>
@@ -157,7 +157,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold text-[var(--foreground)]">
             Improving the site carefully over time
           </h2>
-          <p className="mt-3 text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy mt-3 text-[var(--muted)]">
             The goal is not speed for its own sake. The goal is to keep
             improving the site over time so it becomes more accurate, more
             useful, and more accessible for people around the world.
@@ -166,7 +166,7 @@ export default function AboutPage() {
             {intentionPoints.map((point) => (
               <div
                 key={point}
-                className="border-b border-[var(--border-soft)] pb-3 text-sm leading-7 text-[var(--foreground)]"
+                className="reading-copy border-b border-[var(--border-soft)] pb-3 text-[var(--foreground)]"
               >
                 {point}
               </div>

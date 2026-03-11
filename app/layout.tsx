@@ -8,7 +8,7 @@ import { SiteSettingsProvider } from "@/components/site-settings-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Run Towards Allah's Mercy",
+  title: "Run towards Mercy of Allah",
   description:
     "A calm, mobile-first reading space for Qur'anic duas, authentic adhkar, remembrance of Allah, and spiritual reflection.",
   icons: {

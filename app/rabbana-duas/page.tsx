@@ -111,7 +111,7 @@ export default function RabbanaDuasPage() {
             <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
               Rabbana duas from the Qur’an
             </h1>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               These are among the most powerful supplications a believer can
               make. They are words that Allah placed in His Book, teaching us
               how to ask for guidance, mercy, forgiveness, patience,
@@ -132,7 +132,7 @@ export default function RabbanaDuasPage() {
               <p className="eyebrow mb-3">What these duas ask for</p>
               <div className="space-y-3">
                 {rabbanaBenefits.map((item) => (
-                  <p key={item} className="text-sm leading-7 text-[var(--foreground)]">
+                  <p key={item} className="reading-copy text-[var(--foreground)]">
                     {item}
                   </p>
                 ))}
@@ -142,7 +142,7 @@ export default function RabbanaDuasPage() {
               <p className="eyebrow mb-3 text-white/70">How to keep them close</p>
               <div className="space-y-3">
                 {readingApproach.map((item) => (
-                  <p key={item} className="text-sm leading-7 text-white/88">
+                  <p key={item} className="reading-copy text-white/88">
                     {item}
                   </p>
                 ))}
@@ -159,13 +159,13 @@ export default function RabbanaDuasPage() {
         <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
           Words taught by Allah
         </h2>
-        <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+        <p className="reading-copy text-[var(--muted)]">
           The Rabbana duas are special because they are not just beautiful
           words. They are words chosen by Allah and preserved in the Qur’an.
           They teach us what to ask for, how to ask, and what truly matters
           most.
         </p>
-        <p className="text-sm font-medium leading-7 text-[var(--foreground)]">
+        <p className="reading-copy font-medium text-[var(--foreground)]">
           Read them slowly, understand their meaning, and make them part of
           your daily life.
         </p>
@@ -196,7 +196,7 @@ export default function RabbanaDuasPage() {
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             Keep these supplications close
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             This starter page is intentionally seeded with five structured
             entries only, so the full verified Rabbana collection can be added
             later without changing the layout or card system.
@@ -236,13 +236,13 @@ export default function RabbanaDuasPage() {
           {whyTheseDuasMatter.map((point) => (
             <div
               key={point}
-              className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 text-sm leading-7 text-[var(--foreground)] shadow-[0_18px_60px_rgba(8,24,19,0.05)]"
+              className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 text-[var(--foreground)] shadow-[0_18px_60px_rgba(8,24,19,0.05)]"
             >
               {point}
             </div>
           ))}
         </div>
-        <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+        <p className="reading-copy text-[var(--muted)]">
           A believer does not only ask for relief. A believer asks for what
           brings nearness to Allah and lasting success.
         </p>
@@ -255,7 +255,7 @@ export default function RabbanaDuasPage() {
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
               Take these words with you every day
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               Do not leave the Rabbana duas only for Ramadan. Read them often,
               understand them deeply, and return to them in times of ease and
               in times of difficulty.

@@ -90,7 +90,7 @@ export function DuaCard({
             {item.title}
           </h3>
           {item.theme ? (
-            <p className="text-sm leading-7 text-[var(--muted)]">{item.theme}</p>
+            <p className="reading-copy-compact text-[var(--muted)]">{item.theme}</p>
           ) : null}
           <SourceBadge
             sourceReference={item.sourceReference}
@@ -117,7 +117,7 @@ export function DuaCard({
           <p
             dir="rtl"
             lang="ar"
-            className="arabic-text text-right text-[calc(2rem*var(--dua-scale))] leading-[1.95] text-[var(--foreground)]"
+            className="arabic-text reading-arabic-lg text-right text-[var(--foreground)]"
           >
             {item.arabic}
           </p>
@@ -126,7 +126,7 @@ export function DuaCard({
         {showTransliteration && item.transliteration ? (
           <div className="rounded-[22px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_72%,var(--background)_28%)] p-5">
             <p className="eyebrow mb-3">Transliteration</p>
-            <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
+            <p className="reading-copy text-[var(--foreground)]">
               {item.transliteration}
             </p>
           </div>
@@ -135,7 +135,7 @@ export function DuaCard({
         <div className={`grid gap-4 ${item.urdu ? "lg:grid-cols-2" : ""}`}>
           <div className="rounded-[22px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_72%,var(--background)_28%)] p-5">
             <p className="eyebrow mb-3">English</p>
-            <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
+            <p className="reading-copy text-[var(--foreground)]">
               {item.english}
             </p>
           </div>
@@ -145,7 +145,7 @@ export function DuaCard({
               <p
                 dir="rtl"
                 lang="ur"
-                className="urdu-text text-right text-base leading-8 text-[var(--foreground)]"
+                className="urdu-text reading-urdu text-right text-[var(--foreground)]"
               >
                 {item.urdu}
               </p>
@@ -156,14 +156,14 @@ export function DuaCard({
         {item.benefit ? (
           <div className="rounded-[22px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_68%,var(--panel-green)_32%)] p-5">
             <p className="eyebrow mb-3">Why keep this close</p>
-            <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
+            <p className="reading-copy text-[var(--foreground)]">
               {item.benefit}
             </p>
           </div>
         ) : null}
 
         {item.repetition ? (
-          <div className="rounded-[22px] border border-dashed border-[var(--border-strong)] bg-[color-mix(in_srgb,var(--accent-soft)_56%,var(--accent-green-soft)_44%)] p-4 text-sm text-[var(--foreground)]">
+          <div className="reading-copy-compact rounded-[22px] border border-dashed border-[var(--border-strong)] bg-[color-mix(in_srgb,var(--accent-soft)_56%,var(--accent-green-soft)_44%)] p-4 text-[var(--foreground)]">
             <span className="font-medium">Suggested reading:</span> {item.repetition}
           </div>
         ) : null}

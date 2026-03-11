@@ -74,7 +74,7 @@ export default function SourcesPage() {
             <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
               Sources you can trust
             </h1>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               This website is built to make authentic duas and adhkar easier to
               read on a phone, with Arabic, English, and Urdu together in one
               place. It aims to stay close to the Qur’an and authentic Sunnah,
@@ -87,11 +87,11 @@ export default function SourcesPage() {
             <div className="relative mx-auto max-w-sm rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_20px_70px_rgba(8,24,19,0.06)]">
               <div className="space-y-4">
                 <div className="h-11 w-11 rounded-full border border-[var(--border-soft)] bg-[var(--accent-soft)]" />
-                <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]">
+                <div className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-[var(--foreground)]">
                   Qur’an and hadith references stay visible so the reader can
                   review source and meaning without leaving the page.
                 </div>
-                <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--muted)]">
+                <div className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-[var(--muted)]">
                   Ease of reading is the aim. Loose quoting or casual
                   fabrication is not.
                 </div>
@@ -107,7 +107,7 @@ export default function SourcesPage() {
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
             Sacred words deserve care
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             Duas and adhkar are not ordinary text. Their wording, source, and
             meaning matter. This page explains how the website handles Qur’anic
             supplications, hadith-based remembrance, source references, and
@@ -126,7 +126,7 @@ export default function SourcesPage() {
             <h2 className="text-xl font-semibold text-[var(--foreground)]">
               {card.title}
             </h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+            <p className="reading-copy mt-3 text-[var(--muted)]">
               {card.text}
             </p>
           </article>
@@ -140,7 +140,7 @@ export default function SourcesPage() {
             <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
               How references are shown
             </h2>
-            <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy text-[var(--muted)]">
               Each dua or dhikr card should clearly show whether its source is
               the Qur’an or hadith. Where possible, the reference should remain
               visible directly on the card so users can review the source while
@@ -157,7 +157,7 @@ export default function SourcesPage() {
                 <h3 className="text-lg font-semibold text-[var(--foreground)]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-7 text-[var(--muted)]">
+                <p className="reading-copy mt-2 text-[var(--muted)]">
                   {item.text}
                 </p>
               </div>
@@ -172,14 +172,14 @@ export default function SourcesPage() {
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
             A note on verification
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             This website may begin with a smaller set of reviewed entries and
             then grow over time. Sample entries may be used during
             development, but sacred text should always be checked carefully
             before public release or wide sharing. Arabic wording, harakat,
             translations, and references should all be reviewed with care.
           </p>
-          <p className="text-sm font-medium leading-7 text-[var(--foreground)]">
+          <p className="reading-copy font-medium text-[var(--foreground)]">
             Ease of reading should never come at the cost of accuracy.
           </p>
         </div>
@@ -201,7 +201,7 @@ export default function SourcesPage() {
               <h3 className="text-xl font-semibold text-[var(--foreground)]">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+              <p className="reading-copy mt-3 text-[var(--muted)]">
                 {item.text}
               </p>
             </article>
@@ -221,7 +221,7 @@ export default function SourcesPage() {
             {trustPrinciples.map((principle) => (
               <div
                 key={principle}
-                className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]"
+                className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-[var(--foreground)]"
               >
                 {principle}
               </div>
@@ -243,7 +243,7 @@ export default function SourcesPage() {
             >
               {source.label}
             </Link>
-            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+            <p className="reading-copy mt-3 text-[var(--muted)]">
               {source.note}
             </p>
           </article>
@@ -257,7 +257,7 @@ export default function SourcesPage() {
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
               Read with presence, share with care
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               The aim of this website is to help people remember Allah with
               ease, understanding, and reverence. Use it to read, reflect, and
               benefit. And when sharing sacred words with others, do so

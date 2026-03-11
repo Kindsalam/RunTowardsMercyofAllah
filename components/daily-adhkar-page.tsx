@@ -118,7 +118,7 @@ export function DailyAdhkarPage({
               {heroTitle}
             </h1>
             <p
-              className={`max-w-2xl text-sm leading-7 sm:text-base ${
+              className={`reading-copy max-w-2xl ${
                 tone === "evening" ? "text-white/82" : "text-[var(--muted)]"
               }`}
             >
@@ -138,12 +138,12 @@ export function DailyAdhkarPage({
                   className={`h-11 w-11 rounded-full border ${classes.previewAccent}`}
                 />
                 <p
-                  className={`arabic-text text-right text-[1.85rem] leading-[1.95] ${classes.previewText}`}
+                  className={`arabic-text reading-arabic-sm text-right ${classes.previewText}`}
                 >
                   {heroPreviewArabic}
                 </p>
                 <div
-                  className={`rounded-[22px] border p-4 text-sm leading-7 ${classes.previewNote}`}
+                  className={`reading-copy rounded-[22px] border p-4 ${classes.previewNote}`}
                 >
                   {heroPreviewText}
                 </div>
@@ -159,10 +159,10 @@ export function DailyAdhkarPage({
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
             {introTitle}
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             {introParagraph}
           </p>
-          <p className="text-sm font-medium leading-7 text-[var(--foreground)]">
+          <p className="reading-copy font-medium text-[var(--foreground)]">
             {introSupportingLine}
           </p>
         </div>
@@ -178,7 +178,7 @@ export function DailyAdhkarPage({
             <h2 className="text-xl font-semibold text-[var(--foreground)]">
               {card.title}
             </h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
+            <p className="reading-copy mt-3 text-[var(--muted)]">
               {card.text}
             </p>
           </article>
@@ -191,7 +191,7 @@ export function DailyAdhkarPage({
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
             {listTitle}
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             {listIntro}
           </p>
         </div>
@@ -225,7 +225,7 @@ export function DailyAdhkarPage({
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
             {reflectionTitle}
           </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          <p className="reading-copy text-[var(--muted)]">
             {reflectionParagraph}
           </p>
         </div>
@@ -249,7 +249,7 @@ export function DailyAdhkarPage({
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
               {bottomTitle}
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
+            <p className="reading-copy max-w-2xl text-[var(--muted)]">
               {bottomParagraph}
             </p>
           </div>

@@ -25,9 +25,10 @@ export function Header() {
         >
           <div className="flex items-center gap-3 lg:gap-4">
             <SiteLogo className="h-11 w-11 rounded-[16px] sm:h-12 sm:w-12 sm:rounded-[18px]" />
-            <div className="min-w-0">
-              <p className="font-display text-lg leading-none text-[var(--foreground)] sm:text-[1.7rem]">
-                Run Towards Allah&apos;s Mercy
+            <div className="min-w-0 space-y-1">
+              <p className="eyebrow leading-none">Run Towards</p>
+              <p className="font-display text-xl leading-none text-[var(--foreground)] sm:text-[1.7rem]">
+                Mercy of Allah
               </p>
             </div>
           </div>
