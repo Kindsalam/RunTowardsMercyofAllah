@@ -24,16 +24,18 @@ export function HeroSection() {
       <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
         <div className="space-y-6">
           <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/80 backdrop-blur">
-            Based on Qur'an and authentic Sunnah
+            Based on the Qur’an and authentic Sunnah
           </div>
           <div className="space-y-4">
             <h1 className="font-display text-4xl leading-none sm:text-5xl lg:text-6xl">
-              Spend the last ten nights in dua, dhikr, and quiet return to Allah.
+              Spend these last 10 nights with words that matter
             </h1>
             <p className="max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
-              A calm reading space for the final stretch of Ramadan, designed to
-              help you slow down, recite, reflect, and keep the tongue and heart
-              engaged with what is rooted in revelation.
+              A simple and beautiful place to read Qur’anic Rabbana duas,
+              authentic morning and evening azkar, and the most important duas
+              for the last ashra and Laylatul Qadr. Arabic is shown with full
+              harakat, with English and Urdu translation for easy reading and
+              understanding.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -41,41 +43,36 @@ export function HeroSection() {
               Start with the Last 10 Nights
             </Link>
             <Link href="/rabbana-duas" className="button-ghost-light">
-              Read Quranic Rabbana Duas
+              Read Rabbana Duas
             </Link>
+          </div>
+          <div className="space-y-2 text-sm leading-6 text-white/74">
+            <p>Only Qur’anic duas and authentic hadith-based adhkar</p>
+            <p>
+              Made for phone reading, quiet reflection, and easy sharing with
+              friends
+            </p>
           </div>
         </div>
         <div className="relative">
           <div className="absolute left-1/2 top-1/2 h-60 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,246,214,0.62)_0%,_rgba(255,246,214,0.12)_36%,_transparent_66%)] blur-xl" />
           <div className="relative mx-auto max-w-sm rounded-[28px] border border-white/15 bg-white/10 p-5 backdrop-blur-md">
             <div className="space-y-4">
-              <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.24em] text-white/75">
-                <span>Ramadan Nights</span>
-                <span>Mobile-first</span>
+              <div className="flex items-center gap-2">
+                <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
               </div>
               <div className="rounded-[22px] border border-white/15 bg-black/10 p-5">
                 <div className="mb-4 h-10 w-10 rounded-full border border-white/20 bg-white/10" />
                 <p className="arabic-text text-right text-3xl leading-[1.9] text-white">
-                  اللَّهُمَّ إِنَّكَ عَفُوٌّ كَرِيمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
+                  اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
                 </p>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-[20px] border border-white/10 bg-black/10 p-4">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-white/65">
-                    Read clearly
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-white/80">
-                    Arabic, English, Urdu, and optional transliteration in one calm flow.
-                  </p>
-                </div>
-                <div className="rounded-[20px] border border-white/10 bg-black/10 p-4">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-white/65">
-                    Keep returning
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-white/80">
-                    Designed for quiet revisits through the nights, mornings, and evenings.
-                  </p>
-                </div>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="h-20 rounded-[20px] border border-white/10 bg-white/5" />
+                <div className="h-20 rounded-[20px] border border-white/10 bg-white/10" />
+                <div className="h-20 rounded-[20px] border border-white/10 bg-white/5" />
               </div>
             </div>
           </div>

@@ -4,18 +4,19 @@ export const lastTenNights: DuaItem[] = [
   {
     id: "laylatul-qadr-dua",
     category: "last-ten-nights",
-    title: "Sample: The dua taught for Laylatul Qadr",
-    theme: "Seeking pardon and forgiveness",
-    arabic: "اللَّهُمَّ إِنَّكَ عَفُوٌّ كَرِيمٌ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
+    title: "Dua for Laylatul Qadr",
+    theme: "This is one of the most important duas for Laylatul Qadr.",
+    arabic: "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
     transliteration:
-      "Allahumma innaka afuwwun karimun tuhibbu l-afwa fa'fu anni.",
+      "Allahumma innaka ‘afuwwun tuhibbul ‘afwa fa’fu ‘anni",
     english:
-      'Sample translation: "O Allah, You are Pardoning and Generous, and You love pardon, so pardon me."',
+      "O Allah, You are Most Forgiving, and You love to forgive, so forgive me.",
     urdu:
-      'نمونہ اردو ترجمہ: "اے اللہ! بے شک تو بہت معاف کرنے والا، کرم فرمانے والا ہے، معافی کو پسند کرتا ہے، پس مجھے معاف فرما دے۔"',
+      "اے اللہ، بے شک تو بہت معاف کرنے والا ہے اور معاف کرنا پسند کرتا ہے، پس مجھے معاف فرما دے۔",
     sourceType: "hadith",
-    sourceReference: "Jami` at-Tirmidhi 3513",
-    repetition: "Read often throughout the last ten nights",
+    sourceReference: "Sunan al-Tirmidhi 3513",
+    repetition:
+      "Read it often in the last 10 nights, especially the odd nights.",
     authenticity: "sahih",
     featured: true,
   },

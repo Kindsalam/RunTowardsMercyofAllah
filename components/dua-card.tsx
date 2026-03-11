@@ -11,16 +11,28 @@ type DuaCardProps = {
   item: DuaItem;
   allowCompletion?: boolean;
   completionStorageKey?: string;
+  copyButtonLabel?: string;
+  shareButtonLabel?: string;
 };
 
 export function DuaCard({
   item,
   allowCompletion = false,
   completionStorageKey,
+  copyButtonLabel = "Copy",
+  shareButtonLabel = "Share",
 }: DuaCardProps) {
   const { showTransliteration } = useSiteSettings();
-  const [copyLabel, setCopyLabel] = useState("Copy");
-  const [shareLabel, setShareLabel] = useState("Share");
+  const [copyLabel, setCopyLabel] = useState(copyButtonLabel);
+  const [shareLabel, setShareLabel] = useState(shareButtonLabel);
+  const categoryLabel =
+    item.category === "rabbana"
+      ? "Qur’anic dua"
+      : item.category === "morning"
+        ? "Morning dhikr"
+        : item.category === "evening"
+          ? "Evening dhikr"
+          : "Last ten nights";
 
   async function handleCopy() {
     const text = [
@@ -37,10 +49,10 @@ export function DuaCard({
     try {
       await navigator.clipboard.writeText(text);
       setCopyLabel("Copied");
-      window.setTimeout(() => setCopyLabel("Copy"), 1600);
+      window.setTimeout(() => setCopyLabel(copyButtonLabel), 1600);
     } catch {
       setCopyLabel("Failed");
-      window.setTimeout(() => setCopyLabel("Copy"), 1600);
+      window.setTimeout(() => setCopyLabel(copyButtonLabel), 1600);
     }
   }
 
@@ -59,10 +71,10 @@ export function DuaCard({
       }
 
       setShareLabel("Shared");
-      window.setTimeout(() => setShareLabel("Share"), 1600);
+      window.setTimeout(() => setShareLabel(shareButtonLabel), 1600);
     } catch {
       setShareLabel("Try again");
-      window.setTimeout(() => setShareLabel("Share"), 1600);
+      window.setTimeout(() => setShareLabel(shareButtonLabel), 1600);
     }
   }
 
@@ -73,11 +85,12 @@ export function DuaCard({
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="space-y-3">
-          <p className="eyebrow">{item.title}</p>
+          <p className="eyebrow">{categoryLabel}</p>
+          <h3 className="text-xl font-semibold leading-tight text-[var(--foreground)] sm:text-2xl">
+            {item.title}
+          </h3>
           {item.theme ? (
-            <h3 className="text-xl font-semibold leading-tight text-[var(--foreground)] sm:text-2xl">
-              {item.theme}
-            </h3>
+            <p className="text-sm leading-7 text-[var(--muted)]">{item.theme}</p>
           ) : null}
           <SourceBadge
             sourceReference={item.sourceReference}

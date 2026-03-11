@@ -25,4 +25,5 @@ export type JourneyLink = {
   title: string;
   eyebrow: string;
   description: string;
+  buttonLabel: string;
 };

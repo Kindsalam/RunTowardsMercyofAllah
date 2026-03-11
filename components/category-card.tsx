@@ -5,6 +5,7 @@ type CategoryCardProps = {
   title: string;
   eyebrow: string;
   description: string;
+  buttonLabel: string;
 };
 
 export function CategoryCard({
@@ -12,6 +13,7 @@ export function CategoryCard({
   title,
   eyebrow,
   description,
+  buttonLabel,
 }: CategoryCardProps) {
   return (
     <Link
@@ -30,7 +32,7 @@ export function CategoryCard({
           <p className="text-sm leading-7 text-[var(--muted)]">{description}</p>
         </div>
         <div className="inline-flex items-center gap-2 text-sm font-medium text-[var(--brand)]">
-          Enter this section
+          {buttonLabel}
           <span className="transition group-hover:translate-x-1">→</span>
         </div>
       </div>

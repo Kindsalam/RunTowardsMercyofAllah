@@ -10,6 +10,29 @@ import { journeyLinks, whyTheseNightsCards } from "@/lib/content";
 export default function HomePage() {
   const featuredDua =
     lastTenNights.find((item) => item.featured) ?? lastTenNights[0];
+  const dunyaBenefits = [
+    "Peace in the heart",
+    "Clarity in hard times",
+    "Guidance in decisions",
+    "Patience in tests",
+    "Protection from harm",
+    "Barakah in daily life",
+  ];
+  const akhirahBenefits = [
+    "Forgiveness of sins",
+    "Mercy from Allah",
+    "Accepted repentance",
+    "Higher reward",
+    "Safety from punishment",
+    "Hope for Jannah",
+  ];
+  const authenticityPoints = [
+    "Qur’anic duas with surah and ayah reference",
+    "Authentic hadith-based adhkar only",
+    "Arabic with full harakat",
+    "English and Urdu translation",
+    "Made for mobile reading",
+  ];
 
   return (
     <div className="page-shell space-y-16 py-6 pb-16 sm:space-y-20 sm:py-8">
@@ -19,12 +42,13 @@ export default function HomePage() {
         <div className="max-w-2xl space-y-3">
           <p className="eyebrow">Why these nights matter</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            The final stretch of Ramadan is not ordinary time.
+            These nights are too precious to waste
           </h2>
           <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            These nights carry the possibility of Laylatul Qadr, a night better
-            than a thousand months. Even brief moments of turning back to Allah
-            can carry immeasurable weight.
+            The last 10 nights of Ramadan are not ordinary nights. In them is
+            Laylatul Qadr, the night that is better than a thousand months.
+            These are nights for dua, dhikr, Qur’an, tears, hope, and turning
+            back to Allah. Even a few sincere minutes can carry huge reward.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
@@ -48,12 +72,10 @@ export default function HomePage() {
         <div className="max-w-2xl space-y-3">
           <p className="eyebrow">Guided journey</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            Choose a way to enter worship, not just a page to open.
+            Where would you like to begin tonight?
           </h2>
           <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            Each path is designed as a gentle entry point, whether you want a
-            focused Laylatul Qadr dua, Qur'anic supplications, or steady daily
-            remembrance.
+            Choose a path and start reading in a few seconds.
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -70,43 +92,64 @@ export default function HomePage() {
           <div className="max-w-2xl space-y-3">
             <p className="eyebrow">Featured Laylatul Qadr dua</p>
             <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              Keep this dua close through every one of the last ten nights.
+              A dua to repeat in these nights
             </h2>
             <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-              This is the most prominent featured sample on the site so a visitor
-              can begin reciting immediately from the landing page.
+              This is one of the most important duas for Laylatul Qadr.
             </p>
           </div>
-          <Link href="/last-ten-nights" className="button-primary">
-            Open the full night collection
-          </Link>
         </div>
-        <DuaCard item={featuredDua} />
+        <DuaCard
+          item={featuredDua}
+          copyButtonLabel="Copy dua"
+          shareButtonLabel="Share"
+        />
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-[30px] border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-          <p className="eyebrow mb-3">Dunya benefits</p>
-          <h3 className="text-2xl font-semibold text-[var(--foreground)]">
-            The heart becomes steadier in the life you are living now.
-          </h3>
-          <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
-            These duas teach gratitude, clarity, trust, and emotional relief.
-            They give words for overwhelm, hope, repentance, family concerns, and
-            the need for protection through ordinary life.
+      <section className="space-y-6">
+        <div className="max-w-3xl space-y-3">
+          <p className="eyebrow">Dunya and akhirah benefits</p>
+          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
+            Duas that help you in this life and the next
+          </h2>
+          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+            The best duas do not pull you away from life. They help you live it
+            properly. They ask Allah for goodness, protection, mercy, guidance,
+            patience, forgiveness, and success in the akhirah. The Rabbana duas
+            especially gather deep meanings in very few words.
           </p>
         </div>
+        <div className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-[30px] border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-          <p className="eyebrow mb-3">Akhirah benefits</p>
+          <p className="eyebrow mb-3">Benefit for your dunya</p>
           <h3 className="text-2xl font-semibold text-[var(--foreground)]">
-            The believer also asks with the next life in view.
+            Benefit for your dunya
           </h3>
-          <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
-            Forgiveness, mercy, safety from punishment, accepted repentance, and
-            sincere worship are central themes in these supplications. They orient
-            the soul beyond the temporary and toward what remains.
-          </p>
+          <ul className="mt-4 grid gap-3 text-sm leading-7 text-[var(--muted)]">
+            {dunyaBenefits.map((item) => (
+              <li key={item} className="rounded-2xl bg-[var(--background)] px-4 py-3">
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
+        <div className="rounded-[30px] border border-[var(--border-soft)] bg-[var(--surface)] p-6">
+          <p className="eyebrow mb-3">Benefit for your akhirah</p>
+          <h3 className="text-2xl font-semibold text-[var(--foreground)]">
+            Benefit for your akhirah
+          </h3>
+          <ul className="mt-4 grid gap-3 text-sm leading-7 text-[var(--muted)]">
+            {akhirahBenefits.map((item) => (
+              <li key={item} className="rounded-2xl bg-[var(--background)] px-4 py-3">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        </div>
+        <p className="text-center text-sm leading-7 text-[var(--muted)] sm:text-base">
+          A believer asks Allah for both. Islam teaches balance, not neglect.
+        </p>
       </section>
 
       <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 sm:px-8">
@@ -114,28 +157,26 @@ export default function HomePage() {
           <div className="space-y-3">
             <p className="eyebrow">Authenticity</p>
             <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              Built around trust, clarity, and careful reading.
+              Clear, trusted, and easy to read
             </h2>
             <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-              This site is structured for Qur'anic duas and authentic hadith
-              sources only. Arabic text is displayed with full harakat, references
-              stay visible, and the starter dataset is clearly labeled as sample
-              content so verified expansions can be added responsibly.
+              This website focuses on Qur’anic Rabbana duas and authentic
+              adhkar from reliable hadith sources. Arabic is shown with full
+              harakat to help non-Arab readers. English and Urdu translations
+              are included for understanding. References are shown clearly so
+              you know what comes from the Qur’an and what comes from authentic
+              hadith.
             </p>
           </div>
-          <div className="grid gap-4">
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]">
-              References are shown on every dua card so readers can trace each
-              sample entry back to its source collection or verse.
-            </div>
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]">
-              Transliteration and font controls are optional utilities, not
-              clutter. The reading experience stays focused on the text.
-            </div>
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]">
-              Morning and evening pages include local progress markers so a person
-              can quietly keep track of what they have read.
-            </div>
+          <div className="grid gap-3">
+            {authenticityPoints.map((point) => (
+              <div
+                key={point}
+                className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]"
+              >
+                {point}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -145,19 +186,24 @@ export default function HomePage() {
           <div className="space-y-4">
             <p className="eyebrow">Do not waste these nights</p>
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
-              Start reading now, even if you begin with one sincere dua.
+              Do not let these nights slip away
             </h2>
             <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-              A small, present heart can do more in these nights than a distracted
-              one with grand plans. Open a section and begin where you are.
+              No one knows if they will reach another Ramadan. Start tonight
+              with a few sincere minutes of dua, dhikr, and reflection. Read
+              what is authentic, keep your tongue busy, and ask Allah for the
+              best of this world and the next.
+            </p>
+            <p className="text-sm leading-7 text-[var(--muted)]">
+              A few honest moments may be heavier than years of habit.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
             <Link href="/last-ten-nights" className="button-primary">
-              Start with the Last 10 Nights
+              Start tonight
             </Link>
-            <Link href="/morning-azkar" className="button-secondary">
-              Read Morning Azkar
+            <Link href="/rabbana-duas" className="button-secondary">
+              Read Rabbana Duas
             </Link>
           </div>
         </div>
