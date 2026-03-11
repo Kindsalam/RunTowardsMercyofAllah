@@ -8,6 +8,8 @@ export const lastTenNights: DuaItem[] = [
     category: "last-ten-nights",
     title: "Dua for Laylatul Qadr",
     theme: "This is one of the most important duas for Laylatul Qadr.",
+    benefit:
+      "This dua centers on Allah's love of forgiveness, which is why it is especially precious in the search for Laylatul Qadr.",
     arabic: "اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي",
     transliteration:
       "Allahumma innaka ‘afuwwun tuhibbul ‘afwa fa’fu ‘anni",
@@ -28,6 +30,8 @@ export const lastTenNights: DuaItem[] = [
     title: "Sample: Asking for pardon, forgiveness, and mercy",
     theme:
       "Sample entry for the last ten nights collection. Useful for repentance and relief from burden.",
+    benefit:
+      "Useful in nights of repentance when asking Allah to lift burden, pardon mistakes, and show mercy.",
     arabic:
       "رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًا كَمَا حَمَلْتَهُ عَلَى ٱلَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ",
     transliteration:
@@ -46,6 +50,8 @@ export const lastTenNights: DuaItem[] = [
     title: "Sample: Asking for good in this life and the next",
     theme:
       "Sample entry for these nights. A concise Rabbana dua gathering dunya and akhirah together.",
+    benefit:
+      "A short comprehensive dua for asking Allah for good in both worlds during these blessed nights.",
     arabic:
       "رَبَّنَا آتِنَا فِي ٱلدُّنْيَا حَسَنَةً وَفِي ٱلْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ ٱلنَّارِ",
     transliteration:
@@ -64,6 +70,8 @@ export const lastTenNights: DuaItem[] = [
     title: "Sample: Asking Allah for steadfast hearts",
     theme:
       "Sample entry for these nights. A dua for remaining guided and receiving mercy.",
+    benefit:
+      "A dua for steadfast hearts and mercy when seeking guidance, acceptance, and protection from deviation.",
     arabic:
       "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ ٱلْوَهَّابُ",
     transliteration:
@@ -82,6 +90,8 @@ export const lastTenNights: DuaItem[] = [
     title: "Sample: Asking for righteous family and leadership in goodness",
     theme:
       "Sample entry for these nights. A Rabbana dua for family, joy, and taqwa.",
+    benefit:
+      "A dua for righteous family, comfort of the eyes, and leadership in goodness during a season of increased dua.",
     arabic:
       "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَٱجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
     transliteration:

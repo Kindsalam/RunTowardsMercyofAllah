@@ -18,11 +18,12 @@ export function CategoryCard({
   return (
     <Link
       href={href}
-      className="group relative overflow-hidden rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-6 shadow-[0_18px_60px_rgba(7,26,20,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[var(--border-strong)] hover:shadow-[0_24px_90px_rgba(7,26,20,0.12)] dark:shadow-[0_18px_60px_rgba(0,0,0,0.2)]"
+      className="group relative overflow-hidden rounded-[28px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,var(--surface-tint),var(--surface))] p-6 shadow-[0_18px_60px_rgba(7,26,20,0.08)] transition duration-300 hover:-translate-y-1 hover:border-[var(--border-strong)] hover:shadow-[0_24px_90px_rgba(7,26,20,0.12)] dark:shadow-[0_18px_60px_rgba(0,0,0,0.2)]"
     >
+      <div className="absolute left-0 top-0 h-32 w-32 rounded-full bg-[radial-gradient(circle,_var(--accent-green-soft)_0%,_transparent_72%)] transition duration-300 group-hover:scale-125" />
       <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-[radial-gradient(circle,_rgba(214,179,98,0.24)_0%,_transparent_70%)] transition duration-300 group-hover:scale-125" />
       <div className="relative space-y-4">
-        <div className="inline-flex rounded-full border border-[var(--border-soft)] bg-[var(--accent-soft)] px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-[var(--muted)]">
+        <div className="inline-flex rounded-full border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--accent-green-soft)_58%,var(--accent-soft)_42%)] px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-[var(--muted)]">
           {eyebrow}
         </div>
         <div className="space-y-3">

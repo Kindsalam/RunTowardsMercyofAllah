@@ -31,7 +31,7 @@ export function EveningAdhkarPage() {
       introSupportingLine="Let the final words of your day be words of remembrance."
       benefitCards={benefitCards}
       listTitle="Evening words to keep close"
-      listIntro="This starter page is intentionally seeded with five structured sample entries only, so the full verified evening adhkar set can be added later without changing the page design."
+      listIntro="This starter page is intentionally seeded with a small structured set only, so the full verified evening adhkar collection can be added later without changing the page design."
       reflectionTitle="Before the day closes"
       reflectionParagraph="Before sleep, the believer remembers Allah, asks forgiveness for mistakes, and places trust in the One who protects through the night. Ending the day with remembrance softens the heart and brings peace."
       bottomTitle="Return tomorrow with remembrance"

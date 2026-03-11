@@ -38,17 +38,22 @@ export default function HomePage() {
     <div className="page-shell space-y-16 py-6 pb-16 sm:space-y-20 sm:py-8">
       <HeroSection />
 
+      <section className="-mt-8 rounded-[24px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_78%,transparent)] px-5 py-3 text-center text-sm leading-7 text-[var(--muted)] sm:px-6">
+        This is a Sadaqah Jariah project built to spread beneficial remembrance,
+        reflection, and peace.
+      </section>
+
       <section className="space-y-6">
         <div className="max-w-2xl space-y-3">
-          <p className="eyebrow">Why these nights matter</p>
+          <p className="eyebrow">A special Ramadan focus</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            These nights are too precious to waste
+            Give the last 10 nights special attention
           </h2>
           <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            The last 10 nights of Ramadan are not ordinary nights. In them is
-            Laylatul Qadr, the night that is better than a thousand months.
-            These are nights for dua, dhikr, Qur’an, tears, hope, and turning
-            back to Allah. Even a few sincere minutes can carry huge reward.
+            This website helps with duas and adhkar all year, but the last 10
+            nights of Ramadan deserve special focus. In them is Laylatul Qadr,
+            the night better than a thousand months, so this is the time to
+            increase dua, dhikr, Qur&apos;an, and sincere turning back to Allah.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
@@ -72,10 +77,11 @@ export default function HomePage() {
         <div className="max-w-2xl space-y-3">
           <p className="eyebrow">Guided journey</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            Where would you like to begin tonight?
+            Choose where to begin
           </h2>
           <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            Choose a path and start reading in a few seconds.
+            Start with the Ramadan section you need most, or return to the
+            duas and adhkar you want to keep close every day.
           </p>
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
@@ -90,12 +96,13 @@ export default function HomePage() {
       <section className="space-y-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl space-y-3">
-            <p className="eyebrow">Featured Laylatul Qadr dua</p>
+            <p className="eyebrow">A special Ramadan dua</p>
             <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              A dua to repeat in these nights
+              A dua to keep close in the last 10 nights
             </h2>
             <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-              This is one of the most important duas for Laylatul Qadr.
+              This is one of the most important duas to repeat in the search
+              for Laylatul Qadr.
             </p>
           </div>
         </div>
@@ -184,23 +191,23 @@ export default function HomePage() {
       <section className="overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,var(--surface),color-mix(in_srgb,var(--surface)_74%,rgba(201,171,103,0.26)_26%))] px-6 py-8 sm:px-8 sm:py-10">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
-            <p className="eyebrow">Do not waste these nights</p>
+            <p className="eyebrow">Do not let Ramadan pass lightly</p>
             <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
-              Do not let these nights slip away
+              Keep returning to words that matter in these days and nights
             </h2>
             <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
-              No one knows if they will reach another Ramadan. Start tonight
-              with a few sincere minutes of dua, dhikr, and reflection. Read
-              what is authentic, keep your tongue busy, and ask Allah for the
-              best of this world and the next.
+              Return often with a few sincere minutes of dua, dhikr, and
+              reflection. In Ramadan especially, keep your tongue busy with
+              what is authentic and ask Allah for the best of this world and
+              the next.
             </p>
             <p className="text-sm leading-7 text-[var(--muted)]">
-              A few honest moments may be heavier than years of habit.
+              A few honest moments of remembrance may carry great weight.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
             <Link href="/last-ten-nights" className="button-primary">
-              Start tonight
+              Begin with Last 10 Nights
             </Link>
             <Link href="/rabbana-duas" className="button-secondary">
               Read Rabbana Duas

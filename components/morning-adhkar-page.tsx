@@ -31,7 +31,7 @@ export function MorningAdhkarPage() {
       introSupportingLine="Read a little with consistency rather than rushing through a lot without presence."
       benefitCards={benefitCards}
       listTitle="Morning words to keep close"
-      listIntro="This starter page is intentionally seeded with five structured sample entries only, so the full verified morning adhkar set can be added later without changing the page design."
+      listIntro="This starter page is intentionally seeded with a small structured set only, so the full verified morning adhkar collection can be added later without changing the page design."
       reflectionTitle="Small words, repeated with sincerity"
       reflectionParagraph="Morning adhkar are not long for the sake of length. Their value is in truthfulness, consistency, and presence of heart. A believer begins the day by remembering Allah, asking for good, and seeking protection before stepping into the duties of life."
       bottomTitle="Carry remembrance into the rest of your day"

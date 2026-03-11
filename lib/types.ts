@@ -9,6 +9,7 @@ export type DuaItem = {
   category: DuaCategory;
   title: string;
   theme?: string;
+  benefit?: string;
   arabic: string;
   transliteration?: string;
   english: string;
@@ -16,7 +17,7 @@ export type DuaItem = {
   sourceType: "quran" | "hadith";
   sourceReference: string;
   repetition?: string;
-  authenticity?: "sahih" | "quran";
+  authenticity?: "sahih" | "hasan" | "quran";
   featured?: boolean;
 };
 

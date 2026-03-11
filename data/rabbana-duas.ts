@@ -8,6 +8,8 @@ export const rabbanaDuas: DuaItem[] = [
     category: "rabbana",
     title: "Our Lord, give us good in this world and in the Hereafter",
     theme: "Dunya and Akhirah",
+    benefit:
+      "This dua gathers the believer's needs in a balanced way: goodness in this life, goodness in the next, and protection from the Fire.",
     arabic:
       "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
     transliteration:
@@ -26,6 +28,8 @@ export const rabbanaDuas: DuaItem[] = [
     category: "rabbana",
     title: "Sample: Keep our hearts firm after guidance",
     theme: "Guidance",
+    benefit:
+      "A dua for firmness after guidance and for asking Allah to keep the heart from deviation.",
     arabic:
       "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِن لَّدُنكَ رَحْمَةً ۚ إِنَّكَ أَنتَ الْوَهَّابُ",
     transliteration:
@@ -43,6 +47,8 @@ export const rabbanaDuas: DuaItem[] = [
     category: "rabbana",
     title: "Sample: We have wronged ourselves",
     theme: "Forgiveness",
+    benefit:
+      "A model of repentance, confession, and hope in Allah's mercy after wrongdoing.",
     arabic:
       "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
     transliteration:
@@ -60,6 +66,8 @@ export const rabbanaDuas: DuaItem[] = [
     category: "rabbana",
     title: "Sample: Pour patience upon us and make us firm",
     theme: "Patience",
+    benefit:
+      "A dua for patience, firmness, and divine help when life becomes heavy or frightening.",
     arabic:
       "رَبَّنَا أَفْرِغْ عَلَيْنَا صَبْرًا وَثَبِّتْ أَقْدَامَنَا وَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ",
     transliteration:
@@ -77,6 +85,8 @@ export const rabbanaDuas: DuaItem[] = [
     category: "rabbana",
     title: "Sample: Grant us joy through family and offspring",
     theme: "Family and Offspring",
+    benefit:
+      "A dua for righteous family life, comfort of the eyes, and leadership in goodness.",
     arabic:
       "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
     transliteration:

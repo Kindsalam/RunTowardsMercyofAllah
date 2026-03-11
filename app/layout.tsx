@@ -10,7 +10,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Run Towards Allah's Mercy",
   description:
-    "A calm, mobile-first Ramadan reading space for Qur'anic Rabbana duas, morning and evening adhkar, and duas for the last 10 nights.",
+    "A calm, mobile-first reading space for Qur'anic duas, authentic adhkar, remembrance of Allah, and spiritual reflection.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

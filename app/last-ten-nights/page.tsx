@@ -4,7 +4,7 @@ import { CopyDuaButton } from "@/components/copy-dua-button";
 import { DuaCard } from "@/components/dua-card";
 import { lastTenNights } from "@/data/last-ten-nights";
 
-const quickFocusItems = [
+const laylatulQadrFocus = [
   {
     title: "Seek Laylatul Qadr",
     text: "Look for it in the last ten nights, especially the odd nights.",
@@ -17,6 +17,12 @@ const quickFocusItems = [
     title: "Stay with Qur’an and dhikr",
     text: "Keep these nights alive with recitation, remembrance, repentance, and reflection.",
   },
+];
+
+const worshipPriorities = [
+  "Return often to the Laylatul Qadr dua",
+  "Let Qur’an and dhikr fill the night",
+  "Even a few sincere minutes can carry great reward",
 ];
 
 export default function LastTenNightsPage() {
@@ -40,61 +46,59 @@ export default function LastTenNightsPage() {
 
   return (
     <div className="page-shell space-y-12 py-6 pb-16 sm:space-y-16 sm:py-8">
-      <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(9,43,33,0.96)_0%,rgba(18,71,53,0.92)_52%,rgba(201,171,103,0.18)_100%)] px-5 py-8 text-white shadow-[0_30px_120px_rgba(6,20,15,0.18)] sm:px-8 sm:py-10 lg:px-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,246,214,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(201,171,103,0.14)_0%,_transparent_36%)]" />
-        <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:44px_44px]" />
-        <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_84%,rgba(201,171,103,0.12)_16%),var(--surface))] px-5 py-8 shadow-[0_24px_90px_rgba(8,24,19,0.08)] sm:px-8 sm:py-10 lg:px-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,171,103,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(16,77,57,0.09)_0%,_transparent_36%)]" />
+        <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-3xl space-y-4">
-            <p className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/80 backdrop-blur">
+            <p className="eyebrow">
               Last Ashra of Ramadan
             </p>
-            <h1 className="font-display text-4xl leading-none text-white sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
               Make these nights count
             </h1>
-            <p className="max-w-2xl text-sm leading-7 text-white/82 sm:text-base">
+            <p className="max-w-2xl text-sm leading-7 text-[var(--muted)] sm:text-base">
               These are the nights of mercy, forgiveness, dua, and hope. Begin
               with the most important supplications and reminders for the last
               10 nights and Laylatul Qadr, presented in Arabic with full
               harakat, English, and Urdu.
             </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link href="#featured-main-dua" className="button-primary">
+                Begin with the main dua
+              </Link>
+              <Link href="#recommended-reading" className="button-secondary">
+                Recommended reading
+              </Link>
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,246,214,0.45)_0%,_rgba(255,246,214,0.08)_36%,_transparent_68%)] blur-xl" />
-            <div className="relative mx-auto max-w-sm rounded-[28px] border border-white/15 bg-white/10 p-5 backdrop-blur-md">
-              <div className="space-y-4">
-                <div className="h-11 w-11 rounded-full border border-white/20 bg-white/10" />
-                <p className="arabic-text text-right text-[2rem] leading-[1.95] text-white">
-                  اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
-                </p>
-                <div className="rounded-[22px] border border-white/10 bg-black/10 p-4 text-sm leading-7 text-white/78">
-                  Keep this dua close in the odd nights and return to it often
-                  with presence and hope.
-                </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]">
+              <p className="eyebrow mb-3">Laylatul Qadr focus</p>
+              <div className="space-y-3">
+                {laylatulQadrFocus.map((item) => (
+                  <div key={item.title} className="space-y-1">
+                    <p className="text-sm font-medium text-[var(--foreground)]">{item.title}</p>
+                    <p className="text-sm leading-7 text-[var(--muted)]">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(8,20,15,0.96)_0%,rgba(16,46,36,0.94)_100%)] p-5 text-white shadow-[0_18px_60px_rgba(8,24,19,0.12)]">
+              <p className="eyebrow mb-3 text-white/70">Worship priorities</p>
+              <div className="space-y-3">
+                {worshipPriorities.map((item) => (
+                  <p key={item} className="text-sm leading-7 text-white/86">
+                    {item}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
-        {quickFocusItems.map((item) => (
-          <article
-            key={item.title}
-            className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]"
-          >
-            <p className="eyebrow mb-3">Quick focus</p>
-            <h2 className="text-xl font-semibold text-[var(--foreground)]">
-              {item.title}
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-              {item.text}
-            </p>
-          </article>
-        ))}
-      </section>
-
-      <section className="space-y-6">
+      <section id="featured-main-dua" className="space-y-6 scroll-mt-28">
         <div className="max-w-2xl space-y-3">
           <p className="eyebrow">Featured main dua</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
@@ -117,7 +121,7 @@ export default function LastTenNightsPage() {
         </div>
       </section>
 
-      <section className="space-y-6">
+      <section id="recommended-reading" className="space-y-6 scroll-mt-28">
         <div className="max-w-3xl space-y-3">
           <p className="eyebrow">Recommended reading</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
@@ -137,25 +141,23 @@ export default function LastTenNightsPage() {
         </div>
       </section>
 
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_80px_rgba(8,24,19,0.07)] sm:px-8">
-        <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-          <div className="space-y-4">
-            <p className="eyebrow">Reflection</p>
-            <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
-              A few sincere moments can carry great weight
-            </h2>
-            <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-              Not every person can do long worship every night. But every
-              person can turn back to Allah with sincerity. A few honest
-              minutes of dua, istighfar, dhikr, and Qur’an in these nights may
-              be heavier than years of habit done without heart.
-            </p>
-          </div>
-          <div className="flex lg:justify-end">
-            <Link href="/rabbana-duas" className="button-secondary">
-              Read Rabbana Duas
-            </Link>
-          </div>
+      <section className="grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+        <div className="space-y-4">
+          <p className="eyebrow">Reflection</p>
+          <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
+            A few sincere moments can carry great weight
+          </h2>
+          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+            Not every person can do long worship every night. But every
+            person can turn back to Allah with sincerity. A few honest
+            minutes of dua, istighfar, dhikr, and Qur’an in these nights may
+            be heavier than years of habit done without heart.
+          </p>
+        </div>
+        <div className="flex lg:justify-end">
+          <Link href="/rabbana-duas" className="button-secondary">
+            Read Rabbana Duas
+          </Link>
         </div>
       </section>
 

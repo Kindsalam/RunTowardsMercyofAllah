@@ -41,10 +41,10 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`rounded-2xl px-4 py-3 text-sm ${
+                  className={`rounded-xl border-b border-[var(--border-soft)] px-3 py-3 text-sm transition ${
                     active
-                      ? "bg-[var(--accent-soft)] text-[var(--foreground)]"
-                      : "text-[var(--muted)] hover:bg-[var(--background)]"
+                      ? "bg-[var(--accent-green-soft)] text-[var(--foreground)]"
+                      : "text-[var(--muted)] hover:bg-[var(--accent-green-soft)] hover:text-[var(--brand)]"
                   }`}
                 >
                   {link.label}

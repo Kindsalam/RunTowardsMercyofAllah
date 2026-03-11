@@ -4,10 +4,10 @@ export const journeyLinks: JourneyLink[] = [
   {
     href: "/last-ten-nights",
     title: "Last 10 Nights and Laylatul Qadr",
-    eyebrow: "Tonight's beginning",
+    eyebrow: "Special season",
     description:
-      "Begin with the most important duas and words to repeat in these blessed nights.",
-    buttonLabel: "Begin tonight",
+      "Return to the most important duas and words to repeat in the most blessed nights of Ramadan.",
+    buttonLabel: "Begin with these nights",
   },
   {
     href: "/rabbana-duas",
@@ -18,7 +18,7 @@ export const journeyLinks: JourneyLink[] = [
     buttonLabel: "Read Rabbana Duas",
   },
   {
-    href: "/morning-adhkar",
+    href: "/adhkar#morning-adhkar-section",
     title: "Morning Adhkar",
     eyebrow: "Start the day",
     description:
@@ -26,7 +26,7 @@ export const journeyLinks: JourneyLink[] = [
     buttonLabel: "Open Morning Adhkar",
   },
   {
-    href: "/evening-adhkar",
+    href: "/adhkar#evening-adhkar-section",
     title: "Evening Adhkar",
     eyebrow: "Close the day",
     description:
@@ -46,17 +46,20 @@ export const siteLinks = [
     label: "Rabbana Duas",
   },
   {
-    href: "/morning-adhkar",
-    label: "Morning Adhkar",
-    aliases: ["/morning-azkar"],
+    href: "/adhkar",
+    label: "Adhkar",
+    aliases: ["/morning-adhkar", "/morning-azkar", "/evening-adhkar", "/evening-azkar"],
   },
-  {
-    href: "/evening-adhkar",
-    label: "Evening Adhkar",
-    aliases: ["/evening-azkar"],
-  },
-  { href: "/sources", label: "Sources" },
 ];
+
+export const legalLinks = [
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-of-use", label: "Terms of Use" },
+  { href: "/cookie-policy", label: "Cookie Policy" },
+  { href: "/disclaimer", label: "Disclaimer" },
+];
+
+export const correctionContact = "from abdul salam @ gmail . com";
 
 export const sourceReferences = [
   {
@@ -95,6 +98,41 @@ export const sourceReferences = [
     note: "Evening remembrance source text.",
   },
   {
+    label: "Sunnah.com: Sahih al-Bukhari 3293",
+    href: "https://sunnah.com/bukhari:3293",
+    note: "Tahlil repeated one hundred times with reward and protection until evening.",
+  },
+  {
+    label: "Sunnah.com: Sahih Muslim 2691",
+    href: "https://sunnah.com/muslim:2691",
+    note: "Parallel source for the daily tahlil dhikr.",
+  },
+  {
+    label: "Sunnah.com: Sahih al-Bukhari 6405",
+    href: "https://sunnah.com/bukhari:6405",
+    note: "Subhan Allah wa bihamdih repeated one hundred times in the day.",
+  },
+  {
+    label: "Sunnah.com: Jami` at-Tirmidhi 3388",
+    href: "https://sunnah.com/tirmidhi:3388",
+    note: "Morning and evening protection dhikr beginning with Bismillah.",
+  },
+  {
+    label: "Sunnah.com: Sunan Abi Dawud 5074",
+    href: "https://sunnah.com/abudawud:5074",
+    note: "Supplication asking Allah for pardon, well-being, and protection.",
+  },
+  {
+    label: "Sunnah.com: Sahih Muslim 2726a",
+    href: "https://sunnah.com/muslim:2726a",
+    note: "Juwairiyah hadith containing the weighty morning tasbih.",
+  },
+  {
+    label: "Sunnah.com: Sahih al-Bukhari 4008",
+    href: "https://sunnah.com/bukhari:4008",
+    note: "Hadith on reciting the last two verses of Surah Al-Baqarah at night.",
+  },
+  {
     label: "Sunnah.com: Hisn al-Muslim 77",
     href: "https://sunnah.com/hisn/78",
     note: "Morning wording and transliteration for the daily adhkar sample.",
@@ -104,14 +142,14 @@ export const sourceReferences = [
 export const whyTheseNightsCards = [
   {
     title: "For your heart",
-    text: "Slow down, leave the noise, and reconnect with Allah with words from the Qur'an and Sunnah.",
+    text: "Slow down in these nights and give your heart time with the Qur'an, dua, and sincere reflection.",
   },
   {
     title: "For your tongue",
-    text: "Keep your tongue busy with authentic duas and adhkar that bring reward and peace.",
+    text: "Keep your tongue busy with authentic duas and adhkar, especially in the nights when reward is multiplied.",
   },
   {
     title: "For your akhirah",
-    text: "Do not let these nights pass empty. Fill them with remembrance, repentance, and hope.",
+    text: "Do not let the last 10 nights pass lightly. Fill them with remembrance, repentance, and hope in Allah's mercy.",
   },
 ];

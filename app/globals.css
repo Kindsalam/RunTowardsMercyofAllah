@@ -4,10 +4,13 @@
   --background: #f6f1e6;
   --surface: #fffaf1;
   --panel-strong: #f1eadb;
+  --surface-tint: color-mix(in srgb, #ffffff 58%, #e2efe7 42%);
+  --panel-green: color-mix(in srgb, #e3efe7 74%, #f1eadb 26%);
   --foreground: #143126;
   --muted: #4e655b;
   --brand: #1f6a50;
   --accent-soft: rgba(201, 171, 103, 0.18);
+  --accent-green-soft: rgba(31, 106, 80, 0.1);
   --border-soft: rgba(20, 49, 38, 0.12);
   --border-strong: rgba(20, 49, 38, 0.24);
   --dua-scale: 1;
@@ -20,10 +23,13 @@
   --background: #08140f;
   --surface: #0f1f19;
   --panel-strong: #132a22;
+  --surface-tint: color-mix(in srgb, #12231c 82%, #173328 18%);
+  --panel-green: color-mix(in srgb, #173328 78%, #132a22 22%);
   --foreground: #edf1ea;
   --muted: #a7beb2;
   --brand: #95d0b0;
   --accent-soft: rgba(201, 171, 103, 0.16);
+  --accent-green-soft: rgba(149, 208, 176, 0.12);
   --border-soft: rgba(237, 241, 234, 0.12);
   --border-strong: rgba(237, 241, 234, 0.22);
 }
@@ -47,6 +53,7 @@ html {
 body {
   min-height: 100vh;
   background:
+    radial-gradient(circle at 18% 10%, rgba(31, 106, 80, 0.11), transparent 28%),
     radial-gradient(circle at top, rgba(201, 171, 103, 0.12), transparent 34%),
     linear-gradient(180deg, var(--background), color-mix(in srgb, var(--background) 72%, #ffffff 28%));
   color: var(--foreground);
@@ -81,7 +88,7 @@ button {
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface)] px-4 py-2.5 text-sm text-[var(--foreground)] hover:border-[var(--border-strong)];
+    @apply inline-flex items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-tint)] px-4 py-2.5 text-sm text-[var(--foreground)] hover:border-[var(--border-strong)];
   }
 
   .button-light {

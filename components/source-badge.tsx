@@ -26,7 +26,11 @@ export function SourceBadge({
       </span>
       {authenticity ? (
         <span className="rounded-full border border-[var(--border-strong)] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
-          {authenticity === "quran" ? "Revelation" : "Sahih sample"}
+          {authenticity === "quran"
+            ? "Revelation"
+            : authenticity === "hasan"
+              ? "Hasan"
+              : "Sahih"}
         </span>
       ) : null}
       {sourceLinks.map((link) =>

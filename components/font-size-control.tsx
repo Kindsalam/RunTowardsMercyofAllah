@@ -12,7 +12,7 @@ export function FontSizeControl() {
   const { fontScale, setFontScale } = useSiteSettings();
 
   return (
-    <div className="inline-flex h-12 min-w-[11rem] items-center rounded-full border border-[var(--border-soft)] bg-[var(--surface)] p-1">
+    <div className="inline-flex h-10 min-w-[7.5rem] items-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-tint)] p-1">
       {options.map((option) => {
         const active = option.value === fontScale;
 

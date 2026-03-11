@@ -18,46 +18,62 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--background)] backdrop-blur-xl">
-      <div className="page-shell relative flex min-h-24 items-center justify-between gap-4 py-4 lg:grid lg:grid-cols-[minmax(0,21rem)_minmax(0,1fr)_auto] lg:items-center">
+      <div className="page-shell relative flex min-h-18 items-center justify-between gap-4 py-3">
         <Link
           href="/"
-          className="min-w-0 flex-1 pr-3 lg:max-w-[21rem] lg:flex-none lg:pr-0"
+          className="min-w-0 flex-1 pr-3 lg:max-w-[18rem] lg:flex-none lg:pr-0"
         >
           <div className="flex items-center gap-3 lg:gap-4">
-            <SiteLogo className="h-12 w-12 rounded-[18px] sm:h-14 sm:w-14 sm:rounded-[20px]" />
+            <SiteLogo className="h-11 w-11 rounded-[16px] sm:h-12 sm:w-12 sm:rounded-[18px]" />
             <div className="min-w-0">
-              <p className="font-display text-lg leading-none text-[var(--foreground)] sm:text-2xl">
+              <p className="font-display text-lg leading-none text-[var(--foreground)] sm:text-[1.7rem]">
                 Run Towards Allah&apos;s Mercy
-              </p>
-              <p className="mt-1 hidden text-xs uppercase tracking-[0.22em] text-[var(--muted)] sm:block">
-                Ramadan reflection companion
               </p>
             </div>
           </div>
         </Link>
 
-        <nav className="hidden w-full max-w-[38rem] grid-cols-3 gap-2 lg:grid xl:max-w-none xl:grid-cols-6">
+        <nav className="hidden flex-1 items-center justify-start gap-2 lg:flex lg:pl-3 xl:gap-3 xl:pl-5">
           {siteLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`inline-flex h-12 w-full items-center justify-center rounded-full border px-4 py-2 text-center text-sm leading-tight transition ${
+              className={`relative inline-flex items-center justify-center rounded-full px-2.5 py-2 text-sm leading-tight whitespace-nowrap transition xl:px-3 ${
                 isActive(link.href, link.aliases)
-                  ? "border-[var(--border-strong)] bg-[var(--accent-soft)] text-[var(--foreground)]"
-                  : "border-transparent bg-[var(--surface)]/50 text-[var(--muted)] hover:border-[var(--border-soft)] hover:bg-[var(--surface)] hover:text-[var(--foreground)]"
+                  ? "bg-[var(--accent-green-soft)] text-[var(--foreground)]"
+                  : "text-[var(--muted)] hover:bg-[var(--accent-green-soft)] hover:text-[var(--brand)]"
               }`}
             >
-              {link.label}
+              <span>{link.label}</span>
+              <span
+                className={`absolute bottom-0 left-0 h-px w-full origin-center bg-[var(--brand)] transition ${
+                  isActive(link.href, link.aliases)
+                    ? "scale-x-100 opacity-100"
+                    : "scale-x-0 opacity-0"
+                }`}
+              />
             </Link>
           ))}
         </nav>
 
-        <div className="hidden flex-none flex-col items-end gap-2 lg:flex">
+        <div className="hidden flex-none items-center gap-2 lg:flex">
           <ThemeToggle />
           <FontSizeControl />
         </div>
 
         <MobileNav links={siteLinks} featuredLinks={journeyLinks} />
+      </div>
+      <div className="border-t border-[var(--border-soft)]/80 bg-[color-mix(in_srgb,var(--surface-tint)_70%,transparent)]">
+        <div className="page-shell py-2">
+          <Link
+            href="/adhkar#morning-bukhari-6306"
+            className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full px-3 py-1.5 text-center text-sm text-[var(--muted)] transition hover:bg-[var(--accent-green-soft)] hover:text-[var(--brand)]"
+          >
+            <span className="text-[var(--foreground)]">
+              Featured Dua: Sayyid Al-Istaghfar (Bukhari 6306)
+            </span>
+          </Link>
+        </div>
       </div>
     </header>
   );

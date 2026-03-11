@@ -7,7 +7,7 @@ type SiteLogoProps = {
 export function SiteLogo({ className = "" }: SiteLogoProps) {
   return (
     <div
-      className={`relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-[20px] border border-[var(--border-soft)] bg-[var(--surface)] shadow-[0_10px_30px_rgba(20,49,38,0.08)] ${className}`}
+      className={`relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-[20px] border border-white/10 bg-[var(--brand)] shadow-[0_12px_34px_rgba(15,59,46,0.24)] ${className}`}
       aria-hidden="true"
     >
       <svg
@@ -18,8 +18,8 @@ export function SiteLogo({ className = "" }: SiteLogoProps) {
       >
         <defs>
           <linearGradient id="logoGlow" x1="8" y1="8" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stopColor="rgba(201, 171, 103, 0.28)" />
-            <stop offset="1" stopColor="rgba(31, 106, 80, 0.08)" />
+            <stop offset="0" stopColor="rgba(255, 244, 217, 0.2)" />
+            <stop offset="1" stopColor="rgba(255, 255, 255, 0.03)" />
           </linearGradient>
         </defs>
 
@@ -27,12 +27,12 @@ export function SiteLogo({ className = "" }: SiteLogoProps) {
         <path
           d="M16 24c5-8 13-12 21-12 9 0 16 4 21 12"
           fill="none"
-          stroke="var(--border-strong)"
+          stroke="rgba(255,255,255,0.34)"
           strokeWidth="1.6"
           strokeLinecap="round"
         />
-        <circle cx="54" cy="17" r="3.8" fill="rgba(201, 171, 103, 0.42)" />
-        <circle cx="56.5" cy="17" r="3.1" fill="var(--surface)" />
+        <circle cx="54" cy="17" r="3.8" fill="rgba(201, 171, 103, 0.58)" />
+        <circle cx="56.5" cy="17" r="3.1" fill="var(--brand)" />
         <text
           x="36"
           y="37"
@@ -40,7 +40,7 @@ export function SiteLogo({ className = "" }: SiteLogoProps) {
           direction="rtl"
           className="arabic-text"
           style={{
-            fill: "var(--foreground)",
+            fill: "#f7f4eb",
             fontSize: "20px",
             fontWeight: 700,
           }}
@@ -52,7 +52,7 @@ export function SiteLogo({ className = "" }: SiteLogoProps) {
           y="53"
           textAnchor="middle"
           style={{
-            fill: "var(--brand)",
+            fill: "rgba(255, 249, 235, 0.92)",
             fontFamily: "var(--font-display)",
             fontSize: "11px",
             fontStyle: "italic",

@@ -39,6 +39,7 @@ export function DuaCard({
     item.transliteration ? `Transliteration: ${item.transliteration}` : null,
     `English: ${item.english}`,
     `Urdu: ${item.urdu}`,
+    item.benefit ? `Why read this: ${item.benefit}` : null,
     `Source: ${item.sourceReference}`,
   ]
     .filter(Boolean)
@@ -80,7 +81,7 @@ export function DuaCard({
   return (
     <article
       id={item.id}
-      className="rounded-[30px] border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[0_20px_80px_rgba(8,24,19,0.08)] sm:p-7"
+      className="rounded-[30px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,var(--surface),var(--surface-tint))] p-5 shadow-[0_20px_80px_rgba(8,24,19,0.08)] sm:p-7"
     >
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="space-y-3">
@@ -111,7 +112,7 @@ export function DuaCard({
       </div>
 
       <div className="mt-6 grid gap-5">
-        <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--panel-strong)] p-5 sm:p-6">
+        <div className="rounded-[26px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,var(--panel-green),var(--panel-strong))] p-5 sm:p-6">
           <p
             dir="rtl"
             lang="ar"
@@ -122,7 +123,7 @@ export function DuaCard({
         </div>
 
         {showTransliteration && item.transliteration ? (
-          <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--background)] p-5">
+          <div className="rounded-[22px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_72%,var(--background)_28%)] p-5">
             <p className="eyebrow mb-3">Transliteration</p>
             <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
               {item.transliteration}
@@ -131,13 +132,13 @@ export function DuaCard({
         ) : null}
 
         <div className="grid gap-4 lg:grid-cols-2">
-          <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--background)] p-5">
+          <div className="rounded-[22px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_72%,var(--background)_28%)] p-5">
             <p className="eyebrow mb-3">English</p>
             <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
               {item.english}
             </p>
           </div>
-          <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--background)] p-5">
+          <div className="rounded-[22px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_72%,var(--background)_28%)] p-5">
             <p className="eyebrow mb-3">Urdu</p>
             <p
               dir="rtl"
@@ -149,8 +150,17 @@ export function DuaCard({
           </div>
         </div>
 
+        {item.benefit ? (
+          <div className="rounded-[22px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_68%,var(--panel-green)_32%)] p-5">
+            <p className="eyebrow mb-3">Why keep this close</p>
+            <p className="text-sm leading-7 text-[var(--foreground)] sm:text-base">
+              {item.benefit}
+            </p>
+          </div>
+        ) : null}
+
         {item.repetition ? (
-          <div className="rounded-[22px] border border-dashed border-[var(--border-strong)] bg-[var(--accent-soft)]/50 p-4 text-sm text-[var(--foreground)]">
+          <div className="rounded-[22px] border border-dashed border-[var(--border-strong)] bg-[color-mix(in_srgb,var(--accent-soft)_56%,var(--accent-green-soft)_44%)] p-4 text-sm text-[var(--foreground)]">
             <span className="font-medium">Suggested reading:</span> {item.repetition}
           </div>
         ) : null}

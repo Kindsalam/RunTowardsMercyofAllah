@@ -1,6 +1,9 @@
 import Link from "next/link";
 
+import { BackToTopButton } from "@/components/back-to-top-button";
 import { DuaCard } from "@/components/dua-card";
+import { ExpandableDuaGroup } from "@/components/expandable-dua-group";
+import { StickySectionIndex } from "@/components/sticky-section-index";
 import { rabbanaDuas } from "@/data/rabbana-duas";
 
 const themeChips = [
@@ -13,6 +16,18 @@ const themeChips = [
   "Family and Offspring",
 ];
 
+const rabbanaBenefits = [
+  "Guidance, mercy, and forgiveness",
+  "Patience, protection, and steadfastness",
+  "Goodness in both dunya and akhirah",
+];
+
+const readingApproach = [
+  "Read the Arabic slowly with understanding",
+  "Return to these duas in ease and difficulty",
+  "Let them become part of daily worship",
+];
+
 const whyTheseDuasMatter = [
   "forgiveness when we fall short",
   "mercy when we are weak",
@@ -22,14 +37,72 @@ const whyTheseDuasMatter = [
   "goodness in both dunya and akhirah",
 ];
 
+const rabbanaThemeSections = [
+  {
+    theme: "Forgiveness",
+    id: "forgiveness-duas",
+    title: "Rabbana duas for forgiveness",
+    description: "Return to confession, pardon, and mercy when the heart needs repentance.",
+  },
+  {
+    theme: "Mercy",
+    id: "mercy-duas",
+    title: "Rabbana duas for mercy",
+    description: "Ask Allah for mercy that steadies the heart and keeps it close to Him.",
+  },
+  {
+    theme: "Guidance",
+    id: "guidance-duas",
+    title: "Rabbana duas for guidance",
+    description: "Read these duas when you need firmness after guidance and clarity in the heart.",
+  },
+  {
+    theme: "Protection",
+    id: "protection-duas",
+    title: "Rabbana duas for protection",
+    description: "Supplications asking Allah for safety from harm, punishment, and loss.",
+  },
+  {
+    theme: "Patience",
+    id: "patience-duas",
+    title: "Rabbana duas for patience",
+    description: "Keep these words close in testing moments, fear, and struggle.",
+  },
+  {
+    theme: "Dunya and Akhirah",
+    id: "dunya-akhirah-duas",
+    title: "Rabbana duas for dunya and akhirah",
+    description: "Balanced supplications asking Allah for good in this life and lasting success in the next.",
+  },
+  {
+    theme: "Family and Offspring",
+    id: "family-duas",
+    title: "Rabbana duas for family and offspring",
+    description: "Duas for righteous homes, comfort of the eyes, and leadership in goodness.",
+  },
+];
+
 export default function RabbanaDuasPage() {
   const featuredDua = rabbanaDuas.find((item) => item.featured) ?? rabbanaDuas[0];
-  const remainingDuas = rabbanaDuas.filter((item) => item.id !== featuredDua.id);
-  const firstGroup = remainingDuas.slice(0, 2);
-  const secondGroup = remainingDuas.slice(2);
+  const themeSections = rabbanaThemeSections
+    .map((section) => ({
+      ...section,
+      items: rabbanaDuas.filter(
+        (item) => item.theme === section.theme && item.id !== featuredDua.id,
+      ),
+    }))
+    .filter((section) => section.items.length > 0);
+  const sectionIndexLinks = [
+    { href: "#featured-rabbana-dua", label: "Featured" },
+    ...themeSections.map((section) => ({
+      href: `#${section.id}`,
+      label: section.theme,
+    })),
+    { href: "#why-rabbana-duas-matter", label: "Why they matter" },
+  ];
 
   return (
-    <div className="page-shell space-y-12 py-6 pb-16 sm:space-y-16 sm:py-8">
+    <div id="page-top" className="page-shell space-y-12 py-6 pb-16 sm:space-y-16 sm:py-8">
       <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_84%,rgba(201,171,103,0.12)_16%),var(--surface))] px-5 py-8 shadow-[0_24px_90px_rgba(8,24,19,0.08)] sm:px-8 sm:py-10 lg:px-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,171,103,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(16,77,57,0.09)_0%,_transparent_36%)]" />
         <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -44,44 +117,58 @@ export default function RabbanaDuasPage() {
               how to ask for guidance, mercy, forgiveness, patience,
               protection, and success in this life and the next.
             </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link href="#featured-rabbana-dua" className="button-primary">
+                Begin with a Rabbana dua
+              </Link>
+              <Link href="#all-rabbana-duas" className="button-secondary">
+                Browse the duas
+              </Link>
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(201,171,103,0.28)_0%,_rgba(201,171,103,0.08)_36%,_transparent_68%)] blur-xl" />
-            <div className="relative mx-auto max-w-sm rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_20px_70px_rgba(8,24,19,0.06)]">
-              <div className="space-y-4">
-                <div className="h-11 w-11 rounded-full border border-[var(--border-soft)] bg-[var(--accent-soft)]" />
-                <p className="arabic-text text-right text-[2rem] leading-[1.95] text-[var(--foreground)]">
-                  رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ
-                  حَسَنَةً وَقِنَا عَذَابَ النَّارِ
-                </p>
-                <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--background)] p-4 text-sm leading-7 text-[var(--muted)]">
-                  Let the Rabbana duas stay close to the tongue and the heart,
-                  not only in Ramadan but beyond it.
-                </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]">
+              <p className="eyebrow mb-3">What these duas ask for</p>
+              <div className="space-y-3">
+                {rabbanaBenefits.map((item) => (
+                  <p key={item} className="text-sm leading-7 text-[var(--foreground)]">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(8,20,15,0.96)_0%,rgba(16,46,36,0.94)_100%)] p-5 text-white shadow-[0_18px_60px_rgba(8,24,19,0.12)]">
+              <p className="eyebrow mb-3 text-white/70">How to keep them close</p>
+              <div className="space-y-3">
+                {readingApproach.map((item) => (
+                  <p key={item} className="text-sm leading-7 text-white/88">
+                    {item}
+                  </p>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_80px_rgba(8,24,19,0.07)] sm:px-8">
-        <div className="max-w-3xl space-y-4">
-          <p className="eyebrow">Intro reflection</p>
-          <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
-            Words taught by Allah
-          </h2>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            The Rabbana duas are special because they are not just beautiful
-            words. They are words chosen by Allah and preserved in the Qur’an.
-            They teach us what to ask for, how to ask, and what truly matters
-            most.
-          </p>
-          <p className="text-sm font-medium leading-7 text-[var(--foreground)]">
-            Read them slowly, understand their meaning, and make them part of
-            your daily life.
-          </p>
-        </div>
+      <StickySectionIndex title="Jump to" links={sectionIndexLinks} />
+
+      <section className="max-w-3xl space-y-4">
+        <p className="eyebrow">Intro reflection</p>
+        <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
+          Words taught by Allah
+        </h2>
+        <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          The Rabbana duas are special because they are not just beautiful
+          words. They are words chosen by Allah and preserved in the Qur’an.
+          They teach us what to ask for, how to ask, and what truly matters
+          most.
+        </p>
+        <p className="text-sm font-medium leading-7 text-[var(--foreground)]">
+          Read them slowly, understand their meaning, and make them part of
+          your daily life.
+        </p>
       </section>
 
       <section className="space-y-5">
@@ -103,7 +190,7 @@ export default function RabbanaDuasPage() {
         </div>
       </section>
 
-      <section className="space-y-6">
+      <section id="featured-rabbana-dua" className="space-y-6 scroll-mt-28">
         <div className="max-w-3xl space-y-3">
           <p className="eyebrow">Main dua list</p>
           <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
@@ -122,43 +209,43 @@ export default function RabbanaDuasPage() {
             <DuaCard item={featuredDua} />
           </div>
         </div>
+      </section>
 
-        <div className="grid gap-6">
-          {firstGroup.map((item) => (
-            <DuaCard key={item.id} item={item} />
+      <section id="all-rabbana-duas" className="space-y-10 scroll-mt-28">
+        {themeSections.map((section) => (
+          <ExpandableDuaGroup
+            key={section.id}
+            id={section.id}
+            eyebrow={section.theme}
+            title={section.title}
+            description={section.description}
+            items={section.items}
+            initialCount={3}
+          />
+        ))}
+      </section>
+
+      <section id="why-rabbana-duas-matter" className="space-y-6 scroll-mt-28">
+        <div className="max-w-3xl space-y-3">
+          <p className="eyebrow">Why these duas matter</p>
+          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
+            These duas ask for what really matters
+          </h2>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {whyTheseDuasMatter.map((point) => (
+            <div
+              key={point}
+              className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 text-sm leading-7 text-[var(--foreground)] shadow-[0_18px_60px_rgba(8,24,19,0.05)]"
+            >
+              {point}
+            </div>
           ))}
         </div>
-      </section>
-
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_80px_rgba(8,24,19,0.07)] sm:px-8">
-        <div className="space-y-6">
-          <div className="max-w-3xl space-y-3">
-            <p className="eyebrow">Why these duas matter</p>
-            <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              These duas ask for what really matters
-            </h2>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {whyTheseDuasMatter.map((point) => (
-              <div
-                key={point}
-                className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-sm leading-7 text-[var(--foreground)]"
-              >
-                {point}
-              </div>
-            ))}
-          </div>
-          <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
-            A believer does not only ask for relief. A believer asks for what
-            brings nearness to Allah and lasting success.
-          </p>
-        </div>
-      </section>
-
-      <section className="grid gap-6">
-        {secondGroup.map((item) => (
-          <DuaCard key={item.id} item={item} />
-        ))}
+        <p className="text-sm leading-7 text-[var(--muted)] sm:text-base">
+          A believer does not only ask for relief. A believer asks for what
+          brings nearness to Allah and lasting success.
+        </p>
       </section>
 
       <section className="overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,var(--surface),color-mix(in_srgb,var(--surface)_74%,rgba(201,171,103,0.24)_26%))] px-6 py-8 sm:px-8 sm:py-10">
@@ -184,6 +271,8 @@ export default function RabbanaDuasPage() {
           </div>
         </div>
       </section>
+
+      <BackToTopButton />
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import { MorningAdhkarPage } from "@/components/morning-adhkar-page";
+import { AdhkarPage } from "@/components/adhkar-page";
 
 export default function MorningAdhkarRoute() {
-  return <MorningAdhkarPage />;
+  return <AdhkarPage />;
 }
