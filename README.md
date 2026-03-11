@@ -67,4 +67,4 @@ Please verify and review all sacred text carefully before public sharing. This s
 
 ## License
 
-Private project. Created by Salam Khan as a Sadaqah Jariah initiative.
+MIT License. Created by Salam Khan as a Sadaqah Jariyah initiative to share authentic duas and adhkar from the Qur’an and Sunnah.
