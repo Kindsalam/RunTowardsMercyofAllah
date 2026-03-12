@@ -54,7 +54,7 @@ export function HeroSection({ featuredItems }: HeroSectionProps) {
         />
       ))}
 
-      <div className="relative grid gap-5 lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] lg:items-center lg:gap-7">
+      <div className="relative grid gap-5 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] lg:items-center lg:gap-8 xl:grid-cols-[minmax(0,23rem)_minmax(0,1fr)]">
         <div className="max-w-[23rem] space-y-4">
           <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.24em] text-white/80 backdrop-blur">
             Reviewed Duas and Adhkar
@@ -82,11 +82,11 @@ export function HeroSection({ featuredItems }: HeroSectionProps) {
           </p>
         </div>
 
-        <div className="relative lg:pl-2">
+        <div className="relative lg:flex lg:justify-end lg:pl-2">
           <div className="absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,_rgba(255,246,214,0.58)_0%,_rgba(255,246,214,0.12)_36%,_transparent_66%)] blur-xl" />
-          <div className="relative mx-auto max-w-[23rem] rounded-[28px] border border-white/15 bg-white/10 p-3 shadow-[0_20px_70px_rgba(0,0,0,0.12)] backdrop-blur-md sm:p-3.5">
-            <div className="rounded-[24px] border border-white/12 bg-black/12 p-5 sm:p-6">
-              <div className="space-y-3.5">
+          <div className="relative mx-auto w-full max-w-[25rem] rounded-[28px] border border-white/15 bg-white/10 p-3.5 shadow-[0_20px_70px_rgba(0,0,0,0.12)] backdrop-blur-md sm:max-w-[27rem] sm:p-4 lg:mx-0 lg:max-w-[31rem]">
+            <div className="rounded-[24px] border border-white/12 bg-black/14 p-5 sm:p-6 lg:p-7">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <p className="eyebrow text-white/70">{activeDua.label}</p>
                   <Link
@@ -96,18 +96,18 @@ export function HeroSection({ featuredItems }: HeroSectionProps) {
                     Open
                   </Link>
                 </div>
-                <div className="space-y-2.5">
-                  <h2 className="text-base font-medium leading-snug text-white sm:text-lg">
+                <div className="space-y-3">
+                  <h2 className="text-lg font-medium leading-snug text-white sm:text-[1.35rem]">
                     {activeDua.item.title}
                   </h2>
                   <p
                     dir="rtl"
                     lang="ar"
-                    className={`${activeArabicClassName} text-right text-white`}
+                    className={`${activeArabicClassName} text-right text-white drop-shadow-[0_3px_12px_rgba(0,0,0,0.18)]`}
                   >
                     {activeDua.item.arabic}
                   </p>
-                  <p className="reading-copy text-white/78">
+                  <p className="reading-copy max-w-[33ch] text-white/88">
                     {activeDua.item.english}
                   </p>
                 </div>
@@ -117,12 +117,12 @@ export function HeroSection({ featuredItems }: HeroSectionProps) {
                       href={primarySource.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm text-white/76 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+                      className="text-[0.95rem] text-white/82 underline decoration-white/30 underline-offset-4 transition hover:text-white"
                     >
                       {primarySource.label}
                     </Link>
                   ) : (
-                    <p className="text-sm text-white/76">
+                    <p className="text-[0.95rem] text-white/82">
                       {activeDua.item.sourceReference}
                     </p>
                   )}
