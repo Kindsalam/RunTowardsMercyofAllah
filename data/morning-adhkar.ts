@@ -18,7 +18,8 @@ export const morningAdhkar: DuaItem[] = [
     urdu:
       "ہم نے صبح کی اسلام کی فطرت پر، اخلاص کے کلمے پر، اپنے نبی محمد صلی اللہ علیہ وسلم کے دین پر، اور اپنے باپ ابراہیم علیہ السلام کے طریقے پر، جو یکسو اور فرمانبردار تھے، اور مشرکوں میں سے نہ تھے۔",
     sourceType: "hadith",
-    sourceReference: "Musnad Ahmad 15360",
+    sourceReference: "Hisn al-Muslim 90",
+    sourceUrl: "https://sunnah.com/hisn/91",
     repetition: "Read once in the morning",
     featured: true,
   },
