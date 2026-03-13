@@ -62,6 +62,7 @@ export const morningAdhkar: DuaItem[] = [
   {
     id: "morning-muslim-2723",
     category: "morning",
+    published: false,
     title: "Sample: We enter the morning and all dominion belongs to Allah",
     theme: "Protection, praise, and asking for the good of the day",
     benefit:
@@ -102,6 +103,7 @@ export const morningAdhkar: DuaItem[] = [
   {
     id: "morning-tirmidhi-abu-dawud",
     category: "morning",
+    published: false,
     title: "Sample: By You we enter the morning",
     theme: "Trusting Allah through life, death, and return",
     benefit:
@@ -143,6 +145,7 @@ export const morningAdhkar: DuaItem[] = [
   {
     id: "morning-abu-dawud-5072",
     category: "morning",
+    published: false,
     title: "Sample: I am pleased with Allah as Lord",
     theme: "Contentment and certainty in faith",
     benefit:

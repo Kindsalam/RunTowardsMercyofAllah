@@ -27,6 +27,7 @@ export const lastTenNights: DuaItem[] = [
   {
     id: "last-ten-sample-baqarah-286",
     category: "last-ten-nights",
+    published: false,
     title: "Sample: Asking for pardon, forgiveness, and mercy",
     theme:
       "Sample entry for the last ten nights collection. Useful for repentance and relief from burden.",
@@ -47,6 +48,7 @@ export const lastTenNights: DuaItem[] = [
   {
     id: "last-ten-sample-baqarah-201",
     category: "last-ten-nights",
+    published: false,
     title: "Sample: Asking for good in this life and the next",
     theme:
       "Sample entry for these nights. A concise Rabbana dua gathering dunya and akhirah together.",
@@ -67,6 +69,7 @@ export const lastTenNights: DuaItem[] = [
   {
     id: "last-ten-sample-ali-imran-3-8",
     category: "last-ten-nights",
+    published: false,
     title: "Sample: Asking Allah for steadfast hearts",
     theme:
       "Sample entry for these nights. A dua for remaining guided and receiving mercy.",
@@ -87,6 +90,7 @@ export const lastTenNights: DuaItem[] = [
   {
     id: "last-ten-sample-furqan-25-74",
     category: "last-ten-nights",
+    published: false,
     title: "Sample: Asking for righteous family and leadership in goodness",
     theme:
       "Sample entry for these nights. A Rabbana dua for family, joy, and taqwa.",

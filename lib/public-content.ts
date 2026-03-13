@@ -6,10 +6,8 @@ import {
 } from "@/data/duas";
 import type { DuaItem } from "@/lib/types";
 
-const draftPrefix = "Sample:";
-
 export function isPublishedDua(item: DuaItem) {
-  return !item.title.startsWith(draftPrefix);
+  return item.published !== false;
 }
 
 function toPublicReadingSet(items: DuaItem[]) {

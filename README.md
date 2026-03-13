@@ -52,6 +52,28 @@ npm run build
 npm start
 ```
 
+## Deployment Safety
+
+This site uses static export, and the production security headers are currently
+defined in [`vercel.json`](./vercel.json). If deployment ever moves away from
+Vercel or the exported `out/` folder is served elsewhere, those headers must be
+reproduced at the CDN or web server layer.
+
+After deployment, run:
+
+```bash
+npm run check:headers -- https://mercyofallah.com
+```
+
+Or pass another deployed URL to confirm these headers are still present:
+
+- `Content-Security-Policy`
+- `Referrer-Policy`
+- `Permissions-Policy`
+- `X-Content-Type-Options`
+- `X-Frame-Options`
+- `Strict-Transport-Security`
+
 ## Project Structure
 
 | Directory | Purpose |

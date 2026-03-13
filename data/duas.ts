@@ -87,6 +87,7 @@ function legacyItemToRecord(item: DuaItem): DuaRecord {
     id: item.id,
     slug: slugify(item.title || item.id),
     title: item.title,
+    published: item.published,
     arabic: item.arabic,
     transliteration: item.transliteration,
     translation: {
@@ -110,6 +111,7 @@ function recordToItem(record: DuaRecord): DuaItem {
     id: record.id,
     category: record.category,
     title: record.title,
+    published: record.published,
     theme: record.theme,
     benefit: record.benefit,
     arabic: record.arabic,

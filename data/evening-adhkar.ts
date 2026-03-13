@@ -46,6 +46,7 @@ export const eveningAdhkar: DuaItem[] = [
   {
     id: "evening-muslim-2723",
     category: "evening",
+    published: false,
     title: "Sample: We enter the evening and the dominion belongs to Allah",
     theme: "Protection, praise, and asking for the good of the night",
     benefit:
@@ -87,6 +88,7 @@ export const eveningAdhkar: DuaItem[] = [
   {
     id: "evening-tirmidhi-3391",
     category: "evening",
+    published: false,
     title: "Sample: By You we enter the evening",
     theme: "Trusting Allah through the night and the return to Him",
     benefit:
