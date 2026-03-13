@@ -1,5 +1,5 @@
 import { TopicalDuasPage } from "@/components/topical-duas-page";
-import { travelDuas } from "@/data/topical-duas";
+import { travelDuas } from "@/data/duas";
 import { adhkarCategoryCards, duaCategoryCards } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 

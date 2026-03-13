@@ -4,6 +4,12 @@ import { CategoryCard } from "@/components/category-card";
 import { DuaCard } from "@/components/dua-card";
 import { HeroSection } from "@/components/hero-section";
 import { ReflectionSection } from "@/components/reflection-section";
+import {
+  homeMorningHeroDua,
+  propheticQuranDuas,
+  shifaDuas,
+  travelDuas,
+} from "@/data/duas";
 import { journeyLinks, whyTheseNightsCards } from "@/lib/content";
 import { publicLastTenNights, publicRabbanaDuas } from "@/lib/public-content";
 import { createMetadata } from "@/lib/seo";
@@ -15,53 +21,70 @@ export const metadata = createMetadata({
   path: "/",
 });
 
-const morningHeroDua = {
-  id: "hero-tirmidhi-3524",
-  title: "Ya Hayyu Ya Qayyum",
-  arabic: "يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ",
-  english: "O Ever-Living, O Sustainer, in Your mercy I seek relief.",
-  sourceReference: "Jami` at-Tirmidhi 3524",
-};
-
-const reminderHeroAyah = {
-  id: "hero-ash-sharh-94-6",
-  title: "A reminder for the heart",
-  arabic: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
-  english: "Surely with hardship comes ease.",
-  sourceReference: "Surah Ash-Sharh 94:6",
-};
-
 export default function HomePage() {
   const featuredDua =
     publicLastTenNights.find((item) => item.featured) ?? publicLastTenNights[0];
+  const rabbanaFeature =
+    publicRabbanaDuas.find((dua) => dua.id === "rabbana-2-201") ??
+    publicRabbanaDuas[0];
+  const healingFeature =
+    shifaDuas.find((dua) => dua.id === "shifa-bukhari-5742") ?? shifaDuas[0];
+  const travelFeature =
+    travelDuas.find((dua) => dua.id === "travel-muslim-1342-departure") ??
+    travelDuas[0];
+  const hardshipFeature =
+    propheticQuranDuas.find((dua) => dua.id === "prophetic-21-87") ??
+    propheticQuranDuas[0];
   const featuredHeroItems = [
     {
-      key: "rabbana" as const,
+      key: "rabbana",
       label: "Rabbana",
-      item:
-        publicRabbanaDuas.find((dua) => dua.id === "rabbana-2-201") ??
-        publicRabbanaDuas[0],
+      title: "Rabbana duas from the Qur'an",
+      supportingLine:
+        "Begin with beloved Qur'anic supplications for goodness, mercy, guidance, and steadfastness.",
       href: "/quran/rabbana-duas#rabbana-2-201",
+      ctaLabel: "Open Rabbana Duas",
+      snippet: rabbanaFeature,
     },
     {
-      key: "morning" as const,
-      label: "Morning",
-      item: morningHeroDua,
-      href: "/adhkar/morning",
+      key: "daily-adhkar",
+      label: "Daily Adhkar",
+      title: "Morning and evening adhkar",
+      supportingLine:
+        "Keep daily remembrance close for protection, gratitude, and steadiness at both ends of the day.",
+      href: "/adhkar",
+      ctaLabel: "Open Daily Adhkar",
+      snippet: homeMorningHeroDua,
     },
     {
-      key: "laylatul-qadr" as const,
-      label: "Laylatul Qadr",
-      item:
-        publicLastTenNights.find((dua) => dua.id === "laylatul-qadr-dua") ??
-        publicLastTenNights[0],
-      href: "/last-ten-nights#laylatul-qadr-dua",
+      key: "healing",
+      label: "Healing",
+      title: "Healing duas for shifa and relief",
+      supportingLine:
+        "Return to concise supplications for pain, illness, ruqyah, and hope in Allah's healing.",
+      href: "/duas/shifa",
+      ctaLabel: "Open Healing Duas",
+      snippet: healingFeature,
     },
     {
-      key: "reminder" as const,
-      label: "Reminder",
-      item: reminderHeroAyah,
-      href: "https://quran.com/94/6",
+      key: "travel",
+      label: "Travel",
+      title: "Travel duas for setting out and returning",
+      supportingLine:
+        "Keep journey duas nearby for departure, safety on the road, and a peaceful return home.",
+      href: "/duas/travel",
+      ctaLabel: "Open Travel Duas",
+      snippet: travelFeature,
+    },
+    {
+      key: "hardship",
+      label: "Hardship",
+      title: "Distress and hardship duas",
+      supportingLine:
+        "Turn to prophetic words of tawhid, repentance, and relief when the heart feels tight.",
+      href: "/duas/prophetic#prophetic-21-87",
+      ctaLabel: "Open Prophetic Duas",
+      snippet: hardshipFeature,
     },
   ];
   const dunyaBenefits = [

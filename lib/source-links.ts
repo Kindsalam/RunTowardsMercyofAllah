@@ -3,6 +3,46 @@ type ParsedSourceLink = {
   href: string | null;
 };
 
+const allowedSourceHosts = new Set([
+  "quran.com",
+  "www.quran.com",
+  "sunnah.com",
+  "www.sunnah.com",
+  "hadithunlocked.com",
+  "www.hadithunlocked.com",
+]);
+
+export function getTrustedSourceHref(url: string | null | undefined): string | null {
+  if (!url) {
+    return null;
+  }
+
+  try {
+    const parsedUrl = new URL(url);
+
+    if (!allowedSourceHosts.has(parsedUrl.hostname)) {
+      return null;
+    }
+
+    return parsedUrl.toString();
+  } catch {
+    return null;
+  }
+}
+
+function parseExplicitLink(reference: string): ParsedSourceLink | null {
+  const match = reference.match(/^(.*?)\s*\|\s*(https?:\/\/\S+)$/i);
+
+  if (!match) {
+    return null;
+  }
+
+  return {
+    label: match[1].trim(),
+    href: getTrustedSourceHref(match[2].trim()),
+  };
+}
+
 const hadithCollectionPatterns: Array<{ pattern: RegExp; slug: string }> = [
   { pattern: /^(?:Jami[`'’]?\s+at-Tirmidhi)\s+([0-9]+[a-z]?)$/i, slug: "tirmidhi" },
   { pattern: /^(?:Sunan\s+al-Tirmidhi)\s+([0-9]+[a-z]?)$/i, slug: "tirmidhi" },
@@ -47,10 +87,16 @@ export function buildSourceLinks(
   sourceUrl?: string,
 ): ParsedSourceLink[] {
   if (sourceUrl && !sourceReference.includes(";")) {
-    return [{ label: sourceReference.trim(), href: sourceUrl }];
+    return [{ label: sourceReference.trim(), href: getTrustedSourceHref(sourceUrl) }];
   }
 
   return sourceReference.split(";").map((segment) => {
+    const explicitLink = parseExplicitLink(segment.trim());
+
+    if (explicitLink) {
+      return explicitLink;
+    }
+
     const label = segment.trim();
 
     if (!label) {

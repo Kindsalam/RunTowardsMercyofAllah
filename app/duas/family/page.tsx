@@ -1,5 +1,5 @@
 import { TopicalDuasPage } from "@/components/topical-duas-page";
-import { familyDuas } from "@/data/topical-duas";
+import { familyDuas } from "@/data/duas";
 import { adhkarCategoryCards, duaCategoryCards, rabbanaDuasCard } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 

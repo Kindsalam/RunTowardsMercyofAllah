@@ -11,6 +11,35 @@ export type DuaCategory =
   | "travel"
   | "daily-life";
 
+export type DuaSource = {
+  sourceName: string;
+  reference: string;
+  url?: string;
+};
+
+export type DuaTranslation = {
+  english: string;
+  urdu?: string;
+};
+
+export type DuaRecord = {
+  id: string;
+  slug: string;
+  title: string;
+  arabic: string;
+  transliteration?: string;
+  translation: DuaTranslation;
+  category: DuaCategory;
+  sourceType: "quran" | "hadith";
+  sources: DuaSource[];
+  sourceReferenceText?: string;
+  theme?: string;
+  benefit?: string;
+  repetition?: string;
+  authenticity?: "sahih" | "hasan" | "quran";
+  featured?: boolean;
+};
+
 export type DuaItem = {
   id: string;
   category: DuaCategory;
@@ -24,6 +53,7 @@ export type DuaItem = {
   sourceType: "quran" | "hadith";
   sourceReference: string;
   sourceUrl?: string;
+  sources?: DuaSource[];
   repetition?: string;
   authenticity?: "sahih" | "hasan" | "quran";
   featured?: boolean;

@@ -1,5 +1,5 @@
 import { TopicalDuasPage } from "@/components/topical-duas-page";
-import { propheticQuranDuas } from "@/data/prophetic-quran-duas";
+import { propheticQuranDuas } from "@/data/duas";
 import { duaCategoryCards, rabbanaDuasCard } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 

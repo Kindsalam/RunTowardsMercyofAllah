@@ -38,6 +38,10 @@ const referenceMethodItems = [
     text: "Source format: Collection name and reference number",
   },
   {
+    title: "Reference hosts",
+    text: "Quran.com, Sunnah.com, and HadithUnlocked.com where a card explicitly cites it",
+  },
+  {
     title: "Language support",
     text: "Arabic, English, Urdu",
   },

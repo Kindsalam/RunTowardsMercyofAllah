@@ -4,8 +4,8 @@ import Link from "next/link";
 import { CopyDuaButton } from "@/components/copy-dua-button";
 import { DuaCard } from "@/components/dua-card";
 import { SacredArabicText } from "@/components/sacred-arabic-text";
+import { lastTenRecommendedActs } from "@/data/duas";
 import { publicLastTenNights } from "@/lib/public-content";
-import type { DuaItem } from "@/lib/types";
 
 export const metadata = createMetadata({
   title: "Last 10 Nights and Laylatul Qadr",
@@ -33,75 +33,6 @@ const worshipPriorities = [
   "Return often to the Laylatul Qadr dua",
   "Let Qur’an and dhikr fill the night",
   "Even a few sincere minutes can carry great reward",
-];
-
-const recommendedActs: DuaItem[] = [
-  {
-    id: "last-ten-prayer-on-laylatul-qadr",
-    category: "last-ten-nights",
-    title: "Stand in prayer on Laylatul Qadr",
-    arabic:
-      "مَنْ قَامَ لَيْلَةَ الْقَدْرِ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ",
-    english:
-      "Whoever stands in prayer on Laylatul Qadr with faith and seeking reward will have his past sins forgiven.",
-    urdu:
-      "جو شخص لیلۃ القدر میں ایمان کے ساتھ اور ثواب کی نیت سے قیام کرے، اس کے پچھلے گناہ معاف کر دیے جاتے ہیں۔",
-    benefit:
-      "Even a small portion of the night spent in sincere prayer can lead to forgiveness of past sins.",
-    sourceType: "hadith",
-    sourceReference: "Sahih al-Bukhari 1901",
-    sourceUrl: "https://sunnah.com/bukhari:1901",
-    authenticity: "sahih",
-  },
-  {
-    id: "last-ten-seek-laylatul-qadr",
-    category: "last-ten-nights",
-    title: "Seek Laylatul Qadr in the last ten nights",
-    arabic:
-      "تَحَرَّوْا لَيْلَةَ الْقَدْرِ فِي الْعَشْرِ الأَوَاخِرِ مِنْ رَمَضَانَ",
-    english: "Seek Laylatul Qadr in the last ten nights of Ramadan.",
-    urdu: "لیلۃ القدر کو رمضان کی آخری دس راتوں میں تلاش کرو۔",
-    benefit:
-      "Increase worship in all the final nights, especially the odd nights.",
-    sourceType: "hadith",
-    sourceReference: "Sahih al-Bukhari 2020",
-    sourceUrl: "https://sunnah.com/bukhari:2020",
-    authenticity: "sahih",
-  },
-  {
-    id: "last-ten-revive-the-night",
-    category: "last-ten-nights",
-    title: "Revive the night with worship",
-    arabic:
-      "كَانَ النَّبِيُّ ﷺ إِذَا دَخَلَ الْعَشْرُ الأَوَاخِرُ شَدَّ مِئْزَرَهُ وَأَحْيَا لَيْلَهُ وَأَيْقَظَ أَهْلَهُ",
-    english:
-      "When the last ten nights began, the Prophet would strive harder, spend the night in worship, and wake his family.",
-    urdu:
-      "جب آخری عشرہ داخل ہوتا تو نبی ﷺ کمر کس لیتے، رات کو عبادت میں گزارتے، اور اپنے گھر والوں کو جگاتے تھے۔",
-    benefit:
-      "Dedicate these nights to prayer, Qur’an, dhikr, and encourage your family to worship as well.",
-    sourceType: "hadith",
-    sourceReference: "Sahih al-Bukhari 2024",
-    sourceUrl: "https://sunnah.com/bukhari:2024",
-    authenticity: "sahih",
-  },
-  {
-    id: "last-ten-increase-charity",
-    category: "last-ten-nights",
-    title: "Increase charity in Ramadan",
-    arabic:
-      "كَانَ رَسُولُ اللَّهِ ﷺ أَجْوَدَ النَّاسِ، وَكَانَ أَجْوَدَ مَا يَكُونُ فِي رَمَضَانَ",
-    english:
-      "The Messenger of Allah was the most generous of people, and he was even more generous in Ramadan.",
-    urdu:
-      "رسول اللہ ﷺ سب لوگوں سے زیادہ سخی تھے، اور رمضان میں آپ اور بھی زیادہ سخی ہو جاتے تھے۔",
-    benefit:
-      "Follow the example of the Prophet by giving charity and helping others during these blessed nights.",
-    sourceType: "hadith",
-    sourceReference: "Sahih al-Bukhari 6",
-    sourceUrl: "https://sunnah.com/bukhari:6",
-    authenticity: "sahih",
-  },
 ];
 
 export default function LastTenNightsPage() {
@@ -209,7 +140,7 @@ export default function LastTenNightsPage() {
         </div>
 
         <div className="grid gap-6">
-          {recommendedActs.map((item) => (
+          {lastTenRecommendedActs.map((item) => (
             <DuaCard key={item.id} item={item} />
           ))}
         </div>

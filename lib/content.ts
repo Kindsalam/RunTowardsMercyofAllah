@@ -307,6 +307,11 @@ export const sourceReferences = [
     href: "https://sunnah.com/hisn/78",
     note: "Morning wording and transliteration for the daily adhkar sample.",
   },
+  {
+    label: "HadithUnlocked.com: Abū Dāwūd 1516",
+    href: "https://hadithunlocked.com/abudawud:1516",
+    note: "An additional hadith reference host the site can display when a card explicitly cites it.",
+  },
 ];
 
 export const whyTheseNightsCards = [

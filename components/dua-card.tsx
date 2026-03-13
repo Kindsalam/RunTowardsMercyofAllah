@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 import { CompletionCheckbox } from "@/components/completion-checkbox";
+import { DuaSources } from "@/components/dua-sources";
 import { SacredArabicText } from "@/components/sacred-arabic-text";
 import { useSiteSettings } from "@/components/site-settings-provider";
-import { SourceBadge } from "@/components/source-badge";
 import type { DuaItem } from "@/lib/types";
 
 type DuaCardProps = {
@@ -108,11 +108,12 @@ export function DuaCard({
           {item.theme ? (
             <p className="reading-copy-compact text-[var(--muted)]">{item.theme}</p>
           ) : null}
-          <SourceBadge
+          <DuaSources
             sourceReference={item.sourceReference}
             sourceType={item.sourceType}
             authenticity={item.authenticity}
             sourceUrl={item.sourceUrl}
+            sources={item.sources}
           />
         </div>
         <div className="flex flex-wrap gap-2">

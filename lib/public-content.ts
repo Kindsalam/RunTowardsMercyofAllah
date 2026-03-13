@@ -1,7 +1,9 @@
-import { eveningAdhkar } from "@/data/evening-adhkar";
-import { lastTenNights } from "@/data/last-ten-nights";
-import { morningAdhkar } from "@/data/morning-adhkar";
-import { rabbanaDuas } from "@/data/rabbana-duas";
+import {
+  eveningAdhkar,
+  lastTenNights,
+  morningAdhkar,
+  rabbanaDuas,
+} from "@/data/duas";
 import type { DuaItem } from "@/lib/types";
 
 const draftPrefix = "Sample:";
