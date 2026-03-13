@@ -8,7 +8,6 @@ import {
   homeMorningHeroDua,
   propheticQuranDuas,
   shifaDuas,
-  travelDuas,
 } from "@/data/duas";
 import { journeyLinks, whyTheseNightsCards } from "@/lib/content";
 import { publicLastTenNights, publicRabbanaDuas } from "@/lib/public-content";
@@ -29,9 +28,9 @@ export default function HomePage() {
     publicRabbanaDuas[0];
   const healingFeature =
     shifaDuas.find((dua) => dua.id === "shifa-bukhari-5742") ?? shifaDuas[0];
-  const travelFeature =
-    travelDuas.find((dua) => dua.id === "travel-muslim-1342-departure") ??
-    travelDuas[0];
+  const laylatulQadrFeature =
+    publicLastTenNights.find((dua) => dua.id === "laylatul-qadr-dua") ??
+    publicLastTenNights[0];
   const hardshipFeature =
     propheticQuranDuas.find((dua) => dua.id === "prophetic-21-87") ??
     propheticQuranDuas[0];
@@ -67,14 +66,14 @@ export default function HomePage() {
       snippet: healingFeature,
     },
     {
-      key: "travel",
-      label: "Travel",
-      title: "Travel duas for setting out and returning",
+      key: "last-ten-nights",
+      label: "Last 10 Nights",
+      title: "Dua for Laylatul Qadr",
       supportingLine:
-        "Keep journey duas nearby for departure, safety on the road, and a peaceful return home.",
-      href: "/duas/travel",
-      ctaLabel: "Open Travel Duas",
-      snippet: travelFeature,
+        "Keep this beloved dua close in the search for Laylatul Qadr during the final nights of Ramadan.",
+      href: "/last-ten-nights#laylatul-qadr-dua",
+      ctaLabel: "Open Last 10 Nights",
+      snippet: laylatulQadrFeature,
     },
     {
       key: "hardship",
