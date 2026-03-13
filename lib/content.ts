@@ -153,9 +153,9 @@ export const duaCategoryCards: JourneyLink[] = [
   {
     href: "/duas/prophetic",
     title: "Prophetic Duas",
-    eyebrow: "From the Sunnah",
+    eyebrow: "From the Qur'an",
     description:
-      "A dedicated home for prophetic supplications across different moments of life and worship.",
+      "Direct supplications of the Prophets preserved in the Qur'an, with Arabic, translation, and clear source links.",
     buttonLabel: "Open Prophetic Duas",
   },
   {

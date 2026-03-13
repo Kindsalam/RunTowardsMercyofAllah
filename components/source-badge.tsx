@@ -15,18 +15,20 @@ export function SourceBadge({
   sourceUrl,
 }: SourceBadgeProps) {
   const sourceLinks = buildSourceLinks(sourceReference, sourceUrl);
-  const tone =
+  const sourceTypeClassName =
     sourceType === "quran"
-      ? "bg-emerald-100 text-emerald-900 dark:bg-emerald-950/60 dark:text-emerald-100"
-      : "bg-amber-100 text-amber-900 dark:bg-amber-950/50 dark:text-amber-100";
+      ? "brand-chip"
+      : "border border-[var(--brand-border)] bg-transparent text-[var(--brand-ink)]";
 
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <span className={`rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] ${tone}`}>
+      <span
+        className={`rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] ${sourceTypeClassName}`}
+      >
         {sourceType === "quran" ? "Qur'an" : "Hadith"}
       </span>
       {authenticity ? (
-        <span className="rounded-full border border-[var(--border-strong)] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
+        <span className="rounded-full border border-[var(--brand-border)] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">
           {authenticity === "quran"
             ? "Revelation"
             : authenticity === "hasan"
@@ -41,7 +43,7 @@ export function SourceBadge({
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[var(--muted)] underline decoration-[var(--border-strong)] underline-offset-4 transition hover:text-[var(--foreground)]"
+            className="text-sm text-[var(--brand-ink)] underline decoration-[var(--brand-border)] underline-offset-4 transition hover:text-[var(--brand)]"
           >
             {link.label}
           </Link>

@@ -107,9 +107,8 @@ export function RabbanaDuasPage() {
       id="page-top"
       className="page-shell space-y-10 pb-16 pt-1 sm:space-y-14 sm:pt-2"
     >
-      <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_84%,rgba(201,171,103,0.12)_16%),var(--surface))] px-5 py-5 shadow-[0_24px_90px_rgba(8,24,19,0.08)] sm:px-8 sm:py-6 lg:px-10 lg:py-7">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,171,103,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(16,77,57,0.09)_0%,_transparent_36%)]" />
-        <div className="relative grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <section className="highlight-section rounded-[34px] px-5 py-5 sm:px-8 sm:py-6 lg:px-10 lg:py-7">
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-[42rem] space-y-3.5">
             <p className="eyebrow">Qur’anic Supplications</p>
             <h1 className="font-display text-4xl leading-[0.96] text-[var(--foreground)] sm:text-[3.3rem] lg:text-[4.15rem]">
@@ -130,7 +129,7 @@ export function RabbanaDuasPage() {
           </div>
 
           <div className="grid gap-3.5 sm:grid-cols-2">
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-4 shadow-[0_18px_60px_rgba(8,24,19,0.06)]">
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
               <p className="eyebrow mb-3">What these duas ask for</p>
               <div className="space-y-3">
                 {rabbanaBenefits.map((item) => (
@@ -140,11 +139,11 @@ export function RabbanaDuasPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(8,20,15,0.96)_0%,rgba(16,46,36,0.94)_100%)] p-4 text-white shadow-[0_18px_60px_rgba(8,24,19,0.12)]">
-              <p className="eyebrow mb-3 text-white/70">How to keep them close</p>
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
+              <p className="eyebrow mb-3">How to keep them close</p>
               <div className="space-y-3">
                 {readingApproach.map((item) => (
-                  <p key={item} className="reading-copy text-white/88">
+                  <p key={item} className="reading-copy text-[var(--foreground)]">
                     {item}
                   </p>
                 ))}
@@ -186,8 +185,7 @@ export function RabbanaDuasPage() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_82%,rgba(201,171,103,0.12)_18%),var(--surface))] p-1 shadow-[0_24px_90px_rgba(8,24,19,0.08)]">
-          <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(201,171,103,0.22)_0%,_transparent_70%)]" />
+        <div className="highlight-section rounded-[34px] p-1">
           <div className="relative">
             <DuaCard item={featuredDua} />
           </div>
@@ -221,7 +219,7 @@ export function RabbanaDuasPage() {
           {whyTheseDuasMatter.map((point) => (
             <div
               key={point}
-              className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 text-[var(--foreground)] shadow-[0_18px_60px_rgba(8,24,19,0.05)]"
+              className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-5 text-[var(--foreground)] shadow-[0_18px_44px_rgba(15,23,42,0.05)]"
             >
               {point}
             </div>
@@ -233,7 +231,7 @@ export function RabbanaDuasPage() {
         </p>
       </section>
 
-      <section className="overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,var(--surface),color-mix(in_srgb,var(--surface)_74%,rgba(201,171,103,0.24)_26%))] px-6 py-8 sm:px-8 sm:py-10">
+      <section className="rounded-[34px] border border-[var(--border-soft)] bg-[var(--surface)] px-6 py-8 shadow-[0_20px_56px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
             <p className="eyebrow">Next step</p>

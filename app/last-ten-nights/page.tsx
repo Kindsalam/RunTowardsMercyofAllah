@@ -124,9 +124,8 @@ export default function LastTenNightsPage() {
 
   return (
     <div className="page-shell space-y-10 pb-16 pt-1 sm:space-y-14 sm:pt-2">
-      <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_84%,rgba(201,171,103,0.12)_16%),var(--surface))] px-5 py-5 shadow-[0_24px_90px_rgba(8,24,19,0.08)] sm:px-8 sm:py-6 lg:px-10 lg:py-7">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,171,103,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(16,77,57,0.09)_0%,_transparent_36%)]" />
-        <div className="relative grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <section className="highlight-section rounded-[34px] px-5 py-5 sm:px-8 sm:py-6 lg:px-10 lg:py-7">
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-[42rem] space-y-3.5">
             <p className="eyebrow">
               Last Ashra of Ramadan
@@ -149,7 +148,7 @@ export default function LastTenNightsPage() {
           </div>
 
           <div className="grid gap-3.5 sm:grid-cols-2">
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-4 shadow-[0_18px_60px_rgba(8,24,19,0.06)]">
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
               <p className="eyebrow mb-3">Laylatul Qadr focus</p>
               <div className="space-y-3">
                 {laylatulQadrFocus.map((item) => (
@@ -160,11 +159,11 @@ export default function LastTenNightsPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(8,20,15,0.96)_0%,rgba(16,46,36,0.94)_100%)] p-4 text-white shadow-[0_18px_60px_rgba(8,24,19,0.12)]">
-              <p className="eyebrow mb-3 text-white/70">Worship priorities</p>
+            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
+              <p className="eyebrow mb-3">Worship priorities</p>
               <div className="space-y-3">
                 {worshipPriorities.map((item) => (
-                  <p key={item} className="reading-copy text-white/86">
+                  <p key={item} className="reading-copy text-[var(--foreground)]">
                     {item}
                   </p>
                 ))}
@@ -185,8 +184,7 @@ export default function LastTenNightsPage() {
           </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_82%,rgba(201,171,103,0.12)_18%),var(--surface))] p-1 shadow-[0_24px_90px_rgba(8,24,19,0.08)]">
-          <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(201,171,103,0.22)_0%,_transparent_70%)]" />
+        <div className="highlight-section rounded-[34px] p-1">
           <div className="relative">
             <DuaCard
               item={featuredDua}
@@ -236,39 +234,37 @@ export default function LastTenNightsPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(9,43,33,0.96)_0%,rgba(18,71,53,0.92)_48%,rgba(201,171,103,0.22)_100%)] px-5 py-8 text-white shadow-[0_30px_120px_rgba(6,20,15,0.22)] sm:px-8 sm:py-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,246,214,0.2)_0%,_transparent_36%),radial-gradient(circle_at_bottom_left,_rgba(201,171,103,0.18)_0%,_transparent_34%)]" />
-        <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:44px_44px]" />
-        <div className="relative grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8">
+      <section className="highlight-section rounded-[34px] px-5 py-8 sm:px-8 sm:py-10">
+        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-8">
           <div className="max-w-3xl space-y-4">
-            <p className="eyebrow text-white/72">Laylatul Qadr</p>
-            <h2 className="font-display text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
+            <p className="eyebrow">Laylatul Qadr</p>
+            <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl lg:text-5xl">
               A night better than a thousand months
             </h2>
-            <p className="reading-copy text-white/88">
+            <p className="reading-copy text-[var(--foreground)]">
               The Night of Decree is better than a thousand months.
             </p>
-            <p className="reading-copy text-white/74">
+            <p className="reading-copy text-[var(--muted)]">
               One night of sincere worship on Laylatul Qadr is better than a
               thousand months of worship.
             </p>
           </div>
 
-          <div className="rounded-[28px] border border-white/15 bg-white/10 p-6 shadow-[0_20px_70px_rgba(0,0,0,0.12)] backdrop-blur-md sm:p-7">
+          <div className="rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)] p-6 shadow-[0_18px_44px_rgba(15,23,42,0.05)] sm:p-7">
             <div className="space-y-5">
               <p
                 dir="rtl"
                 lang="ar"
-                className="arabic-quran reading-arabic-quran text-right text-white"
+                className="arabic-quran reading-arabic-quran text-right text-[var(--foreground)]"
               >
                 لَيْلَةُ الْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ
               </p>
-              <div className="border-t border-white/12 pt-4">
+              <div className="border-t border-[var(--border-soft)] pt-4">
                 <Link
                   href="https://quran.com/97/3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-white/82 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+                  className="text-sm font-medium text-[var(--brand-ink)] underline decoration-[var(--brand-border)] underline-offset-4 transition hover:text-[var(--brand)]"
                 >
                   Surah Al-Qadr 97:3
                 </Link>
@@ -298,7 +294,7 @@ export default function LastTenNightsPage() {
         </div>
       </section>
 
-      <section className="overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,var(--surface),color-mix(in_srgb,var(--surface)_74%,rgba(201,171,103,0.24)_26%))] px-6 py-8 sm:px-8 sm:py-10">
+      <section className="rounded-[34px] border border-[var(--border-soft)] bg-[var(--surface)] px-6 py-8 shadow-[0_20px_56px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
             <p className="eyebrow">Next step</p>

@@ -1,8 +1,7 @@
 export function ReflectionSection() {
   return (
-    <section className="relative overflow-hidden rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_80px_rgba(8,24,19,0.08)] sm:px-8 lg:px-10">
-      <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_top_right,_rgba(214,179,98,0.18)_0%,_transparent_55%)]" />
-      <div className="relative space-y-8">
+    <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_56px_rgba(15,23,42,0.05)] sm:px-8 lg:px-10">
+      <div className="space-y-8">
         <div className="max-w-2xl space-y-3">
           <p className="eyebrow">Allah is near</p>
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
@@ -13,7 +12,7 @@ export function ReflectionSection() {
           </p>
         </div>
         <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="rounded-[28px] border border-[var(--border-soft)] bg-[var(--panel-strong)] p-5 sm:p-7">
+          <div className="highlight-card rounded-[28px] p-5 sm:p-7">
             <p
               dir="rtl"
               lang="ar"

@@ -1,22 +1,24 @@
-import { TopicPlaceholderPage } from "@/components/topic-placeholder-page";
+import { TopicalDuasPage } from "@/components/topical-duas-page";
+import { rizqDuas } from "@/data/topical-duas";
 import { quranCategoryCards, duaCategoryCards } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Duas for Rizq",
   description:
-    "A placeholder page for duas connected to provision, sufficiency, and barakah in halal rizq.",
+    "Read reviewed duas for provision, barakah, halal sufficiency, and goodness in this life and the next with visible source links.",
   path: "/duas/rizq",
 });
 
 export default function RizqDuasPage() {
   return (
-    <TopicPlaceholderPage
+    <TopicalDuasPage
       eyebrow="Duas"
       title="Duas for rizq"
-      description="A dedicated section for supplications about provision, sufficiency, and barakah is being prepared carefully."
-      introTitle="Ask Allah for provision with humility and trust"
-      introText="This section will be added carefully so the duas, references, and related reminders can sit together without clutter."
+      description="Read reviewed supplications for halal provision, sufficiency, barakah, and goodness in both dunya and akhirah."
+      introTitle="Ask Allah for provision with trust and restraint"
+      introText="These duas ask for more than money alone. They ask for wholesome provision, accepted deeds, protection from haram, and lasting goodness in this life and the next."
+      items={rizqDuas}
       relatedCards={[
         quranCategoryCards[0],
         duaCategoryCards[6],

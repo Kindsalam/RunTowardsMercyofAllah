@@ -1,8 +1,15 @@
 export type DuaCategory =
   | "rabbana"
+  | "prophetic"
   | "morning"
   | "evening"
-  | "last-ten-nights";
+  | "last-ten-nights"
+  | "shifa"
+  | "forgiveness"
+  | "rizq"
+  | "family"
+  | "travel"
+  | "daily-life";
 
 export type DuaItem = {
   id: string;

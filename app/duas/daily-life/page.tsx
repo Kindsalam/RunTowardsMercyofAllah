@@ -1,22 +1,24 @@
-import { TopicPlaceholderPage } from "@/components/topic-placeholder-page";
+import { TopicalDuasPage } from "@/components/topical-duas-page";
+import { dailyLifeDuas } from "@/data/topical-duas";
 import { adhkarCategoryCards, quranCategoryCards } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Daily Life Duas",
   description:
-    "A placeholder page for duas connected to daily life, routines, and ordinary moments that still deserve remembrance.",
+    "Read reviewed daily-life duas for morning remembrance, increase in knowledge, and asking Allah to set right religion, life, and final return.",
   path: "/duas/daily-life",
 });
 
 export default function DailyLifeDuasPage() {
   return (
-    <TopicPlaceholderPage
+    <TopicalDuasPage
       eyebrow="Duas"
       title="Daily life duas"
-      description="A section for daily-life supplications is being prepared carefully so ordinary moments can be linked to remembrance with clarity and ease."
-      introTitle="A place for the ordinary moments people return to often"
-      introText="This page will eventually hold short, useful duas for common daily situations. Until then, the daily adhkar and Qur’anic sections remain the strongest place to begin."
+      description="Read reviewed supplications for ordinary moments of life: entering the day with remembrance, asking for more knowledge, and asking Allah to set every part of life right."
+      introTitle="Keep everyday moments tied to remembrance"
+      introText="Daily life needs duas that can be returned to often without clutter. These supplications keep mornings, learning, work, responsibility, and the final return to Allah connected to remembrance."
+      items={dailyLifeDuas}
       relatedCards={[
         adhkarCategoryCards[0],
         adhkarCategoryCards[1],

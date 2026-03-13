@@ -22,7 +22,7 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
-        className="inline-flex items-center gap-2 rounded-full border border-[var(--border-soft)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--foreground)]"
+        className="inline-flex items-center gap-2 rounded-full border border-[var(--brand-border)] bg-[var(--brand-surface)] px-4 py-2 text-sm text-[var(--brand-ink)]"
         aria-expanded={open}
         aria-label="Open navigation"
       >
@@ -30,7 +30,7 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
       </button>
 
       {open ? (
-        <div className="absolute right-0 top-full z-50 mt-3 w-[min(24rem,calc(100vw-2rem))] rounded-[28px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.14)]">
+        <div className="absolute right-0 top-full z-50 mt-3 w-[min(24rem,calc(100vw-2rem))] rounded-[28px] border border-[var(--brand-border)] bg-[var(--surface-overlay)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.14)]">
           <nav className="grid gap-3">
             {links.map((link) => {
               const active =
@@ -43,7 +43,7 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
                 <div
                   key={link.href}
                   className={`rounded-[22px] border border-[var(--border-soft)] px-3 py-3 transition ${
-                    active ? "bg-[var(--accent-green-soft)]/55" : "bg-[var(--background)]"
+                    active ? "border-[var(--brand-border)] bg-[var(--brand-surface)]" : "bg-[var(--surface)]"
                   }`}
                 >
                   <Link
@@ -64,8 +64,8 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
                           onClick={() => setOpen(false)}
                           className={`rounded-full border px-3 py-1.5 text-xs transition ${
                             pathname === child.href
-                              ? "border-[var(--border-strong)] bg-[var(--surface)] text-[var(--foreground)]"
-                              : "border-[var(--border-soft)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--brand)]"
+                              ? "border-[var(--brand-border-strong)] bg-[var(--brand-surface-strong)] text-[var(--brand-ink)]"
+                              : "border-[var(--brand-border)] bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--brand-surface)] hover:text-[var(--brand-ink)]"
                           }`}
                         >
                           {child.label}
@@ -78,7 +78,7 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
             })}
           </nav>
 
-          <div className="mt-4 grid gap-3 rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-4">
+          <div className="mt-4 grid gap-3 rounded-[24px] border border-[var(--brand-border)] bg-[var(--surface)] p-4">
             <p className="eyebrow">Reading controls</p>
             <div className="flex flex-col items-start gap-2">
               <ThemeToggle />
@@ -86,14 +86,14 @@ export function MobileNav({ links, featuredLinks }: MobileNavProps) {
             </div>
           </div>
 
-          <div className="mt-4 space-y-3 rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-4">
+          <div className="mt-4 space-y-3 rounded-[24px] border border-[var(--brand-border)] bg-[var(--surface)] p-4">
             <p className="eyebrow">Guided journey</p>
             {featuredLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-2xl border border-[var(--border-soft)] bg-[var(--surface)] px-4 py-3"
+                className="block rounded-2xl border border-[var(--brand-border)] bg-[var(--surface)] px-4 py-3 transition hover:bg-[var(--brand-surface)]"
               >
                 <p className="text-sm font-medium text-[var(--foreground)]">{link.title}</p>
                 <p className="mt-1 text-sm leading-6 text-[var(--muted)]">

@@ -25,8 +25,8 @@ export function CompletionCheckbox({ storageKey }: CompletionCheckboxProps) {
       onClick={toggleValue}
       className={`inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm transition ${
         checked
-          ? "border-emerald-600 bg-emerald-100 text-emerald-900 dark:border-emerald-500 dark:bg-emerald-950/50 dark:text-emerald-100"
-          : "border-[var(--border-soft)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--border-strong)] hover:text-[var(--foreground)]"
+          ? "border-[var(--brand-border-strong)] bg-[var(--brand-surface-strong)] text-[var(--brand-ink)]"
+          : "border-[var(--border-soft)] bg-[var(--surface)] text-[var(--muted)] hover:border-[var(--brand-border)] hover:bg-[var(--brand-surface)] hover:text-[var(--brand-ink)]"
       }`}
       aria-pressed={checked}
     >

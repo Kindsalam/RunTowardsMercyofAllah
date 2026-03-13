@@ -9,7 +9,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-[var(--border-soft)] bg-[var(--surface)]/70">
+    <footer className="border-t border-[var(--border-soft)] bg-[var(--surface)]">
       <div className="page-shell flex flex-col gap-5 py-6">
         <div className="space-y-2">
           <p className="text-sm leading-7 text-[var(--muted)]">
@@ -26,7 +26,7 @@ export function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-2.5 py-1 text-sm text-[var(--muted)] transition hover:bg-[var(--accent-green-soft)] hover:text-[var(--brand)]"
+              className="rounded-full px-2.5 py-1 text-sm text-[var(--muted)] transition hover:bg-[var(--brand-surface)] hover:text-[var(--brand-ink)]"
             >
               {link.label}
             </Link>

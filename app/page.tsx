@@ -92,15 +92,18 @@ export default function HomePage() {
     <div className="page-shell space-y-16 pb-16 pt-1 sm:space-y-20 sm:pt-2">
       <HeroSection featuredItems={featuredHeroItems} />
 
-      <section className="reading-copy -mt-8 rounded-[24px] border border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--surface-tint)_78%,transparent)] px-5 py-3 text-center text-[var(--muted)] sm:px-6">
+      <section className="reading-copy -mt-8 rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-3 text-center text-[var(--muted)] shadow-[0_12px_34px_rgba(15,23,42,0.04)] sm:px-6">
         <span>
           This is a Sadaqah Jariah project built to spread beneficial
           remembrance, reflection, and peace.
         </span>{" "}
-        <span className="font-medium text-[color:#a2382c]">
+        <span className="font-medium text-[var(--brand-ink)]">
           This site is currently in beta version, so if you experience some
           issues or find minor errors, please bear with us and refer to the{" "}
-          <Link href="/disclaimer" className="underline underline-offset-4">
+          <Link
+            href="/disclaimer"
+            className="text-[var(--brand)] underline decoration-[var(--brand-border)] underline-offset-4"
+          >
             Disclaimer
           </Link>
           . This helps us give readers a better experience and correct any
@@ -171,89 +174,125 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-        <DuaCard
-          item={featuredDua}
-          copyButtonLabel="Copy dua"
-          shareButtonLabel="Share"
-        />
+        <div className="highlight-section rounded-[34px] p-1">
+          <DuaCard
+            item={featuredDua}
+            copyButtonLabel="Copy dua"
+            shareButtonLabel="Share"
+          />
+        </div>
       </section>
 
-      <section className="space-y-6">
-        <div className="max-w-3xl space-y-3">
-          <p className="eyebrow">Dunya and akhirah benefits</p>
-          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            Duas that help you in this life and the next
-          </h2>
-          <p className="reading-copy text-[var(--muted)]">
-            The best duas do not pull you away from life. They help you live it
-            properly. They ask Allah for goodness, protection, mercy, guidance,
-            patience, forgiveness, and success in the akhirah. The Rabbana duas
-            especially gather deep meanings in very few words.
-          </p>
+      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-6 shadow-[0_18px_44px_rgba(15,23,42,0.05)] sm:px-8">
+        <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+          <div className="max-w-2xl space-y-3">
+            <p className="eyebrow">Dunya and akhirah benefits</p>
+            <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
+              Duas that help you in this life and the next
+            </h2>
+            <p className="reading-copy text-[var(--muted)]">
+              The best duas keep a believer balanced. They ask Allah for what
+              steadies daily life while also preparing the heart for the
+              akhirah.
+            </p>
+            <p className="reading-copy-compact font-medium text-[var(--foreground)]">
+              Islam teaches balance, not neglect.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <div>
+                  <p className="eyebrow">Dunya</p>
+                  <h3 className="text-lg font-semibold text-[var(--foreground)]">
+                    Benefit for your dunya
+                  </h3>
+                </div>
+                <span className="brand-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em]">
+                  6 ways
+                </span>
+              </div>
+              <ul className="flex flex-wrap gap-2">
+                {dunyaBenefits.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-full border border-[var(--border-soft)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <div>
+                  <p className="eyebrow">Akhirah</p>
+                  <h3 className="text-lg font-semibold text-[var(--foreground)]">
+                    Benefit for your akhirah
+                  </h3>
+                </div>
+                <span className="brand-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em]">
+                  6 ways
+                </span>
+              </div>
+              <ul className="flex flex-wrap gap-2">
+                {akhirahBenefits.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-full border border-[var(--border-soft)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--foreground)]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-[30px] border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-          <p className="eyebrow mb-3">Benefit for your dunya</p>
-          <h3 className="text-2xl font-semibold text-[var(--foreground)]">
-            Benefit for your dunya
-          </h3>
-          <ul className="reading-copy mt-4 grid gap-3 text-[var(--muted)]">
-            {dunyaBenefits.map((item) => (
-              <li key={item} className="rounded-2xl bg-[var(--background)] px-4 py-3">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="rounded-[30px] border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-          <p className="eyebrow mb-3">Benefit for your akhirah</p>
-          <h3 className="text-2xl font-semibold text-[var(--foreground)]">
-            Benefit for your akhirah
-          </h3>
-          <ul className="reading-copy mt-4 grid gap-3 text-[var(--muted)]">
-            {akhirahBenefits.map((item) => (
-              <li key={item} className="rounded-2xl bg-[var(--background)] px-4 py-3">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        </div>
-        <p className="reading-copy text-center text-[var(--muted)]">
-          A believer asks Allah for both. Islam teaches balance, not neglect.
-        </p>
       </section>
 
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 sm:px-8">
-        <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">
+      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-6 shadow-[0_18px_44px_rgba(15,23,42,0.05)] sm:px-8">
+        <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div className="space-y-3">
             <p className="eyebrow">Authenticity</p>
             <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
               Clear, trusted, and easy to read
             </h2>
             <p className="reading-copy text-[var(--muted)]">
-              This website currently focuses on a carefully reviewed starting
-              set of Qur’anic Rabbana duas and hadith-based adhkar. Arabic is
-              shown with full harakat to help non-Arab readers. English and
-              Urdu translations are included for understanding, and references
-              stay visible so you can see what comes from the Qur’an and what
-              comes from hadith.
+              The site stays focused on a reviewed starting set, with visible
+              references and readable Arabic so trust does not come at the cost
+              of ease.
             </p>
           </div>
-          <div className="grid gap-3">
-            {authenticityPoints.map((point) => (
-              <div
-                key={point}
-                className="reading-copy rounded-[24px] border border-[var(--border-soft)] bg-[var(--background)] p-5 text-[var(--foreground)]"
-              >
-                {point}
+          <div className="space-y-3">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--surface)] p-4">
+                <p className="eyebrow mb-2">Reading support</p>
+                <p className="text-sm font-medium text-[var(--foreground)]">
+                  Arabic, English, and Urdu together
+                </p>
               </div>
-            ))}
+              <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--surface)] p-4">
+                <p className="eyebrow mb-2">Source visibility</p>
+                <p className="text-sm font-medium text-[var(--foreground)]">
+                  Qur&apos;an and hadith references stay clickable
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {authenticityPoints.map((point) => (
+                <div
+                  key={point}
+                  className="rounded-full border border-[var(--border-soft)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)]"
+                >
+                  {point}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,var(--surface),color-mix(in_srgb,var(--surface)_74%,rgba(201,171,103,0.26)_26%))] px-6 py-8 sm:px-8 sm:py-10">
+      <section className="highlight-section rounded-[34px] px-6 py-8 sm:px-8 sm:py-10">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
             <p className="eyebrow">Do not let Ramadan pass lightly</p>

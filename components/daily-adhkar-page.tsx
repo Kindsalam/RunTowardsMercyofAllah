@@ -101,16 +101,16 @@ export function DailyAdhkarPage({
               eyebrow={previewLabel}
               tone="dark"
             >
-              <p className="arabic-sacred reading-arabic-sm text-right text-white">
+              <p className="arabic-sacred reading-arabic-sm text-right text-[var(--foreground)]">
                 {heroPreviewArabic}
               </p>
-              <p className="reading-copy text-white/86">{heroPreviewText}</p>
+              <p className="reading-copy text-[var(--muted)]">{heroPreviewText}</p>
             </PremiumHeroPanel>
           </>
         }
       />
 
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_80px_rgba(8,24,19,0.07)] sm:px-8">
+      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_56px_rgba(15,23,42,0.05)] sm:px-8">
         <div className="max-w-3xl space-y-4">
           <p className="eyebrow">Reflection</p>
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
@@ -129,7 +129,7 @@ export function DailyAdhkarPage({
         {benefitCards.map((card) => (
           <article
             key={card.title}
-            className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]"
+            className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[0_18px_44px_rgba(15,23,42,0.05)]"
           >
             <p className="eyebrow mb-3">{tone === "morning" ? "Morning benefit" : "Evening benefit"}</p>
             <h2 className="text-xl font-semibold text-[var(--foreground)]">
@@ -153,8 +153,7 @@ export function DailyAdhkarPage({
           </p>
         </div>
 
-        <div className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_82%,rgba(201,171,103,0.12)_18%),var(--surface))] p-1 shadow-[0_24px_90px_rgba(8,24,19,0.08)]">
-          <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(201,171,103,0.22)_0%,_transparent_70%)]" />
+        <div className="highlight-section rounded-[34px] p-1">
           <div className="relative">
             <DuaCard
               item={featuredItem}
@@ -176,7 +175,7 @@ export function DailyAdhkarPage({
         </div>
       </section>
 
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_80px_rgba(8,24,19,0.07)] sm:px-8">
+      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-8 shadow-[0_20px_56px_rgba(15,23,42,0.05)] sm:px-8">
         <div className="max-w-3xl space-y-4">
           <p className="eyebrow">Reflection</p>
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
@@ -199,7 +198,7 @@ export function DailyAdhkarPage({
         ))}
       </section>
 
-      <section className="overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,var(--surface),color-mix(in_srgb,var(--surface)_74%,rgba(201,171,103,0.24)_26%))] px-6 py-8 sm:px-8 sm:py-10">
+      <section className="rounded-[34px] border border-[var(--border-soft)] bg-[var(--surface)] px-6 py-8 shadow-[0_20px_56px_rgba(15,23,42,0.05)] sm:px-8 sm:py-10">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
             <p className="eyebrow">Next step</p>

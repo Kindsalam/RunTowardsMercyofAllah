@@ -25,17 +25,19 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--background)] backdrop-blur-xl">
-      <div className="page-shell relative flex min-h-18 items-center justify-between gap-4 py-3">
+    <header className="sticky top-0 z-40 border-b border-[var(--border-soft)] bg-[var(--surface-overlay)] backdrop-blur-xl">
+      <div className="page-shell relative flex min-h-18 items-center justify-between gap-4 py-2.5">
         <Link
           href="/"
-          className="min-w-0 flex-1 pr-3 lg:max-w-[18rem] lg:flex-none lg:pr-0"
+          className="min-w-0 flex-1 pr-3 lg:flex-none lg:pr-0"
         >
           <div className="flex items-center gap-3 lg:gap-4">
-            <SiteLogo className="h-11 w-11 rounded-[16px] sm:h-12 sm:w-12 sm:rounded-[18px]" />
-            <div className="min-w-0 space-y-1">
-              <p className="eyebrow leading-none">Run Towards</p>
-              <p className="font-display text-xl leading-none text-[var(--foreground)] sm:text-[1.7rem]">
+            <SiteLogo className="-my-4 h-[7rem] w-[10rem] sm:-my-5 sm:h-[8.6rem] sm:w-[12.2rem]" />
+            <div className="min-w-0 space-y-0">
+              <p className="eyebrow text-[0.72rem] leading-none whitespace-nowrap sm:text-[0.8rem]">
+                Run Towards
+              </p>
+              <p className="font-display text-[1.2rem] leading-[0.95] whitespace-nowrap text-[var(--foreground)] sm:text-[1.58rem]">
                 Mercy of Allah
               </p>
             </div>
@@ -53,8 +55,8 @@ export function Header() {
                   href={link.href}
                   className={`relative inline-flex items-center justify-center gap-1 rounded-full px-2.5 py-2 text-sm leading-tight whitespace-nowrap transition xl:px-3 ${
                     active
-                      ? "bg-[var(--accent-green-soft)] text-[var(--foreground)]"
-                      : "text-[var(--muted)] hover:bg-[var(--accent-green-soft)] hover:text-[var(--brand)]"
+                      ? "bg-[var(--brand-surface-strong)] text-[var(--brand-ink)]"
+                      : "text-[var(--muted)] hover:bg-[var(--brand-surface)] hover:text-[var(--brand-ink)]"
                   }`}
                 >
                   <span>{link.label}</span>
@@ -72,7 +74,7 @@ export function Header() {
                   <div
                     className={`pointer-events-none absolute top-full z-50 pt-3 opacity-0 transition duration-150 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100 ${alignMenu}`}
                   >
-                    <div className="w-56 rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-3 shadow-[0_24px_80px_rgba(0,0,0,0.12)]">
+                    <div className="w-56 rounded-[24px] border border-[var(--brand-border)] bg-[var(--surface-overlay)] p-3 shadow-[0_24px_80px_rgba(0,0,0,0.12)]">
                       <div className="grid gap-1">
                         {link.children.map((child) => (
                           <Link
@@ -80,8 +82,8 @@ export function Header() {
                             href={child.href}
                             className={`rounded-2xl px-3 py-2 text-sm transition ${
                               pathname === child.href
-                                ? "bg-[var(--accent-green-soft)] text-[var(--foreground)]"
-                                : "text-[var(--muted)] hover:bg-[var(--accent-green-soft)] hover:text-[var(--brand)]"
+                                ? "bg-[var(--brand-surface-strong)] text-[var(--brand-ink)]"
+                                : "text-[var(--muted)] hover:bg-[var(--brand-surface)] hover:text-[var(--brand-ink)]"
                             }`}
                           >
                             {child.label}

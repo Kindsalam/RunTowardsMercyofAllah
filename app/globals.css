@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f1e6;
-  --surface: #fffaf1;
-  --panel-strong: #f1eadb;
-  --surface-tint: color-mix(in srgb, #ffffff 58%, #e2efe7 42%);
-  --panel-green: color-mix(in srgb, #e3efe7 74%, #f1eadb 26%);
-  --foreground: #143126;
-  --muted: #4e655b;
-  --brand: #1f6a50;
-  --accent-soft: rgba(201, 171, 103, 0.18);
-  --accent-green-soft: rgba(31, 106, 80, 0.1);
-  --border-soft: rgba(20, 49, 38, 0.12);
-  --border-strong: rgba(20, 49, 38, 0.24);
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-subtle: #f7f9f8;
+  --surface-overlay: rgba(255, 255, 255, 0.9);
+  --panel-strong: #ffffff;
+  --surface-tint: #ffffff;
+  --panel-green: #ffffff;
+  --foreground: #1d1d1f;
+  --muted: #6e6e73;
+  --brand: #0a7a43;
+  --brand-rgb: 10 122 67;
+  --brand-ink: #075e34;
+  --brand-surface: rgb(var(--brand-rgb) / 0.06);
+  --brand-surface-strong: rgb(var(--brand-rgb) / 0.12);
+  --brand-border: rgb(var(--brand-rgb) / 0.18);
+  --brand-border-strong: rgb(var(--brand-rgb) / 0.28);
+  --accent-soft: var(--brand-surface);
+  --accent-green-soft: var(--brand-surface-strong);
+  --border-soft: rgba(29, 29, 31, 0.12);
+  --border-strong: rgba(29, 29, 31, 0.2);
   --reading-scale: 1;
   --dua-scale: 1;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
@@ -23,18 +31,26 @@
 }
 
 .dark {
-  --background: #08140f;
-  --surface: #0f1f19;
-  --panel-strong: #132a22;
-  --surface-tint: color-mix(in srgb, #12231c 82%, #173328 18%);
-  --panel-green: color-mix(in srgb, #173328 78%, #132a22 22%);
-  --foreground: #edf1ea;
-  --muted: #a7beb2;
-  --brand: #95d0b0;
-  --accent-soft: rgba(201, 171, 103, 0.16);
-  --accent-green-soft: rgba(149, 208, 176, 0.12);
-  --border-soft: rgba(237, 241, 234, 0.12);
-  --border-strong: rgba(237, 241, 234, 0.22);
+  --background: #0c0f0d;
+  --surface: #131816;
+  --surface-subtle: #171c1a;
+  --surface-overlay: rgba(19, 24, 22, 0.9);
+  --panel-strong: #191f1c;
+  --surface-tint: #191f1c;
+  --panel-green: #191f1c;
+  --foreground: #f5f7f5;
+  --muted: #a4ada6;
+  --brand: #0a7a43;
+  --brand-rgb: 10 122 67;
+  --brand-ink: #8fe0ad;
+  --brand-surface: rgb(var(--brand-rgb) / 0.18);
+  --brand-surface-strong: rgb(var(--brand-rgb) / 0.28);
+  --brand-border: rgb(var(--brand-rgb) / 0.34);
+  --brand-border-strong: rgb(var(--brand-rgb) / 0.48);
+  --accent-soft: var(--brand-surface);
+  --accent-green-soft: var(--brand-surface-strong);
+  --border-soft: rgba(245, 245, 247, 0.12);
+  --border-strong: rgba(245, 245, 247, 0.22);
 }
 
 html[data-font-scale="sm"] {
@@ -58,10 +74,7 @@ html {
 
 body {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 18% 10%, rgba(31, 106, 80, 0.11), transparent 28%),
-    radial-gradient(circle at top, rgba(201, 171, 103, 0.12), transparent 34%),
-    linear-gradient(180deg, var(--background), color-mix(in srgb, var(--background) 72%, #ffffff 28%));
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
 }
@@ -77,7 +90,7 @@ button {
 }
 
 ::selection {
-  background: rgba(201, 171, 103, 0.3);
+  background: rgb(var(--brand-rgb) / 0.22);
 }
 
 @layer components {
@@ -90,19 +103,78 @@ button {
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-[var(--brand)] px-5 py-3 text-sm font-medium text-white shadow-[0_12px_34px_rgba(15,59,46,0.22)] hover:-translate-y-0.5 hover:opacity-95;
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium text-white hover:-translate-y-0.5 hover:opacity-95;
+    background: var(--brand);
+    box-shadow:
+      0 14px 34px rgb(var(--brand-rgb) / 0.22),
+      inset 0 1px 0 rgb(255 255 255 / 0.12);
+  }
+
+  .button-primary:hover {
+    background: color-mix(in srgb, var(--brand) 88%, #041b10 12%);
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-[var(--border-soft)] bg-[var(--surface-tint)] px-4 py-2.5 text-sm text-[var(--foreground)] hover:border-[var(--border-strong)];
+    @apply inline-flex items-center justify-center rounded-full border px-4 py-2.5 text-sm text-[var(--foreground)] hover:border-[var(--border-strong)];
+    border-color: var(--brand-border);
+    background: color-mix(in srgb, var(--surface) 94%, var(--brand-surface) 6%);
+    color: var(--brand-ink);
+  }
+
+  .button-secondary:hover {
+    background: color-mix(in srgb, var(--surface) 80%, var(--brand-surface-strong) 20%);
+    border-color: var(--brand-border-strong);
   }
 
   .button-light {
-    @apply inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-medium text-[#0f3b2e] hover:-translate-y-0.5 hover:bg-[#fff9ea];
+    @apply inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-medium hover:-translate-y-0.5;
+    background: var(--surface);
+    border-color: var(--brand-border);
+    color: var(--brand-ink);
+    box-shadow: 0 14px 30px rgb(15 23 42 / 0.08);
+  }
+
+  .button-light:hover {
+    background: var(--brand-surface);
+    border-color: var(--brand-border-strong);
   }
 
   .button-ghost-light {
-    @apply inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-medium text-white backdrop-blur hover:bg-white/16;
+    @apply inline-flex items-center justify-center rounded-full border px-5 py-3 text-sm font-medium;
+    border-color: var(--brand-border);
+    background: var(--brand-surface);
+    color: var(--brand-ink);
+  }
+
+  .button-ghost-light:hover {
+    background: var(--brand-surface-strong);
+    border-color: var(--brand-border-strong);
+  }
+
+  .highlight-section {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--brand-border);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface) 70%, var(--brand) 30%),
+      color-mix(in srgb, var(--surface) 86%, var(--brand) 14%)
+    );
+    box-shadow:
+      0 24px 72px rgb(15 23 42 / 0.06),
+      inset 0 1px 0 rgb(255 255 255 / 0.22);
+  }
+
+  .highlight-card {
+    border: 1px solid color-mix(in srgb, var(--brand-border) 88%, var(--border-soft) 12%);
+    background: color-mix(in srgb, var(--surface) 88%, var(--brand) 12%);
+    box-shadow: 0 18px 44px rgb(15 23 42 / 0.05);
+  }
+
+  .brand-chip {
+    border: 1px solid var(--brand-border);
+    background: var(--brand-surface);
+    color: var(--brand-ink);
   }
 
   .font-display {

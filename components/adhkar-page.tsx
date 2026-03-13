@@ -68,9 +68,8 @@ export function AdhkarPage() {
 
   return (
     <div id="page-top" className="page-shell space-y-12 py-6 pb-16 sm:space-y-16 sm:py-8">
-      <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_84%,rgba(201,171,103,0.12)_16%),var(--surface))] px-5 py-8 shadow-[0_24px_90px_rgba(8,24,19,0.08)] sm:px-8 sm:py-10 lg:px-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,171,103,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(16,77,57,0.09)_0%,_transparent_36%)]" />
-        <div className="relative grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <section className="highlight-section rounded-[34px] px-5 py-8 sm:px-8 sm:py-10 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-3xl space-y-4">
             <p className="eyebrow">Authentic Daily Remembrance</p>
             <h1 className="font-display text-4xl leading-none text-[var(--foreground)] sm:text-5xl lg:text-6xl">
@@ -92,7 +91,7 @@ export function AdhkarPage() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]">
+            <div className="rounded-[24px] border border-[var(--brand-border)] bg-[var(--surface)] p-5 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
               <p className="eyebrow mb-3">Morning benefits</p>
               <div className="space-y-3">
                 {morningBenefits.map((item) => (
@@ -102,11 +101,11 @@ export function AdhkarPage() {
                 ))}
               </div>
             </div>
-            <div className="rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(8,20,15,0.96)_0%,rgba(16,46,36,0.94)_100%)] p-5 text-white shadow-[0_18px_60px_rgba(8,24,19,0.12)]">
-              <p className="eyebrow mb-3 text-white/70">Evening benefits</p>
+            <div className="highlight-card rounded-[24px] p-5">
+              <p className="eyebrow mb-3">Evening benefits</p>
               <div className="space-y-3">
                 {eveningBenefits.map((item) => (
-                  <p key={item} className="reading-copy text-white/88">
+                  <p key={item} className="reading-copy text-[var(--foreground)]">
                     {item}
                   </p>
                 ))}

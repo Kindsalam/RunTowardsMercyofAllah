@@ -25,8 +25,7 @@ export function PremiumPageHero({
   aside,
 }: PremiumPageHeroProps) {
   return (
-    <section className="relative overflow-hidden rounded-[34px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--surface)_84%,rgba(201,171,103,0.12)_16%),var(--surface))] px-5 py-5 shadow-[0_24px_90px_rgba(8,24,19,0.08)] sm:px-8 sm:py-6 lg:px-10 lg:py-7">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(201,171,103,0.18)_0%,_transparent_34%),radial-gradient(circle_at_bottom_left,_rgba(16,77,57,0.09)_0%,_transparent_36%)]" />
+    <section className="highlight-section rounded-[34px] px-5 py-5 sm:px-8 sm:py-6 lg:px-10 lg:py-7">
       <div
         className={`relative grid gap-6 ${
           aside ? "lg:grid-cols-[1.05fr_0.95fr] lg:items-center" : ""
@@ -64,17 +63,17 @@ export function PremiumHeroPanel({
     <div
       className={
         isDark
-          ? "rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(160deg,rgba(8,20,15,0.96)_0%,rgba(16,46,36,0.94)_100%)] p-5 text-white shadow-[0_18px_60px_rgba(8,24,19,0.12)] sm:p-6"
-          : "rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)]/95 p-4 shadow-[0_18px_60px_rgba(8,24,19,0.06)]"
+          ? "highlight-card rounded-[24px] p-5 text-[var(--foreground)] sm:p-6"
+          : "rounded-[24px] border border-[var(--brand-border)] bg-[var(--surface-subtle)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]"
       }
     >
       <div className="space-y-2.5">
-        <p className={isDark ? "eyebrow text-white/70" : "eyebrow"}>{eyebrow}</p>
+        <p className={isDark ? "eyebrow text-[var(--muted)]" : "eyebrow"}>{eyebrow}</p>
         {title ? (
           <h2
             className={
               isDark
-                ? "text-lg font-semibold text-white"
+                ? "text-lg font-semibold text-[var(--foreground)]"
                 : "text-lg font-semibold text-[var(--foreground)]"
             }
           >
@@ -82,7 +81,7 @@ export function PremiumHeroPanel({
           </h2>
         ) : null}
         {description ? (
-          <p className={isDark ? "reading-copy text-white/86" : "reading-copy text-[var(--muted)]"}>
+          <p className={isDark ? "reading-copy text-[var(--muted)]" : "reading-copy text-[var(--muted)]"}>
             {description}
           </p>
         ) : null}
@@ -91,7 +90,7 @@ export function PremiumHeroPanel({
             {items.map((item) => (
               <p
                 key={item}
-                className={isDark ? "reading-copy text-white/88" : "reading-copy text-[var(--foreground)]"}
+                className={isDark ? "reading-copy text-[var(--foreground)]" : "reading-copy text-[var(--foreground)]"}
               >
                 {item}
               </p>

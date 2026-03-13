@@ -1,22 +1,24 @@
-import { TopicPlaceholderPage } from "@/components/topic-placeholder-page";
+import { TopicalDuasPage } from "@/components/topical-duas-page";
+import { travelDuas } from "@/data/topical-duas";
 import { adhkarCategoryCards, duaCategoryCards } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
   title: "Travel Duas",
   description:
-    "A placeholder page for travel-related duas, departures, journeys, and safe return.",
+    "Read reviewed travel duas for departure, halting, and return with Arabic, English, Urdu, and clickable Sunnah references.",
   path: "/duas/travel",
 });
 
 export default function TravelDuasPage() {
   return (
-    <TopicPlaceholderPage
+    <TopicalDuasPage
       eyebrow="Duas"
       title="Travel duas"
-      description="A travel-dua section is being prepared carefully so journey supplications can be collected in a clean and easy-to-return-to layout."
-      introTitle="Supplications for departure, movement, and return"
-      introText="This page will be expanded carefully. For now, keep travel-related remembrance close through the adhkar section and the broader daily-life categories."
+      description="Read reviewed supplications for setting out, halting safely during travel, and returning with repentance and praise."
+      introTitle="Travel with remembrance and reliance upon Allah"
+      introText="These duas keep journeys connected to tawhid, piety, ease, protection, and thankful return. They are useful for departure, for stopping at a place, and for the return home."
+      items={travelDuas}
       relatedCards={[
         adhkarCategoryCards[4],
         adhkarCategoryCards[0],

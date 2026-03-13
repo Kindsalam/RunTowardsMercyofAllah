@@ -77,7 +77,7 @@ export default function AboutPage() {
               Ongoing charity and beneficial knowledge
             </h2>
           </div>
-          <div className="border-s-2 border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--panel-strong)_58%,transparent)] px-5 py-4 sm:px-6">
+          <div className="border-s-2 border-[var(--border-soft)] bg-[var(--surface)] px-5 py-4 sm:px-6">
             <p
               dir="rtl"
               lang="ar"
@@ -114,7 +114,7 @@ export default function AboutPage() {
               Help one another in righteousness and piety
             </h2>
           </div>
-          <div className="border-s-2 border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--panel-strong)_58%,transparent)] px-5 py-4 sm:px-6">
+          <div className="border-s-2 border-[var(--border-soft)] bg-[var(--surface)] px-5 py-4 sm:px-6">
             <p
               dir="rtl"
               lang="ar"

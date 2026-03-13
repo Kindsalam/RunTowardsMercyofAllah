@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     description: defaultDescription,
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/logo-mercy.svg",
+    shortcut: "/logo-mercy.svg",
+    apple: "/logo-mercy.svg",
   },
 };
 
