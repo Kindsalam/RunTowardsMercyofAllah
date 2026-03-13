@@ -20,7 +20,7 @@ export default function PropheticDuasPage() {
       introText="These cards gather dua words spoken by Prophets across forgiveness, hardship, knowledge, gratitude, protection, prayer, and children. Each card keeps the Qur'anic Arabic and Quran.com translations together so the source stays visible while you read."
       items={propheticQuranDuas}
       heroSummaryEyebrow="Highlights"
-      heroSummaryTitle="29 reviewed duas"
+      heroSummaryTitle="30 reviewed duas"
       heroSummaryItems={[
         "Forgiveness, mercy, hardship, and guidance",
         "Children, gratitude, knowledge, and protection",

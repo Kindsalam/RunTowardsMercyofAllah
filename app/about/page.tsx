@@ -38,7 +38,7 @@ export default function AboutPage() {
           <div className="reading-copy border-l-2 border-[var(--border-soft)] pl-5 text-[var(--foreground)]">
             Created by Salam Khan as a Sadaqah Jariah initiative so people can
             keep benefiting from remembrance, dua, and reflection even after
-            the creator has passed away.
+            the founder has passed away.
           </div>
         }
       />
@@ -47,11 +47,11 @@ export default function AboutPage() {
         <div className="max-w-3xl space-y-4">
           <p className="eyebrow">Why this project exists</p>
           <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-4xl">
-            Built to remain beneficial after the creator passes away
+            Built to remain beneficial after the founder passes away
           </h2>
           <p className="reading-copy text-[var(--muted)]">
             This site was created as a Sadaqah Jariah project so that people
-            can continue benefiting from it even after the creator passes away.
+            can continue benefiting from it even after the founder passes away.
             The intention is to spread beneficial knowledge, encourage ibadah
             and reflection, and help people remember Allah through carefully
             reviewed duas and adhkar.
@@ -59,7 +59,7 @@ export default function AboutPage() {
           <p className="reading-copy text-[var(--muted)]">
             The idea for this website had been in the making for many years.
             Alhamdulillah, on Wednesday, March 11, 2026, Allah helped this
-            project begin properly, and subhan Allah helped the creator choose
+            project begin properly, and subhan Allah helped the founder choose
             this domain name as well.
           </p>
           <p className="reading-copy text-[var(--muted)]">
@@ -140,7 +140,7 @@ export default function AboutPage() {
           </h2>
           <p className="reading-copy mt-3 text-[var(--muted)]">
             This website was built using modern AI tools in collaboration with a
-            human creator. The process is guided by intention, review, and a
+            human maintainer. The process is guided by intention, review, and a
             commitment to clarity rather than automation for its own sake.
           </p>
           <div className="mt-5 space-y-3">

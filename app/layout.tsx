@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { RouteScrollManager } from "@/components/route-scroll-manager";
 import { SiteSettingsProvider } from "@/components/site-settings-provider";
 import { defaultDescription, siteName, siteUrl } from "@/lib/seo";
 
@@ -57,6 +58,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={notoNaskhArabic.variable} suppressHydrationWarning>
         <SiteSettingsProvider>
+          <RouteScrollManager />
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">{children}</main>

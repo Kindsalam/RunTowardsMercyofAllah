@@ -23,7 +23,7 @@ const sections = [
   },
   {
     title: "Use and responsibility",
-    body: "The creator and contributors are not liable for misuse of the site, loose quoting, or reliance without verification. The website is meant to benefit readers, not to replace responsible study and review.",
+    body: "The site owner and contributors are not liable for misuse of the site, loose quoting, or reliance without verification. The website is meant to benefit readers, not to replace responsible study and review.",
   },
 ];
 

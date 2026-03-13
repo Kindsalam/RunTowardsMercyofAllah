@@ -36,6 +36,7 @@ export function AdhkarPage() {
     "morning-tirmidhi-3388",
     "morning-abu-dawud-5074",
     "morning-muslim-2723",
+    "morning-tirmidhi-3392",
   ]);
   const morningPraise = pickItems(publicMorningAdhkar, [
     "morning-bukhari-3293-muslim-2691",
@@ -52,6 +53,7 @@ export function AdhkarPage() {
     "evening-tirmidhi-3388",
     "evening-abu-dawud-5074",
     "evening-muslim-2723",
+    "evening-tirmidhi-3392",
   ]);
   const eveningClosing = pickItems(publicEveningAdhkar, [
     "evening-bukhari-6306",
@@ -134,7 +136,7 @@ export function AdhkarPage() {
           title="Protection and well-being for the day"
           description="These adhkar ask Allah for safety, well-being, and protection from the harms of the day."
           items={morningProtection}
-          initialCount={3}
+          initialCount={4}
           allowCompletion
           completionStoragePrefix="morning-read"
         />
@@ -167,7 +169,7 @@ export function AdhkarPage() {
           title="Protection and well-being through the night"
           description="Read these as the evening begins to ask Allah for safety, shelter, and calm."
           items={eveningProtection}
-          initialCount={3}
+          initialCount={4}
           allowCompletion
           completionStoragePrefix="evening-read"
         />

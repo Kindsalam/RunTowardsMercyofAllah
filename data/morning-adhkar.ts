@@ -125,17 +125,18 @@ export const morningAdhkar: DuaItem[] = [
     title: "Asking Allah for pardon and well-being",
     theme: "Safety, covering, and protection",
     benefit:
-      "A comprehensive morning and evening dua asking Allah for pardon, well-being, protection, and safety from every direction.",
+      "A comprehensive morning and evening dua asking Allah for well-being, forgiveness, protection, and safety from every direction.",
     arabic:
-      "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي، اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
+      "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ، اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي، اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي، وَاحْفَظْنِي مِنْ بَيْنِ يَدَيَّ، وَمِنْ خَلْفِي، وَعَنْ يَمِينِي، وَعَنْ شِمَالِي، وَمِنْ فَوْقِي، وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
     transliteration:
-      "Allahumma inni as'aluka l-'afwa wa l-'afiyata fi d-dunya wa l-akhirah. Allahumma inni as'aluka l-'afwa wa l-'afiyata fi dini wa dunyaya wa ahli wa mali. Allahumma stur 'awrati wa amin raw'ati. Allahumma ihfazni min bayni yadayya wa min khalfi wa 'an yamini wa 'an shimali wa min fawqi, wa a'udhu bi-'azamatika an ughtala min tahti",
+      "Allahumma inni as'aluka l-'afiyata fi d-dunya wa l-akhirah. Allahumma inni as'aluka l-'afwa wa l-'afiyata fi dini wa dunyaya wa ahli wa mali. Allahumma stur 'awrati wa amin raw'ati, wahfazni min bayni yadayya, wa min khalfi, wa 'an yamini, wa 'an shimali, wa min fawqi, wa a'udhu bi-'azamatika an ughtala min tahti",
     english:
-      "O Allah, I ask You for pardon and well-being in this world and the Hereafter. O Allah, I ask You for pardon and well-being in my religion, my worldly life, my family, and my wealth. O Allah, conceal my faults and calm my fears. O Allah, protect me from in front of me, from behind me, from my right, from my left, and from above me. I seek refuge in Your greatness from being taken unexpectedly from beneath me.",
+      "O Allah, I ask You for well-being in this world and the Hereafter. O Allah, I ask You for forgiveness and well-being in my religion, my worldly life, my family, and my wealth. O Allah, conceal my faults and calm my fears. Protect me from in front of me, from behind me, from my right, from my left, and from above me. I seek refuge in Your greatness from being taken unexpectedly from beneath me.",
     urdu:
-      "اے اللہ! میں تجھ سے دنیا اور آخرت میں معافی اور عافیت مانگتا ہوں۔ اے اللہ! میں تجھ سے اپنے دین، اپنی دنیا، اپنے اہل و عیال اور اپنے مال میں معافی اور عافیت مانگتا ہوں۔ اے اللہ! میرے عیبوں کو ڈھانپ دے اور میرے خوفوں کو امن میں بدل دے۔ اے اللہ! مجھے میرے سامنے سے، میرے پیچھے سے، میری دائیں جانب سے، میری بائیں جانب سے اور میرے اوپر سے محفوظ رکھ، اور میں تیری عظمت کی پناہ چاہتا ہوں کہ اچانک نیچے سے ہلاک کیا جاؤں۔",
+      "اے اللہ! میں تجھ سے دنیا اور آخرت میں عافیت مانگتا ہوں۔ اے اللہ! میں تجھ سے اپنے دین، اپنی دنیا، اپنے اہل و عیال اور اپنے مال میں معافی اور عافیت مانگتا ہوں۔ اے اللہ! میرے عیبوں کو ڈھانپ دے اور میرے خوفوں کو امن میں بدل دے۔ مجھے میرے سامنے سے، میرے پیچھے سے، میری دائیں جانب سے، میری بائیں جانب سے اور میرے اوپر سے محفوظ رکھ، اور میں تیری عظمت کی پناہ چاہتا ہوں کہ اچانک نیچے سے ہلاک کیا جاؤں۔",
     sourceType: "hadith",
     sourceReference: "Sunan Abi Dawud 5074",
+    sourceUrl: "https://sunnah.com/abudawud:5074",
     repetition: "Read once in the morning and once in the evening",
     authenticity: "sahih",
   },
@@ -178,6 +179,26 @@ export const morningAdhkar: DuaItem[] = [
     sourceReference: "Sahih Muslim 2726a",
     repetition: "Read three times in the morning",
     authenticity: "sahih",
+  },
+  {
+    id: "morning-tirmidhi-3392",
+    category: "morning",
+    title: "Seeking refuge from the evil of the self and Shaytan",
+    theme: "Protection through the day",
+    benefit:
+      "This dua begins with praise of Allah's knowledge and lordship, then asks for protection from the soul and Shaytan.",
+    arabic:
+      "اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ، فَاطِرَ السَّمَوَاتِ وَالأَرْضِ، رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي، وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ، وَأَنْ أَقْتَرِفَ عَلَى نَفْسِي سُوءًا أَوْ أَجُرَّهُ إِلَى مُسْلِمٍ",
+    transliteration:
+      "Allahumma 'Alima l-ghaybi wa-sh-shahadah, Fatira s-samawati wa l-ard, Rabba kulli shay'in wa malikah, ash-hadu an la ilaha illa ant, a'udhu bika min sharri nafsi, wa min sharri sh-shaytani wa shirkih, wa an aqtarifa 'ala nafsi su'an aw ajurrahu ila muslim",
+    english:
+      "O Allah, Knower of the unseen and the seen, Creator of the heavens and the earth, Lord of everything and its Sovereign. I testify that none has the right to be worshipped but You. I seek refuge in You from the evil of my soul, and from the evil of Shaitan and his shirk, and from bringing evil upon myself, or dragging it to another Muslim.",
+    urdu:
+      "اے اللہ! غیب اور حاضر کے جاننے والے، آسمانوں اور زمین کے پیدا کرنے والے، ہر چیز کے رب اور اس کے مالک، میں گواہی دیتا ہوں کہ تیرے سوا کوئی معبود نہیں۔ میں اپنے نفس کے شر سے، شیطان کے شر اور اس کے شرک سے، اور اس بات سے تیری پناہ چاہتا ہوں کہ میں اپنے اوپر کوئی برائی کماؤں یا اسے کسی مسلمان کی طرف کھینچ لاؤں۔",
+    sourceType: "hadith",
+    sourceReference: "Jami` at-Tirmidhi 3392",
+    sourceUrl: "https://sunnah.com/tirmidhi:3392",
+    repetition: "Read it in the morning.",
   },
   {
     id: "morning-bukhari-6306",

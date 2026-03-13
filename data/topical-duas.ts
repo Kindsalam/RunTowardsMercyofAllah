@@ -54,6 +54,26 @@ export const shifaDuas: DuaItem[] = [
       "Place the hand on the place of pain, say Bismillah three times, then say this seven times.",
     authenticity: "sahih",
   },
+  {
+    id: "shifa-riyad-908",
+    category: "shifa",
+    title: "Ruqyah for healing from harm and the evil eye",
+    benefit:
+      "A concise prophetic ruqyah asking Allah for healing from harm, envy, and the evil eye.",
+    arabic:
+      "بِسْمِ اللَّهِ أَرْقِيكَ، مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ، مِنْ شَرِّ كُلِّ نَفْسٍ أَوْ عَيْنِ حَاسِدٍ، اللَّهُ يَشْفِيكَ، بِسْمِ اللَّهِ أَرْقِيكَ",
+    transliteration:
+      "Bismillahi arqika, min kulli shay'in yu'dhika, min sharri kulli nafsin aw 'ayni hasidin, Allahu yashfika, bismillahi arqika",
+    english:
+      "In the Name of Allah, I recite over you from everything that harms you, from the evil of every soul or envious eye. May Allah cure you. In the Name of Allah, I recite over you.",
+    urdu:
+      "اللہ کے نام کے ساتھ میں تم پر دم کرتا ہوں، ہر اس چیز سے جو تمہیں تکلیف دے، ہر نفس کے شر سے یا حسد کرنے والی آنکھ سے۔ اللہ تمہیں شفا دے۔ اللہ کے نام کے ساتھ میں تم پر دم کرتا ہوں۔",
+    sourceType: "hadith",
+    sourceReference: "Riyad as-Salihin 908 (from Sahih Muslim)",
+    sourceUrl: "https://sunnah.com/riyadussalihin:908",
+    repetition: "Read it as ruqyah for someone who is unwell.",
+    authenticity: "sahih",
+  },
 ];
 
 export const forgivenessDuas: DuaItem[] = [
@@ -109,6 +129,44 @@ export const forgivenessDuas: DuaItem[] = [
     sourceUrl: "https://sunnah.com/tirmidhi:3434",
     repetition: "The Prophet was counted saying it often in one sitting.",
     authenticity: "sahih",
+  },
+  {
+    id: "forgiveness-tirmidhi-3433",
+    category: "forgiveness",
+    title: "Words of praise, forgiveness, and repentance",
+    benefit:
+      "This brief istighfar joins praise of Allah with repentance and seeking His forgiveness.",
+    arabic:
+      "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ، أَسْتَغْفِرُكَ وَأَتُوبُ إِلَيْكَ",
+    transliteration:
+      "Subhanaka Allahumma wa bihamdika, ash-hadu an la ilaha illa anta, astaghfiruka wa atubu ilayk",
+    english:
+      "How perfect You are, O Allah, and I praise You. I testify that there is none worthy of worship except You. I seek Your forgiveness and repent to You.",
+    urdu:
+      "اے اللہ! تو پاک ہے اور تمام تعریف تیرے لیے ہے۔ میں گواہی دیتا ہوں کہ تیرے سوا کوئی معبود نہیں۔ میں تجھ سے بخشش مانگتا ہوں اور تیری طرف توبہ کرتا ہوں۔",
+    sourceType: "hadith",
+    sourceReference: "Jami` at-Tirmidhi 3433",
+    sourceUrl: "https://sunnah.com/tirmidhi:3433",
+    repetition: "Read it at the close of a gathering.",
+  },
+  {
+    id: "forgiveness-riyad-1874",
+    category: "forgiveness",
+    title: "Istighfar of the Ever-Living, the Self-Subsisting",
+    benefit:
+      "A short and weighty formula of repentance that turns the heart back to Allah with His greatest names.",
+    arabic:
+      "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ",
+    transliteration:
+      "Astaghfirullaha l-'Azim alladhi la ilaha illa huwa l-Hayyu l-Qayyumu wa atubu ilayh",
+    english:
+      "I seek the forgiveness of Allah the Magnificent, Whom there is none worthy of worship except Him, the Ever-Living, the Self-Subsisting, and I repent to Him.",
+    urdu:
+      "میں اللہ عظیم سے بخشش مانگتا ہوں، جس کے سوا کوئی معبود نہیں، وہ ہمیشہ زندہ اور سب کو قائم رکھنے والا ہے، اور میں اسی کی طرف توبہ کرتا ہوں۔",
+    sourceType: "hadith",
+    sourceReference: "Riyad as-Salihin 1874",
+    sourceUrl: "https://sunnah.com/riyadussalihin:1874",
+    repetition: "Read it often when seeking sincere repentance.",
   },
 ];
 
@@ -239,6 +297,25 @@ export const travelDuas: DuaItem[] = [
     sourceUrl: "https://sunnah.com/muslim:1342",
     repetition: "Say it when mounting and setting out on a journey.",
     authenticity: "sahih",
+  },
+  {
+    id: "travel-abu-dawud-2600",
+    category: "travel",
+    title: "Dua when entrusting a traveler to Allah",
+    benefit:
+      "A prophetic farewell dua that entrusts a traveler's religion, trust, and final deeds to Allah.",
+    arabic:
+      "أَسْتَوْدِعُ اللَّهَ دِينَكَ وَأَمَانَتَكَ وَخَوَاتِيمَ عَمَلِكَ",
+    transliteration:
+      "Astawdi'u Allaha dinaka wa amanataka wa khawatima 'amalik",
+    english:
+      "I place your religion, your faithfulness, and the ends of your deeds in the trust of Allah.",
+    urdu:
+      "میں تمہارے دین، تمہاری امانت، اور تمہارے اعمال کے خاتمے کو اللہ کی حفاظت میں سپرد کرتا ہوں۔",
+    sourceType: "hadith",
+    sourceReference: "Sunan Abi Dawud 2600",
+    sourceUrl: "https://sunnah.com/abudawud:2600",
+    repetition: "Say it when seeing someone off for travel.",
   },
   {
     id: "travel-muslim-1342-return",
