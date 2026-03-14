@@ -7,7 +7,7 @@ import { FontSizeControl } from "@/components/font-size-control";
 import { MobileNav } from "@/components/mobile-nav";
 import { SiteLogo } from "@/components/site-logo";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { journeyLinks, siteLinks } from "@/lib/content";
+import { siteLinks } from "@/lib/content";
 
 export function Header() {
   const pathname = usePathname();
@@ -103,7 +103,7 @@ export function Header() {
           <FontSizeControl />
         </div>
 
-        <MobileNav links={siteLinks} featuredLinks={journeyLinks} />
+        <MobileNav links={siteLinks} />
       </div>
     </header>
   );

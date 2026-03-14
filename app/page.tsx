@@ -9,7 +9,6 @@ import {
   propheticQuranDuas,
   shifaDuas,
 } from "@/data/duas";
-import { journeyLinks, whyTheseNightsCards } from "@/lib/content";
 import { publicLastTenNights, publicRabbanaDuas } from "@/lib/public-content";
 import { createMetadata } from "@/lib/seo";
 
@@ -21,8 +20,6 @@ export const metadata = createMetadata({
 });
 
 export default function HomePage() {
-  const featuredDua =
-    publicLastTenNights.find((item) => item.featured) ?? publicLastTenNights[0];
   const rabbanaFeature =
     publicRabbanaDuas.find((dua) => dua.id === "rabbana-2-201") ??
     publicRabbanaDuas[0];
@@ -34,6 +31,7 @@ export default function HomePage() {
   const hardshipFeature =
     propheticQuranDuas.find((dua) => dua.id === "prophetic-21-87") ??
     propheticQuranDuas[0];
+
   const featuredHeroItems = [
     {
       key: "rabbana",
@@ -86,6 +84,63 @@ export default function HomePage() {
       snippet: hardshipFeature,
     },
   ];
+
+  const homeJourneyLinks = [
+    {
+      href: "/last-ten-nights",
+      title: "Last 10 Nights",
+      eyebrow: "Ramadan focus",
+      description:
+        "Keep the dua for Laylatul Qadr and the most important reminders for the final nights close.",
+      buttonLabel: "Open Last 10 Nights",
+    },
+    {
+      href: "/quran/rabbana-duas",
+      title: "Rabbana Duas",
+      eyebrow: "From the Qur'an",
+      description:
+        "Return to beloved Qur'anic supplications for guidance, mercy, forgiveness, and steadfastness.",
+      buttonLabel: "Read Rabbana Duas",
+    },
+    {
+      href: "/adhkar/morning",
+      title: "Morning Adhkar",
+      eyebrow: "Start the day",
+      description:
+        "Begin the day with protection, gratitude, and reliance upon Allah.",
+      buttonLabel: "Open Morning Adhkar",
+    },
+    {
+      href: "/adhkar/evening",
+      title: "Evening Adhkar",
+      eyebrow: "Close the day",
+      description:
+        "End the day with calm remembrance, repentance, and protection.",
+      buttonLabel: "Open Evening Adhkar",
+    },
+  ];
+
+  const ramadanFocusPoints = [
+    {
+      title: "For your heart",
+      text: "Slow down and give these nights sincere moments of dua and Qur'an.",
+    },
+    {
+      title: "For your tongue",
+      text: "Keep istighfar, dhikr, and this dua near you through the night.",
+    },
+    {
+      title: "For your akhirah",
+      text: "Treat these nights as a chance for mercy, pardon, and return.",
+    },
+  ];
+
+  const trustPoints = [
+    "Reviewed Qur'an and hadith references",
+    "Arabic, English, and Urdu together",
+    "Clear source links on each reading card",
+  ];
+
   const dunyaBenefits = [
     "Peace in the heart",
     "Clarity in hard times",
@@ -94,6 +149,7 @@ export default function HomePage() {
     "Protection from harm",
     "Barakah in daily life",
   ];
+
   const akhirahBenefits = [
     "Forgiveness of sins",
     "Mercy from Allah",
@@ -102,243 +158,177 @@ export default function HomePage() {
     "Safety from punishment",
     "Hope for Jannah",
   ];
-  const authenticityPoints = [
-    "Qur’anic duas with surah and ayah reference",
-    "Hadith-based adhkar with visible references",
-    "Arabic with full harakat",
-    "English and Urdu translation",
-    "A reviewed reading set that grows carefully over time",
-  ];
 
   return (
-    <div className="page-shell space-y-16 pb-16 pt-1 sm:space-y-20 sm:pt-2">
+    <div className="page-shell space-y-12 pb-14 pt-1 sm:space-y-16 sm:pt-2">
       <HeroSection featuredItems={featuredHeroItems} />
 
-      <section className="reading-copy -mt-8 rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-3 text-center text-[var(--muted)] shadow-[0_12px_34px_rgba(15,23,42,0.04)] sm:px-6">
-        <span>
+      <section className="space-y-5">
+        <div className="max-w-2xl space-y-2.5">
+          <p className="eyebrow">Start here</p>
+          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-[2.4rem]">
+            Choose where to begin
+          </h2>
+          <p className="reading-copy text-[var(--muted)]">
+            Start with the section that fits your day, your need, or the nights
+            you want to make count.
+          </p>
+        </div>
+        <div className="grid gap-3 lg:grid-cols-2">
+          {homeJourneyLinks.map((link) => (
+            <CategoryCard key={link.href} {...link} compact />
+          ))}
+        </div>
+      </section>
+
+      <section className="highlight-section rounded-[34px] px-5 py-5 sm:px-7 sm:py-6">
+        <div className="grid gap-5 xl:grid-cols-[0.44fr_0.56fr] xl:items-start">
+          <div className="space-y-4">
+            <div className="max-w-2xl space-y-2.5">
+              <p className="eyebrow">Featured for Ramadan</p>
+              <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-[2.45rem]">
+                Keep this dua close in the last 10 nights
+              </h2>
+              <p className="reading-copy text-[var(--muted)]">
+                Return often to the dua taught for Laylatul Qadr and give these
+                nights your clearest moments of remembrance.
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
+              {ramadanFocusPoints.map((point) => (
+                <article
+                  key={point.title}
+                  className="rounded-[22px] border border-[var(--brand-border)] bg-[var(--surface)] px-4 py-3"
+                >
+                  <h3 className="text-base font-semibold text-[var(--foreground)]">
+                    {point.title}
+                  </h3>
+                  <p className="reading-copy-compact mt-1.5 text-[var(--muted)]">
+                    {point.text}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="min-w-0">
+            <DuaCard
+              item={laylatulQadrFeature}
+              copyButtonLabel="Copy dua"
+              shareButtonLabel="Share"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="space-y-4">
+        <div className="max-w-2xl space-y-2">
+          <p className="eyebrow">Reviewed sources</p>
+          <h2 className="font-display text-2xl text-[var(--foreground)] sm:text-[2rem]">
+            Clear Qur&apos;an and hadith references
+          </h2>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-3">
+          {trustPoints.map((point) => (
+            <div
+              key={point}
+              className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--surface)] px-4 py-4"
+            >
+              <p className="text-sm font-medium leading-6 text-[var(--foreground)]">
+                {point}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <p className="reading-copy-compact text-[var(--muted)]">
           This is a Sadaqah Jariah project built to spread beneficial
-          remembrance, reflection, and peace.
-        </span>{" "}
-        <span className="font-medium text-[var(--brand-ink)]">
-          This site is currently in beta version, so if you experience some
-          issues or find minor errors, please bear with us and refer to the{" "}
+          remembrance, reflection, and peace. The site is still growing
+          carefully, so if you notice an issue, please refer to the{" "}
           <Link
             href="/disclaimer"
             className="text-[var(--brand)] underline decoration-[var(--brand-border)] underline-offset-4"
           >
             Disclaimer
           </Link>
-          . This helps us give readers a better experience and correct any
-          mistakes.
-        </span>
-      </section>
-
-      <section className="space-y-6">
-        <div className="max-w-2xl space-y-3">
-          <p className="eyebrow">A special Ramadan focus</p>
-          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            Give the last 10 nights special attention
-          </h2>
-          <p className="reading-copy text-[var(--muted)]">
-            This website helps with duas and adhkar all year, but the last 10
-            nights of Ramadan deserve special focus. In them is Laylatul Qadr,
-            the night better than a thousand months, so this is the time to
-            increase dua, dhikr, Qur&apos;an, and sincere turning back to Allah.
-          </p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {whyTheseNightsCards.map((card) => (
-            <article
-              key={card.title}
-              className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]"
-            >
-              <h3 className="text-xl font-semibold text-[var(--foreground)]">
-                {card.title}
-              </h3>
-              <p className="reading-copy mt-3 text-[var(--muted)]">
-                {card.text}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-6">
-        <div className="max-w-2xl space-y-3">
-          <p className="eyebrow">Guided journey</p>
-          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            Choose where to begin
-          </h2>
-          <p className="reading-copy text-[var(--muted)]">
-            Start with the Ramadan section you need most, or return to the
-            duas and adhkar you want to keep close every day.
-          </p>
-        </div>
-        <div className="grid gap-4 lg:grid-cols-2">
-          {journeyLinks.map((link) => (
-            <CategoryCard key={link.href} {...link} />
-          ))}
-        </div>
+          .
+        </p>
       </section>
 
       <ReflectionSection />
 
-      <section className="space-y-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div className="max-w-2xl space-y-3">
-            <p className="eyebrow">A special Ramadan dua</p>
-            <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              A dua to keep close in the last 10 nights
-            </h2>
-            <p className="reading-copy text-[var(--muted)]">
-              This is one of the most important duas to repeat in the search
-              for Laylatul Qadr.
-            </p>
-          </div>
+      <section className="space-y-4">
+        <div className="max-w-2xl space-y-2">
+          <p className="eyebrow">Dunya and akhirah</p>
+          <h2 className="font-display text-2xl text-[var(--foreground)] sm:text-[2rem]">
+            Duas that steady this life and prepare the next
+          </h2>
+          <p className="reading-copy-compact text-[var(--muted)]">
+            The best duas help the heart stay balanced in both.
+          </p>
         </div>
-        <div className="highlight-section rounded-[34px] p-1">
-          <DuaCard
-            item={featuredDua}
-            copyButtonLabel="Copy dua"
-            shareButtonLabel="Share"
-          />
-        </div>
-      </section>
 
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-6 shadow-[0_18px_44px_rgba(15,23,42,0.05)] sm:px-8">
-        <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
-          <div className="max-w-2xl space-y-3">
-            <p className="eyebrow">Dunya and akhirah benefits</p>
-            <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              Duas that help you in this life and the next
-            </h2>
-            <p className="reading-copy text-[var(--muted)]">
-              The best duas keep a believer balanced. They ask Allah for what
-              steadies daily life while also preparing the heart for the
-              akhirah.
-            </p>
-            <p className="reading-copy-compact font-medium text-[var(--foreground)]">
-              Islam teaches balance, not neglect.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
-              <div className="mb-3 flex items-center justify-between gap-3">
-                <div>
-                  <p className="eyebrow">Dunya</p>
-                  <h3 className="text-lg font-semibold text-[var(--foreground)]">
-                    Benefit for your dunya
-                  </h3>
-                </div>
-                <span className="brand-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em]">
-                  6 ways
-                </span>
+        <div className="grid gap-3 lg:grid-cols-2">
+          <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <div>
+                <p className="eyebrow">Dunya</p>
+                <h3 className="text-lg font-semibold text-[var(--foreground)]">
+                  Benefit for your dunya
+                </h3>
               </div>
-              <ul className="flex flex-wrap gap-2">
-                {dunyaBenefits.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-full border border-[var(--border-soft)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <span className="brand-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em]">
+                6 ways
+              </span>
             </div>
-            <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
-              <div className="mb-3 flex items-center justify-between gap-3">
-                <div>
-                  <p className="eyebrow">Akhirah</p>
-                  <h3 className="text-lg font-semibold text-[var(--foreground)]">
-                    Benefit for your akhirah
-                  </h3>
-                </div>
-                <span className="brand-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em]">
-                  6 ways
-                </span>
-              </div>
-              <ul className="flex flex-wrap gap-2">
-                {akhirahBenefits.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-full border border-[var(--border-soft)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--foreground)]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="rounded-[32px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-6 shadow-[0_18px_44px_rgba(15,23,42,0.05)] sm:px-8">
-        <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <div className="space-y-3">
-            <p className="eyebrow">Authenticity</p>
-            <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-              Clear, trusted, and easy to read
-            </h2>
-            <p className="reading-copy text-[var(--muted)]">
-              The site stays focused on a reviewed starting set, with visible
-              references and readable Arabic so trust does not come at the cost
-              of ease.
-            </p>
-          </div>
-          <div className="space-y-3">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--surface)] p-4">
-                <p className="eyebrow mb-2">Reading support</p>
-                <p className="text-sm font-medium text-[var(--foreground)]">
-                  Arabic, English, and Urdu together
-                </p>
-              </div>
-              <div className="rounded-[22px] border border-[var(--border-soft)] bg-[var(--surface)] p-4">
-                <p className="eyebrow mb-2">Source visibility</p>
-                <p className="text-sm font-medium text-[var(--foreground)]">
-                  Qur&apos;an and hadith references stay clickable
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {authenticityPoints.map((point) => (
-                <div
-                  key={point}
-                  className="rounded-full border border-[var(--border-soft)] bg-[var(--background)] px-3 py-2 text-sm text-[var(--foreground)]"
+            <ul className="flex flex-wrap gap-2">
+              {dunyaBenefits.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-[var(--border-soft)] bg-[var(--background)] px-3 py-1.5 text-sm text-[var(--foreground)]"
                 >
-                  {point}
-                </div>
+                  {item}
+                </li>
               ))}
+            </ul>
+          </div>
+
+          <div className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] p-4 shadow-[0_18px_44px_rgba(15,23,42,0.05)]">
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <div>
+                <p className="eyebrow">Akhirah</p>
+                <h3 className="text-lg font-semibold text-[var(--foreground)]">
+                  Benefit for your akhirah
+                </h3>
+              </div>
+              <span className="brand-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em]">
+                6 ways
+              </span>
             </div>
+            <ul className="flex flex-wrap gap-2">
+              {akhirahBenefits.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-[var(--border-soft)] bg-[var(--background)] px-3 py-1.5 text-sm text-[var(--foreground)]"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      <section className="highlight-section rounded-[34px] px-6 py-8 sm:px-8 sm:py-10">
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-4">
-            <p className="eyebrow">Do not let Ramadan pass lightly</p>
-            <h2 className="font-display text-3xl leading-tight text-[var(--foreground)] sm:text-5xl">
-              Keep returning to words that matter in these days and nights
-            </h2>
-            <p className="reading-copy max-w-2xl text-[var(--muted)]">
-              Return often with a few sincere minutes of dua, dhikr, and
-              reflection. In Ramadan especially, keep your tongue busy with
-              clearly referenced words and ask Allah for the best of this
-              world and the next.
-            </p>
-            <p className="reading-copy text-[var(--muted)]">
-              A few honest moments of remembrance may carry great weight.
-            </p>
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-            <Link href="/last-ten-nights" className="button-primary">
-              Begin with Last 10 Nights
-            </Link>
-            <Link href="/quran/rabbana-duas" className="button-secondary">
-              Read Rabbana Duas
-            </Link>
-          </div>
+      <section className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--surface)] px-5 py-4 sm:px-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="reading-copy text-[var(--foreground)]">
+            Keep one section close and return to it daily.
+          </p>
+          <Link href="/duas" className="button-primary sm:shrink-0">
+            Explore Duas
+          </Link>
         </div>
       </section>
     </div>
