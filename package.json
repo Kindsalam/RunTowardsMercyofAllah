@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "audit:quran-display": "node scripts/audit-quran-display.mjs",
     "check:headers": "node scripts/check-security-headers.mjs"
   },
   "dependencies": {

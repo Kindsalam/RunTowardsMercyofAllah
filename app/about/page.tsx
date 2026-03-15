@@ -112,7 +112,11 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="border-s-2 border-[var(--border-soft)] bg-[var(--surface)] px-5 py-4 sm:px-6">
-            <SacredArabicText size="quran" className="text-[var(--foreground)]">
+            <SacredArabicText
+              size="quran"
+              variant="quran"
+              className="text-[var(--foreground)]"
+            >
               وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ
             </SacredArabicText>
           </div>

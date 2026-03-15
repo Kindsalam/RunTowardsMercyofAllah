@@ -16,7 +16,9 @@ type HeroFeature = {
   snippet?: {
     id: string;
     arabic: string;
+    displayArabic?: string;
     english: string;
+    sourceType: "quran" | "hadith";
     sourceReference: string;
     sourceUrl?: string;
   };
@@ -84,8 +86,9 @@ export function HeroSection({ featuredItems }: HeroSectionProps) {
               <div className="relative h-[24rem] sm:h-[26rem]">
                 {featuredItems.map((entry, index) => {
                   const isActive = index === activeIndex;
+                  const snippetArabic = entry.snippet?.displayArabic ?? entry.snippet?.arabic;
                   const arabicSize = entry.snippet
-                    ? getHeroArabicSize(entry.key, entry.snippet.arabic)
+                    ? getHeroArabicSize(entry.key, snippetArabic ?? "")
                     : "hero";
 
                   return (
@@ -123,9 +126,10 @@ export function HeroSection({ featuredItems }: HeroSectionProps) {
                               <div className="w-full overflow-y-auto pr-1">
                                 <SacredArabicText
                                   size={arabicSize}
+                                  variant={entry.snippet.sourceType}
                                   className="w-full text-[var(--foreground)]"
                                 >
-                                  {entry.snippet.arabic}
+                                  {snippetArabic}
                                 </SacredArabicText>
                               </div>
                             </Link>

@@ -28,6 +28,7 @@ export type DuaRecord = {
   title: string;
   published?: boolean;
   arabic: string;
+  displayArabic?: string;
   transliteration?: string;
   translation: DuaTranslation;
   category: DuaCategory;
@@ -49,6 +50,7 @@ export type DuaItem = {
   theme?: string;
   benefit?: string;
   arabic: string;
+  displayArabic?: string;
   transliteration?: string;
   english: string;
   urdu?: string;

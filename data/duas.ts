@@ -15,6 +15,10 @@ import {
   travelDuas as travelDuasLegacy,
 } from "@/data/topical-duas";
 
+const quranAnnotationRangePattern = /[\u06D6-\u06ED]/u;
+const quranUnsupportedDisplayPattern = /[\u06DF\u06E0\u06E1\u06E2\u06E3\u06E5\u06E6\u06ED]/gu;
+const tatweelBeforeSuperscriptAlifPattern = /\u0640(?=\u0670)/gu;
+
 function slugify(value: string) {
   return value
     .toLowerCase()
@@ -22,6 +26,28 @@ function slugify(value: string) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .replace(/-{2,}/g, "-");
+}
+
+function buildReviewedDisplayArabic(item: DuaItem) {
+  if (item.sourceType !== "quran") {
+    return item.displayArabic;
+  }
+
+  if (item.displayArabic) {
+    return item.displayArabic;
+  }
+
+  if (!quranAnnotationRangePattern.test(item.arabic)) {
+    return undefined;
+  }
+
+  const cleaned = item.arabic
+    .replace(quranUnsupportedDisplayPattern, "")
+    .replace(tatweelBeforeSuperscriptAlifPattern, "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  return cleaned === item.arabic ? undefined : cleaned;
 }
 
 function sourceLabelToStructuredSource(
@@ -89,6 +115,7 @@ function legacyItemToRecord(item: DuaItem): DuaRecord {
     title: item.title,
     published: item.published,
     arabic: item.arabic,
+    displayArabic: buildReviewedDisplayArabic(item),
     transliteration: item.transliteration,
     translation: {
       english: item.english,
@@ -115,6 +142,7 @@ function recordToItem(record: DuaRecord): DuaItem {
     theme: record.theme,
     benefit: record.benefit,
     arabic: record.arabic,
+    displayArabic: record.displayArabic,
     transliteration: record.transliteration,
     english: record.translation.english,
     urdu: record.translation.urdu,

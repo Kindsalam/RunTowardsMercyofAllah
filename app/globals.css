@@ -28,8 +28,8 @@
   --font-arabic: "Geeza Pro", "Noto Naskh Arabic", "Amiri", serif;
   --font-arabic-display: var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Amiri", "Scheherazade New", "Geeza Pro", serif;
   --font-arabic-sacred: var(--font-arabic-display);
-  --font-arabic-quran: var(--font-arabic-display);
-  --font-arabic-annotation-safe: "Geeza Pro", "Amiri", "Scheherazade New", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  --font-arabic-quran: var(--font-indopak-quran), var(--font-quran-uthmanic-hafs), var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Amiri", "Scheherazade New", serif;
+  --font-arabic-annotation-safe: var(--font-arabic-quran);
 }
 
 .dark {
@@ -230,6 +230,31 @@ button {
     line-height: 2.24;
   }
 
+  .sacred-arabic-quran.sacred-arabic-size-sm {
+    font-size: calc(2rem * var(--reading-scale));
+    line-height: 2.38;
+  }
+
+  .sacred-arabic-quran.sacred-arabic-size-md {
+    font-size: calc(2.08rem * var(--reading-scale));
+    line-height: 2.34;
+  }
+
+  .sacred-arabic-quran.sacred-arabic-size-lg {
+    font-size: calc(2.16rem * var(--reading-scale));
+    line-height: 2.32;
+  }
+
+  .sacred-arabic-quran.sacred-arabic-size-hero {
+    font-size: calc(2.02rem * var(--reading-scale));
+    line-height: 2.32;
+  }
+
+  .sacred-arabic-quran.sacred-arabic-size-quran {
+    font-size: calc(2.14rem * var(--reading-scale));
+    line-height: 2.34;
+  }
+
   @media (min-width: 640px) {
     .reading-copy {
       font-size: calc(1.05rem * var(--reading-scale));
@@ -253,6 +278,31 @@ button {
       font-size: calc(2.38rem * var(--reading-scale));
       line-height: 2.16;
     }
+
+    .sacred-arabic-quran.sacred-arabic-size-sm {
+      font-size: calc(2.1rem * var(--reading-scale));
+      line-height: 2.24;
+    }
+
+    .sacred-arabic-quran.sacred-arabic-size-md {
+      font-size: calc(2.2rem * var(--reading-scale));
+      line-height: 2.2;
+    }
+
+    .sacred-arabic-quran.sacred-arabic-size-lg {
+      font-size: calc(2.3rem * var(--reading-scale));
+      line-height: 2.18;
+    }
+
+    .sacred-arabic-quran.sacred-arabic-size-hero {
+      font-size: calc(2.28rem * var(--reading-scale));
+      line-height: 2.18;
+    }
+
+    .sacred-arabic-quran.sacred-arabic-size-quran {
+      font-size: calc(2.42rem * var(--reading-scale));
+      line-height: 2.18;
+    }
   }
 
   .arabic-text {
@@ -264,8 +314,9 @@ button {
 
   .arabic-sacred,
   .arabic-quran,
-  .sacred-arabic {
-    font-family: var(--font-arabic-sacred), serif;
+  .sacred-arabic,
+  .sacred-arabic-hadith,
+  .sacred-arabic-quran {
     direction: rtl;
     unicode-bidi: isolate;
     text-wrap: pretty;
@@ -281,6 +332,18 @@ button {
     font-synthesis-weight: none;
     font-synthesis-style: none;
     font-weight: 400;
+  }
+
+  .arabic-sacred,
+  .sacred-arabic,
+  .sacred-arabic-hadith {
+    font-family: var(--font-arabic-sacred), serif;
+  }
+
+  .arabic-quran,
+  .sacred-arabic-quran {
+    font-family: var(--font-arabic-quran), serif;
+    word-spacing: 0;
   }
 
   .sacred-arabic-annotation-safe {

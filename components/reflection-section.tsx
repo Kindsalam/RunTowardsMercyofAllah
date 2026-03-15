@@ -15,7 +15,11 @@ export function ReflectionSection() {
         </div>
         <div className="grid gap-4 lg:grid-cols-[1.08fr_0.92fr]">
           <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--background)] p-5 sm:p-6">
-            <SacredArabicText size="quran" className="text-[var(--foreground)]">
+            <SacredArabicText
+              size="quran"
+              variant="quran"
+              className="text-[var(--foreground)]"
+            >
               وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ
             </SacredArabicText>
           </div>

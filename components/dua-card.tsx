@@ -26,6 +26,8 @@ export function DuaCard({
   const { showTransliteration } = useSiteSettings();
   const [copyLabel, setCopyLabel] = useState(copyButtonLabel);
   const [shareLabel, setShareLabel] = useState(shareButtonLabel);
+  const visibleArabic = item.displayArabic ?? item.arabic;
+  const arabicVariant = item.sourceType === "quran" ? "quran" : "hadith";
   const arabicSize = item.sourceType === "quran" ? "quran" : "lg";
   const categoryLabel =
     item.category === "rabbana"
@@ -51,7 +53,7 @@ export function DuaCard({
                       : "Daily life dua";
   const shareText = [
     item.title,
-    item.arabic,
+    visibleArabic,
     item.transliteration ? `Transliteration: ${item.transliteration}` : null,
     `English: ${item.english}`,
     item.urdu ? `Urdu: ${item.urdu}` : null,
@@ -131,8 +133,12 @@ export function DuaCard({
 
       <div className="mt-6 grid gap-5">
         <div className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-6 sm:p-7">
-          <SacredArabicText size={arabicSize} className="text-[var(--foreground)]">
-            {item.arabic}
+          <SacredArabicText
+            size={arabicSize}
+            variant={arabicVariant}
+            className="text-[var(--foreground)]"
+          >
+            {visibleArabic}
           </SacredArabicText>
         </div>
 
