@@ -32,7 +32,7 @@ export function Header() {
           className="min-w-0 flex-1 pr-3 lg:flex-none lg:pr-0"
         >
           <div className="flex items-center gap-3 lg:gap-4">
-            <SiteLogo className="-my-4 h-[7rem] w-[10rem] sm:-my-5 sm:h-[8.6rem] sm:w-[12.2rem]" />
+            <SiteLogo className="-my-4 h-[7rem] w-[5.6rem] sm:-my-5 sm:h-[8.6rem] sm:w-[6.9rem]" />
             <div className="min-w-0 space-y-0">
               <p className="eyebrow text-[0.72rem] leading-none whitespace-nowrap sm:text-[0.8rem]">
                 Run Towards
