@@ -25,11 +25,11 @@
   --dua-scale: 1;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-arabic: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", "Geeza Pro", "Noto Naskh Arabic", serif;
-  --font-arabic-display: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Geeza Pro", serif;
-  --font-arabic-sacred: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
-  /* Amiri Quran is the working font for correct shadda+kasra positioning based on device testing */
-  --font-arabic-quran: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  --font-arabic: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", serif;
+  --font-arabic-display: var(--font-amiri), "Amiri", serif;
+  --font-arabic-sacred: var(--font-amiri), "Amiri", serif;
+  /* Sacred Quranic/dua text uses Amiri Quran as primary, Amiri as fallback only */
+  --font-arabic-quran: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", serif;
   --font-arabic-annotation-safe: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", serif;
 }
 
