@@ -339,17 +339,17 @@ button {
   .arabic-sacred,
   .sacred-arabic,
   .sacred-arabic-hadith {
-    font-family: var(--font-arabic-sacred), serif;
+    font-family: "Amiri", serif;
   }
 
   .arabic-quran,
   .sacred-arabic-quran {
-    font-family: var(--font-arabic-quran), serif;
+    font-family: "Amiri Quran", "Amiri", serif;
     word-spacing: 0;
   }
 
   .sacred-arabic-annotation-safe {
-    font-family: var(--font-arabic-annotation-safe), serif;
+    font-family: "Amiri Quran", "Amiri", serif;
   }
 
   .urdu-text {
