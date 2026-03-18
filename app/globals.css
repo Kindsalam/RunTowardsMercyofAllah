@@ -25,11 +25,12 @@
   --dua-scale: 1;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-arabic: "Geeza Pro", "Noto Naskh Arabic", "Amiri", serif;
-  --font-arabic-display: var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Amiri", "Scheherazade New", "Geeza Pro", serif;
-  --font-arabic-sacred: var(--font-arabic-display);
-  --font-arabic-quran: var(--font-indopak-quran), var(--font-quran-uthmanic-hafs), var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Amiri", "Scheherazade New", serif;
-  --font-arabic-annotation-safe: var(--font-arabic-quran);
+  --font-arabic: var(--font-amiri), "Amiri", "Geeza Pro", "Noto Naskh Arabic", serif;
+  --font-arabic-display: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Scheherazade New", "Geeza Pro", serif;
+  --font-arabic-sacred: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  /* Amiri Quran is specifically designed for Quran typesetting with proper harakat positioning */
+  --font-arabic-quran: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  --font-arabic-annotation-safe: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", serif;
 }
 
 .dark {

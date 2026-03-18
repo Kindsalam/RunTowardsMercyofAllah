@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Naskh_Arabic } from "next/font/google";
+import { Amiri, Amiri_Quran, Noto_Naskh_Arabic } from "next/font/google";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 
@@ -11,6 +11,25 @@ import { defaultDescription, siteName, siteUrl } from "@/lib/seo";
 
 import "./globals.css";
 
+// Amiri Quran - specifically designed for Quran typesetting with proper harakat
+const amiriQuran = Amiri_Quran({
+  subsets: ["arabic"],
+  weight: ["400"],
+  display: "swap",
+  preload: true,
+  variable: "--font-amiri-quran",
+});
+
+// Amiri - classical Arabic typeface with excellent harakat support
+const amiri = Amiri({
+  subsets: ["arabic"],
+  weight: ["400", "700"],
+  display: "swap",
+  preload: true,
+  variable: "--font-amiri",
+});
+
+// Noto Naskh Arabic - good fallback with wide character support
 const notoNaskhArabic = Noto_Naskh_Arabic({
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
@@ -20,17 +39,18 @@ const notoNaskhArabic = Noto_Naskh_Arabic({
   variable: "--font-noto-naskh-arabic",
 });
 
+// Local fonts as additional fallbacks
 const indoPakQuran = localFont({
   src: "./fonts/indopak-quran.ttf",
   display: "swap",
-  preload: true,
+  preload: false, // Lower priority, used as fallback
   variable: "--font-indopak-quran",
 });
 
 const quranUthmanicHafs = localFont({
   src: "./fonts/quran-uthmanic-hafs.woff2",
   display: "swap",
-  preload: true,
+  preload: false, // Lower priority, used as fallback
   variable: "--font-quran-uthmanic-hafs",
 });
 
@@ -72,7 +92,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${notoNaskhArabic.variable} ${indoPakQuran.variable} ${quranUthmanicHafs.variable}`}
+        className={`${amiriQuran.variable} ${amiri.variable} ${notoNaskhArabic.variable} ${indoPakQuran.variable} ${quranUthmanicHafs.variable}`}
         suppressHydrationWarning
       >
         <SiteSettingsProvider>
