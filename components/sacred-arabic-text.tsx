@@ -1,3 +1,28 @@
+/**
+ * SacredArabicText Component
+ *
+ * A specialized component for rendering Arabic sacred text (Quran, Hadith, Duas)
+ * with proper RTL direction, typography, and harakat (diacritical marks) support.
+ *
+ * Features:
+ * - Automatic RTL direction and language attributes
+ * - Optimized font stacks for Quran (IndoPak script) and Hadith variants
+ * - Mobile-first harakat rendering with proper line-height
+ * - Font feature settings for proper ligature and mark positioning
+ * - Automatic detection of Quran annotation glyphs
+ *
+ * Usage:
+ * ```tsx
+ * <SacredArabicText variant="quran" size="lg">
+ *   بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+ * </SacredArabicText>
+ * ```
+ *
+ * Sizes: sm, md, lg, hero, quran
+ * Variants: quran (IndoPak fonts), hadith (Noto Naskh Arabic)
+ *
+ * @see /app/typography-test/page.tsx for visual testing
+ */
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
 const sizeClasses = {
