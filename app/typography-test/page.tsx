@@ -184,6 +184,111 @@ export default function TypographyTestPage() {
           </div>
         </section>
 
+        {/* Font Debug Section */}
+        <section className="mb-16">
+          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
+            Font Debug - Direct Comparison
+          </h2>
+          <p className="mb-4 text-sm text-[var(--muted)]">
+            Testing the same text with explicitly set fonts to identify which renders harakat correctly:
+          </p>
+          <div className="space-y-6">
+            {/* Amiri Quran - Google Fonts */}
+            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
+              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
+                Amiri Quran (Google Fonts) - Recommended
+              </div>
+              <p
+                dir="rtl"
+                lang="ar"
+                className="text-right text-3xl leading-[2.4]"
+                style={{ fontFamily: "var(--font-amiri-quran), 'Amiri Quran', serif" }}
+              >
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+              </p>
+            </div>
+
+            {/* Amiri - Google Fonts */}
+            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
+              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
+                Amiri (Google Fonts)
+              </div>
+              <p
+                dir="rtl"
+                lang="ar"
+                className="text-right text-3xl leading-[2.4]"
+                style={{ fontFamily: "var(--font-amiri), 'Amiri', serif" }}
+              >
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+              </p>
+            </div>
+
+            {/* Noto Naskh Arabic */}
+            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
+              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
+                Noto Naskh Arabic (Google Fonts)
+              </div>
+              <p
+                dir="rtl"
+                lang="ar"
+                className="text-right text-3xl leading-[2.4]"
+                style={{ fontFamily: "var(--font-noto-naskh-arabic), 'Noto Naskh Arabic', serif" }}
+              >
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+              </p>
+            </div>
+
+            {/* IndoPak Quran (local) */}
+            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
+              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
+                IndoPak Quran (Local Font)
+              </div>
+              <p
+                dir="rtl"
+                lang="ar"
+                className="text-right text-3xl leading-[2.4]"
+                style={{ fontFamily: "var(--font-indopak-quran), serif" }}
+              >
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+              </p>
+            </div>
+
+            {/* Uthmanic Hafs (local) */}
+            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
+              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
+                Quran Uthmanic Hafs (Local Font)
+              </div>
+              <p
+                dir="rtl"
+                lang="ar"
+                className="text-right text-3xl leading-[2.4]"
+                style={{ fontFamily: "var(--font-quran-uthmanic-hafs), serif" }}
+              >
+                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Kasrah Test - Specific Issue */}
+        <section className="mb-16">
+          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
+            Kasrah Position Test
+          </h2>
+          <p className="mb-4 text-sm text-[var(--muted)]">
+            The kasrah (ِ) under the letter baa (ب) in رَبِّ should appear BELOW the letter, not above.
+            If kasrah appears above, the font does not support proper harakat positioning.
+          </p>
+          <div className="rounded-xl border-2 border-[var(--brand-border)] bg-[var(--surface)] p-8">
+            <SacredArabicText size="quran" variant="quran" className="text-center">
+              رَبِّ الْعَالَمِينَ
+            </SacredArabicText>
+            <p className="mt-4 text-center text-sm text-[var(--muted)]">
+              The small diagonal line under ب in رَبِّ = kasrah = &quot;i&quot; sound
+            </p>
+          </div>
+        </section>
+
         {/* Dark/Light Mode Note */}
         <section className="mb-8">
           <div className="rounded-xl border border-[var(--brand-border)] bg-[var(--brand-surface)] p-6">
@@ -207,6 +312,9 @@ export default function TypographyTestPage() {
               <li>
                 5. Verify shaddah, sukoon, tanween, and madd marks render
                 correctly
+              </li>
+              <li>
+                6. Compare the &quot;Font Debug&quot; section to see which font renders correctly
               </li>
             </ul>
           </div>
