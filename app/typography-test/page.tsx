@@ -1,325 +1,333 @@
-import type { Metadata } from "next";
+"use client";
 
+import { useEffect, useState } from "react";
 import { SacredArabicText } from "@/components/sacred-arabic-text";
 
-export const metadata: Metadata = {
-  title: "Typography Test",
-  description: "Test page for Arabic typography and harakat rendering",
-  robots: "noindex, nofollow",
-};
+interface FontDebugInfo {
+  activeFont: string;
+  computedFontFamily: string;
+  cssClass: string;
+  isProperlySized: boolean;
+}
 
-// Sample Arabic texts with various diacritical marks (harakat)
-const sampleTexts = {
-  // Bismillah with full harakat
-  bismillah: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-  // Al-Fatiha verse 1-2 with harakat
-  fatiha: "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ",
-  // Ayat al-Kursi opening with shaddah, sukoon, madd
-  ayatKursi:
-    "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ",
-  // Surah Al-Ikhlas with tanween
-  ikhlas:
-    "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
-  // Hadith sample with harakat
-  hadith:
-    "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
-  // Short dua with dense harakat
-  dua: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
-  // Complex combination: shaddah + sukoon + tanween
-  complex: "مُحَمَّدٌ رَسُولُ اللَّهِ ۚ وَالَّذِينَ مَعَهُ أَشِدَّاءُ عَلَى الْكُفَّارِ رُحَمَاءُ بَيْنَهُمْ",
-};
+function FontDebugDisplay({ label, fontFamily, cssClass }: { label: string; fontFamily: string; cssClass: string }) {
+  const [debugInfo, setDebugInfo] = useState<FontDebugInfo>({
+    activeFont: "Loading...",
+    computedFontFamily: "Loading...",
+    cssClass,
+    isProperlySized: false,
+  });
 
-const sizes = ["sm", "md", "lg", "hero", "quran"] as const;
+  useEffect(() => {
+    // Get computed font-family from DOM element
+    const element = document.getElementById(`debug-${cssClass}`);
+    if (element) {
+      const computed = window.getComputedStyle(element);
+      const fontFamily = computed.fontFamily;
+      
+      // Try to determine which font is actually being used
+      let activeFont = "Unknown";
+      if (fontFamily.includes("Scheherazade")) {
+        activeFont = "Scheherazade New ✓ (PRIMARY)";
+      } else if (fontFamily.includes("Amiri Quran")) {
+        activeFont = "Amiri Quran (Fallback)";
+      } else if (fontFamily.includes("Amiri")) {
+        activeFont = "Amiri (Fallback)";
+      } else if (fontFamily.includes("Noto Naskh")) {
+        activeFont = "Noto Naskh Arabic (Fallback)";
+      } else if (fontFamily.includes("serif") || fontFamily.includes("system")) {
+        activeFont = "System Font (Failed to load)";
+      }
+
+      setDebugInfo({
+        activeFont,
+        computedFontFamily: fontFamily,
+        cssClass,
+        isProperlySized: true,
+      });
+    }
+  }, [cssClass]);
+
+  return (
+    <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
+      <div className="mb-4 flex items-center justify-between">
+        <div className="text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
+          {label}
+        </div>
+        <div className="rounded-full bg-[var(--brand-surface)] px-3 py-1 text-xs font-medium text-[var(--brand-ink)]">
+          {debugInfo.isProperlySized ? debugInfo.activeFont : "Loading..."}
+        </div>
+      </div>
+      <p
+        id={`debug-${cssClass}`}
+        dir="rtl"
+        lang="ar"
+        className={`text-right text-3xl leading-relaxed ${cssClass}`}
+        style={{ fontFamily }}
+      >
+        الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+      </p>
+      <div className="mt-4 space-y-1 text-xs text-[var(--muted)]">
+        <div>
+          <span className="font-medium">CSS Class:</span> {cssClass}
+        </div>
+        <div>
+          <span className="font-medium">CSS Font Family:</span>{" "}
+          <code className="rounded bg-[var(--surface-subtle)] px-1 font-mono text-[10px]">
+            {fontFamily}
+          </code>
+        </div>
+        <div>
+          <span className="font-medium">Computed Font:</span> {debugInfo.computedFontFamily}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TypographyTestPage() {
+  const [fontFeatureWarning, setFontFeatureWarning] = useState(false);
+
+  useEffect(() => {
+    // Check if browser supports CSS font-feature-settings
+    const element = document.createElement("div");
+    element.style.fontFeatureSettings = '"cv62" 1';
+    const supports = element.style.fontFeatureSettings !== "";
+    setFontFeatureWarning(!supports);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[var(--background)] py-12">
-      <div className="page-shell">
-        <header className="mb-12 text-center">
-          <h1 className="mb-4 text-3xl font-semibold text-[var(--foreground)]">
-            Arabic Typography Test
-          </h1>
-          <p className="text-[var(--muted)]">
-            Testing harakat rendering across different sizes and variants.
-            <br />
-            Check on mobile devices (iPhone Safari, Android Chrome) for
-            diacritic placement.
-          </p>
-        </header>
-
-        {/* Size Comparison - Hadith Variant */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Hadith Variant - All Sizes
-          </h2>
-          <div className="space-y-8">
-            {sizes.map((size) => (
-              <div
-                key={`hadith-${size}`}
-                className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6"
-              >
-                <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                  Size: {size}
-                </div>
-                <SacredArabicText size={size} variant="hadith">
-                  {sampleTexts.bismillah}
-                </SacredArabicText>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Size Comparison - Quran Variant */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Quran Variant - All Sizes
-          </h2>
-          <div className="space-y-8">
-            {sizes.map((size) => (
-              <div
-                key={`quran-${size}`}
-                className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6"
-              >
-                <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                  Size: {size}
-                </div>
-                <SacredArabicText size={size} variant="quran">
-                  {sampleTexts.fatiha}
-                </SacredArabicText>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Dense Harakat Tests */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Dense Harakat Tests
-          </h2>
-          <div className="space-y-8">
-            {/* Ayat al-Kursi - shaddah, sukoon, madd */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Ayat al-Kursi (shaddah, sukoon, madd)
-              </div>
-              <SacredArabicText size="lg" variant="quran">
-                {sampleTexts.ayatKursi}
-              </SacredArabicText>
-            </div>
-
-            {/* Al-Ikhlas - tanween */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Surah Al-Ikhlas (tanween)
-              </div>
-              <SacredArabicText size="lg" variant="quran">
-                {sampleTexts.ikhlas}
-              </SacredArabicText>
-            </div>
-
-            {/* Complex combination */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Complex Harakat (shaddah + sukoon + tanween)
-              </div>
-              <SacredArabicText size="lg" variant="quran">
-                {sampleTexts.complex}
-              </SacredArabicText>
-            </div>
-          </div>
-        </section>
-
-        {/* Hadith Sample */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Hadith Sample
-          </h2>
-          <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-            <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-              Hadith of Intentions
-            </div>
-            <SacredArabicText size="lg" variant="hadith">
-              {sampleTexts.hadith}
-            </SacredArabicText>
-          </div>
-        </section>
-
-        {/* Dua Sample */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Dua Sample
-          </h2>
-          <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-            <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-              Rabbana Dua (dense harakat)
-            </div>
-            <SacredArabicText size="lg" variant="hadith">
-              {sampleTexts.dua}
-            </SacredArabicText>
-          </div>
-        </section>
-
-        {/* Side by Side Comparison */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Variant Comparison (Same Text)
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Hadith Variant
-              </div>
-              <SacredArabicText size="lg" variant="hadith">
-                {sampleTexts.bismillah}
-              </SacredArabicText>
-            </div>
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Quran Variant
-              </div>
-              <SacredArabicText size="lg" variant="quran">
-                {sampleTexts.bismillah}
-              </SacredArabicText>
-            </div>
-          </div>
-        </section>
-
-        {/* Font Debug Section */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Font Debug - Direct Comparison
-          </h2>
-          <p className="mb-4 text-sm text-[var(--muted)]">
-            Testing the same text with explicitly set fonts to identify which renders harakat correctly:
-          </p>
-          <div className="space-y-6">
-            {/* Amiri Quran - Google Fonts */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Amiri Quran (Google Fonts) - Recommended
-              </div>
-              <p
-                dir="rtl"
-                lang="ar"
-                className="text-right text-3xl leading-[2.4]"
-                style={{ fontFamily: "var(--font-amiri-quran), 'Amiri Quran', serif" }}
-              >
-                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
-              </p>
-            </div>
-
-            {/* Amiri - Google Fonts */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Amiri (Google Fonts)
-              </div>
-              <p
-                dir="rtl"
-                lang="ar"
-                className="text-right text-3xl leading-[2.4]"
-                style={{ fontFamily: "var(--font-amiri), 'Amiri', serif" }}
-              >
-                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
-              </p>
-            </div>
-
-            {/* Noto Naskh Arabic */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Noto Naskh Arabic (Google Fonts)
-              </div>
-              <p
-                dir="rtl"
-                lang="ar"
-                className="text-right text-3xl leading-[2.4]"
-                style={{ fontFamily: "var(--font-noto-naskh-arabic), 'Noto Naskh Arabic', serif" }}
-              >
-                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
-              </p>
-            </div>
-
-            {/* IndoPak Quran (local) */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                IndoPak Quran (Local Font)
-              </div>
-              <p
-                dir="rtl"
-                lang="ar"
-                className="text-right text-3xl leading-[2.4]"
-                style={{ fontFamily: "var(--font-indopak-quran), serif" }}
-              >
-                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
-              </p>
-            </div>
-
-            {/* Uthmanic Hafs (local) */}
-            <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-              <div className="mb-3 text-sm font-medium uppercase tracking-wide text-[var(--muted)]">
-                Quran Uthmanic Hafs (Local Font)
-              </div>
-              <p
-                dir="rtl"
-                lang="ar"
-                className="text-right text-3xl leading-[2.4]"
-                style={{ fontFamily: "var(--font-quran-uthmanic-hafs), serif" }}
-              >
-                الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Kasrah Test - Specific Issue */}
-        <section className="mb-16">
-          <h2 className="mb-6 text-xl font-medium text-[var(--foreground)]">
-            Kasrah Position Test
-          </h2>
-          <p className="mb-4 text-sm text-[var(--muted)]">
-            The kasrah (ِ) under the letter baa (ب) in رَبِّ should appear BELOW the letter, not above.
-            If kasrah appears above, the font does not support proper harakat positioning.
-          </p>
-          <div className="rounded-xl border-2 border-[var(--brand-border)] bg-[var(--surface)] p-8">
-            <SacredArabicText size="quran" variant="quran" className="text-center">
-              رَبِّ الْعَالَمِينَ
-            </SacredArabicText>
-            <p className="mt-4 text-center text-sm text-[var(--muted)]">
-              The small diagonal line under ب in رَبِّ = kasrah = &quot;i&quot; sound
-            </p>
-          </div>
-        </section>
-
-        {/* Dark/Light Mode Note */}
-        <section className="mb-8">
-          <div className="rounded-xl border border-[var(--brand-border)] bg-[var(--brand-surface)] p-6">
-            <h3 className="mb-2 font-medium text-[var(--brand-ink)]">
-              Testing Instructions
-            </h3>
-            <ul className="space-y-2 text-sm text-[var(--muted)]">
-              <li>
-                1. Check harakat (diacritics) positioning - they should not
-                overlap with letters above/below
-              </li>
-              <li>
-                2. Toggle dark mode to verify contrast and readability
-              </li>
-              <li>
-                3. Test on different screen sizes using browser dev tools
-              </li>
-              <li>
-                4. Test on actual mobile devices (iPhone Safari, Android Chrome)
-              </li>
-              <li>
-                5. Verify shaddah, sukoon, tanween, and madd marks render
-                correctly
-              </li>
-              <li>
-                6. Compare the &quot;Font Debug&quot; section to see which font renders correctly
-              </li>
-            </ul>
-          </div>
-        </section>
+    <div className="space-y-8 px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl">
+        <h1 className="mb-2 text-3xl font-bold text-[var(--foreground)]">
+          Arabic Typography Test - Shadda + Kasra Verification
+        </h1>
+        <p className="text-lg text-[var(--muted)]">
+          Testing correct harakat positioning with Scheherazade New font
+        </p>
       </div>
+
+      {fontFeatureWarning && (
+        <div className="mx-auto max-w-4xl rounded-xl border-2 border-red-500 bg-red-50 p-6 dark:bg-red-950">
+          <p className="font-medium text-red-900 dark:text-red-100">
+            ⚠️ Warning: Your browser may not support CSS font-feature-settings. Harakat positioning might not work correctly.
+          </p>
+        </div>
+      )}
+
+      {/* SECTION 1: Normal Site Rendering via Component */}
+      <section className="mx-auto max-w-4xl space-y-4">
+        <div>
+          <h2 className="mb-4 text-2xl font-bold text-[var(--foreground)]">
+            Section 1: Site Rendering (via SacredArabicText Component)
+          </h2>
+          <p className="mb-6 text-sm text-[var(--muted)]">
+            This is how Arabic text renders across the site using the SacredArabicText component.
+            The component applies all CSS classes and should use Scheherazade New with cv62=1.
+          </p>
+        </div>
+
+        <div className="rounded-2xl border-2 border-[var(--brand-border)] bg-[var(--brand-surface)] p-8">
+          <SacredArabicText size="lg" variant="quran">
+            الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ
+          </SacredArabicText>
+          <p className="mt-4 text-center text-sm text-[var(--muted)]">
+            The kasrah (ِ) under ب in رَبِّ should appear BELOW the letter, not above it.
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION 2: Forced Font Rendering (No Fallbacks) */}
+      <section className="mx-auto max-w-4xl space-y-4">
+        <div>
+          <h2 className="mb-4 text-2xl font-bold text-[var(--foreground)]">
+            Section 2: Forced Rendering (Primary Font Only)
+          </h2>
+          <p className="mb-6 text-sm text-[var(--muted)]">
+            These tests explicitly specify ONLY the target font with no fallbacks to verify it loads and works.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {/* Scheherazade New - Forced */}
+          <FontDebugDisplay
+            label="Scheherazade New (Forced - Should Load) ✓"
+            fontFamily="var(--font-scheherazade-new), 'Scheherazade New', serif"
+            cssClass="sacred-arabic sacred-arabic-quran sacred-arabic-size-lg"
+          />
+
+          {/* Amiri Quran - Forced */}
+          <FontDebugDisplay
+            label="Amiri Quran (Forced - Fallback)"
+            fontFamily="var(--font-amiri-quran), 'Amiri Quran', serif"
+            cssClass="sacred-arabic sacred-arabic-size-lg"
+          />
+
+          {/* Amiri - Forced */}
+          <FontDebugDisplay
+            label="Amiri (Forced - Secondary Fallback)"
+            fontFamily="var(--font-amiri), 'Amiri', serif"
+            cssClass="sacred-arabic sacred-arabic-size-lg"
+          />
+        </div>
+      </section>
+
+      {/* SECTION 3: Font Comparison */}
+      <section className="mx-auto max-w-4xl space-y-4">
+        <div>
+          <h2 className="mb-4 text-2xl font-bold text-[var(--foreground)]">
+            Section 3: Font Comparison - Harakat Rendering Quality
+          </h2>
+          <p className="mb-6 text-sm text-[var(--muted)]">
+            Comparing the same text across different fonts. Look for proper kasra positioning
+            (below the base letter, not above or merged with shadda).
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {/* Test Strings with Different Harakat Combinations */}
+          <div>
+            <h3 className="mb-3 font-medium text-[var(--foreground)]">
+              Test 1: Shadda + Kasra (رَبِّ)
+            </h3>
+            <div className="space-y-3">
+              <div className="rounded-lg border border-[var(--border-soft)] p-4">
+                <div className="mb-2 text-xs font-medium text-[var(--muted)]">
+                  Scheherazade New + cv62=1
+                </div>
+                <p
+                  dir="rtl"
+                  lang="ar"
+                  className="text-right text-2xl leading-loose"
+                  style={{ fontFamily: "var(--font-scheherazade-new), 'Scheherazade New', serif", fontFeatureSettings: '"cv62" 1' }}
+                >
+                  رَبِّ الْعَالَمِينَ
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-[var(--border-soft)] p-4">
+                <div className="mb-2 text-xs font-medium text-[var(--muted)]">
+                  Amiri Quran (No cv62)
+                </div>
+                <p
+                  dir="rtl"
+                  lang="ar"
+                  className="text-right text-2xl leading-loose"
+                  style={{ fontFamily: "var(--font-amiri-quran), 'Amiri Quran', serif" }}
+                >
+                  رَبِّ الْعَالَمِينَ
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-[var(--border-soft)] p-4">
+                <div className="mb-2 text-xs font-medium text-[var(--muted)]">
+                  Amiri (No cv62)
+                </div>
+                <p
+                  dir="rtl"
+                  lang="ar"
+                  className="text-right text-2xl leading-loose"
+                  style={{ fontFamily: "var(--font-amiri), 'Amiri', serif" }}
+                >
+                  رَبِّ الْعَالَمِينَ
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Test Complex Harakat */}
+          <div>
+            <h3 className="mb-3 font-medium text-[var(--foreground)]">
+              Test 2: Multiple Harakat Combinations
+            </h3>
+            <div className="rounded-lg border border-[var(--border-soft)] p-4">
+              <div className="mb-3 text-xs font-medium text-[var(--muted)]">
+                Scheherazade New + cv62=1
+              </div>
+              <p
+                dir="rtl"
+                lang="ar"
+                className="text-right text-xl leading-loose"
+                style={{ fontFamily: "var(--font-scheherazade-new), 'Scheherazade New', serif", fontFeatureSettings: '"cv62" 1' }}
+              >
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+              </p>
+            </div>
+          </div>
+
+          {/* Ayat al-Kursi Full Test */}
+          <div>
+            <h3 className="mb-3 font-medium text-[var(--foreground)]">
+              Test 3: Ayat Al-Kursi (Full Harakat)
+            </h3>
+            <div className="rounded-lg border border-[var(--border-soft)] p-4">
+              <div className="mb-3 text-xs font-medium text-[var(--muted)]">
+                Scheherazade New + cv62=1
+              </div>
+              <p
+                dir="rtl"
+                lang="ar"
+                className="text-right text-lg leading-loose"
+                style={{ fontFamily: "var(--font-scheherazade-new), 'Scheherazade New', serif", fontFeatureSettings: '"cv62" 1' }}
+              >
+                اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Critical Info Box */}
+      <section className="mx-auto max-w-4xl">
+        <div className="rounded-xl border-2 border-[var(--brand-border)] bg-[var(--brand-surface)] p-6">
+          <h3 className="mb-4 font-bold text-[var(--brand-ink)]">
+            Critical Font Features
+          </h3>
+          <ul className="space-y-2 text-sm text-[var(--foreground)]">
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--brand)] font-bold">✓</span>
+              <span>
+                <strong>Primary Font:</strong> Scheherazade New (SIL International, Google Fonts)
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--brand)] font-bold">✓</span>
+              <span>
+                <strong>OpenType Feature:</strong> cv62=1 (Lowered kasra position in Scheherazade New)
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--brand)] font-bold">✓</span>
+              <span>
+                <strong>Expected Result:</strong> Kasra appears BELOW base letter when combined with shadda
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--brand)] font-bold">✓</span>
+              <span>
+                <strong>Fallback Chain:</strong> Scheherazade New → Amiri Quran → Amiri → Noto Naskh Arabic
+              </span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Mobile Testing Instructions */}
+      <section className="mx-auto max-w-4xl">
+        <div className="rounded-xl border border-[var(--border-soft)] bg-[var(--surface-subtle)] p-6">
+          <h3 className="mb-3 font-bold text-[var(--foreground)]">
+            Mobile Testing Checklist
+          </h3>
+          <ol className="space-y-2 text-sm text-[var(--foreground)]">
+            <li>1. Open this page on iPhone Safari and Android Chrome</li>
+            <li>2. Look at Section 1 (Site Rendering) - check if kasra is below ب in رَبِّ</li>
+            <li>3. Check Section 3 to compare Scheherazade New vs other fonts</li>
+            <li>4. Verify the kasra position is consistent across all test cases</li>
+            <li>5. If kasra still appears above or inside shadda, the font may not be loading</li>
+            <li>6. Check browser DevTools to confirm computed font-family includes "Scheherazade"</li>
+          </ol>
+        </div>
+      </section>
     </div>
   );
 }

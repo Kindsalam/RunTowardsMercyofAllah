@@ -25,12 +25,12 @@
   --dua-scale: 1;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-arabic: var(--font-amiri), "Amiri", "Geeza Pro", "Noto Naskh Arabic", serif;
-  --font-arabic-display: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Scheherazade New", "Geeza Pro", serif;
-  --font-arabic-sacred: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
-  /* Amiri Quran is specifically designed for Quran typesetting with proper harakat positioning */
-  --font-arabic-quran: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
-  --font-arabic-annotation-safe: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", serif;
+  --font-arabic: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", "Geeza Pro", "Noto Naskh Arabic", serif;
+  --font-arabic-display: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Geeza Pro", serif;
+  --font-arabic-sacred: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  /* Scheherazade New with cv62=1 (lowered kasra) is specifically designed for Quran typesetting with correct shadda+kasra positioning */
+  --font-arabic-quran: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  --font-arabic-annotation-safe: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", serif;
 }
 
 .dark {
@@ -325,7 +325,8 @@ button {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-kerning: normal;
-    font-feature-settings: "rlig" 1, "calt" 1, "liga" 1, "ccmp" 1, "mark" 1, "mkmk" 1, "kern" 1;
+    /* cv62=1 (Scheherazade New): Lowers kasra below base letter when combined with shadda */
+    font-feature-settings: "rlig" 1, "calt" 1, "liga" 1, "ccmp" 1, "mark" 1, "mkmk" 1, "kern" 1, "cv62" 1;
     font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
     letter-spacing: 0;
     word-spacing: 0.02em;
@@ -333,10 +334,6 @@ button {
     font-synthesis-weight: none;
     font-synthesis-style: none;
     font-weight: 400;
-    /* Mobile harakat rendering improvements */
-    -webkit-text-stroke: 0;
-    paint-order: stroke fill;
-    text-decoration-skip-ink: none;
   }
 
   .arabic-sacred,
@@ -363,108 +360,10 @@ button {
   }
 
   /* ===========================================
-     Mobile-First Arabic Typography Enhancements
-     Optimized for harakat (diacritics) rendering
-     on South Asian mobile devices (iPhone Safari,
-     Android Chrome)
+     NOTE: Previous CSS hacks for mobile harakat
+     spacing (line-height, padding, etc.) were
+     ineffective because the root issue was font
+     OpenType mark positioning, not CSS spacing.
+     This is now fixed by Scheherazade New + cv62.
      =========================================== */
-
-  /* Base mobile adjustments - ensures harakat don't overlap */
-  @media (max-width: 639px) {
-    .sacred-arabic,
-    .sacred-arabic-hadith,
-    .sacred-arabic-quran,
-    .arabic-sacred,
-    .arabic-quran {
-      /* Increase line-height for proper harakat spacing on mobile */
-      line-height: 2.4 !important;
-      /* Slightly reduce font size on very small screens to prevent overflow */
-      font-size: calc(var(--font-size, 1.92rem) * 0.95 * var(--reading-scale));
-      /* Ensure proper padding for harakat above/below */
-      padding-block: 0.15em;
-      /* Prevent text from being cut off */
-      overflow: visible;
-    }
-
-    .sacred-arabic-size-sm {
-      --font-size: 1.75rem;
-      line-height: 2.5 !important;
-    }
-
-    .sacred-arabic-size-md {
-      --font-size: 1.85rem;
-      line-height: 2.45 !important;
-    }
-
-    .sacred-arabic-size-lg {
-      --font-size: 1.95rem;
-      line-height: 2.4 !important;
-    }
-
-    .sacred-arabic-size-hero {
-      --font-size: 1.82rem;
-      line-height: 2.45 !important;
-    }
-
-    .sacred-arabic-size-quran {
-      --font-size: 1.9rem;
-      line-height: 2.5 !important;
-    }
-
-    /* Quran variant needs extra space for annotation marks */
-    .sacred-arabic-quran.sacred-arabic-size-sm {
-      --font-size: 1.85rem;
-      line-height: 2.55 !important;
-    }
-
-    .sacred-arabic-quran.sacred-arabic-size-md {
-      --font-size: 1.92rem;
-      line-height: 2.5 !important;
-    }
-
-    .sacred-arabic-quran.sacred-arabic-size-lg {
-      --font-size: 2rem;
-      line-height: 2.48 !important;
-    }
-
-    .sacred-arabic-quran.sacred-arabic-size-hero {
-      --font-size: 1.88rem;
-      line-height: 2.5 !important;
-    }
-
-    .sacred-arabic-quran.sacred-arabic-size-quran {
-      --font-size: 1.98rem;
-      line-height: 2.55 !important;
-    }
-  }
-
-  /* Touch device optimizations */
-  @media (pointer: coarse) {
-    .sacred-arabic,
-    .sacred-arabic-hadith,
-    .sacred-arabic-quran {
-      /* Slightly more generous spacing on touch devices */
-      word-spacing: 0.03em;
-      /* Ensure taps don't accidentally trigger on harakat */
-      -webkit-tap-highlight-color: transparent;
-    }
-  }
-
-  /* iOS Safari specific fixes */
-  @supports (-webkit-touch-callout: none) {
-    .sacred-arabic,
-    .sacred-arabic-hadith,
-    .sacred-arabic-quran {
-      /* Fix for iOS text rendering quirks */
-      -webkit-font-smoothing: subpixel-antialiased;
-      /* Prevent iOS from adjusting text size */
-      -webkit-text-size-adjust: 100%;
-    }
-  }
-
-  /* Container rules to prevent harakat clipping */
-  .sacred-arabic-container {
-    overflow: visible;
-    padding-block: 0.25em;
-  }
 }
