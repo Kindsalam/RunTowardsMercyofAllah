@@ -505,28 +505,6 @@ export const propheticQuranDuas: DuaItem[] = [
     authenticity: "quran",
   },
   {
-    id: "prophetic-46-15",
-    category: "prophetic",
-    title: "Dua for gratitude, good deeds, and righteous offspring",
-    theme: "Gratitude",
-    benefit:
-      "This dua asks Allah for lasting gratitude, accepted righteous deeds, and righteousness in one's descendants.",
-    arabic:
-      "رَبِّ أَوْزِعْنِىٓ أَنْ أَشْكُرَ نِعْمَتَكَ ٱلَّتِىٓ أَنْعَمْتَ عَلَىَّ وَعَلَىٰ وَٰلِدَىَّ وَأَنْ أَعْمَلَ صَـٰلِحًا تَرْضَىٰهُ وَأَصْلِحْ لِى فِى ذُرِّيَّتِىٓ ۖ إِنِّى تُبْتُ إِلَيْكَ وَإِنِّى مِنَ ٱلْمُسْلِمِينَ",
-    transliteration:
-      "rabbi awziʿ'nī an ashkura niʿ'mataka allatī anʿamta ʿalayya waʿalā wālidayya wa-an aʿmala ṣāliḥan tarḍāhu wa-aṣliḥ lī fī dhurriyyatī innī tub'tu ilayka wa-innī mina l-mus'limīna",
-    english:
-      "My Lord! Inspire me to always be thankful for Your favours which You have blessed me and my parents with, and to do good deeds that please You. And instill righteousness in my offspring. I truly repent to You, and I truly submit to Your Will.",
-    urdu:
-      "اے میرے رب! مجھے توفیق دے کہ میں تیری اس نعمت کا شکر ادا کروں جو تو نے مجھ پر اور میرے والدین پر کی، اور یہ کہ میں ایسا نیک عمل کروں جس سے تو راضی ہو۔ اور میری اولاد میں بھی میرے لیے صلاح پیدا فرما۔ میں یقیناً تیری طرف توبہ کرتا ہوں اور میں یقیناً فرمانبرداروں میں سے ہوں۔",
-    sourceType: "quran",
-    sourceReference: "Surah Al-Ahqaf 46:15",
-    sourceUrl: "https://quran.com/46/15",
-    repetition:
-      "Read it when asking Allah for gratitude, accepted deeds, and righteous offspring.",
-    authenticity: "quran",
-  },
-  {
     id: "prophetic-38-35",
     category: "prophetic",
     title: "Prophet Sulayman asks forgiveness and a unique kingdom",

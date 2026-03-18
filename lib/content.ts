@@ -314,6 +314,16 @@ export const sourceReferences = [
   },
 ];
 
+/** Curated subset for the Reference examples section: 2 Quran, 2 Sunnah.com, 1 HadithUnlocked */
+const quranRefs = sourceReferences.filter((s) => s.href?.includes("quran.com"));
+const sunnahRefs = sourceReferences.filter((s) => s.href?.includes("sunnah.com"));
+const hadithUnlockedRefs = sourceReferences.filter((s) => s.href?.includes("hadithunlocked.com"));
+export const sourceReferenceExamples = [
+  ...quranRefs.slice(0, 2),
+  ...sunnahRefs.slice(0, 2),
+  ...hadithUnlockedRefs.slice(0, 1),
+];
+
 export const whyTheseNightsCards = [
   {
     title: "For your heart",

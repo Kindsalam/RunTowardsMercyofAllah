@@ -3,7 +3,10 @@ import Link from "next/link";
 import { CategoryCard } from "@/components/category-card";
 import { CorrectionNote } from "@/components/correction-note";
 import { PageHero } from "@/components/page-hero";
-import { aboutSectionCards, sourceReferences } from "@/lib/content";
+import {
+  aboutSectionCards,
+  sourceReferenceExamples,
+} from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -48,25 +51,6 @@ const referenceMethodItems = [
   {
     title: "Reading support",
     text: "Optional transliteration where enabled",
-  },
-];
-
-const contentMapItems = [
-  {
-    title: "Last 10 Nights",
-    text: "A focused set of duas and reminders relevant to the last ashra and Laylatul Qadr.",
-  },
-  {
-    title: "Rabbana Duas",
-    text: "Qur’anic supplications beginning with Rabbana, covering mercy, forgiveness, guidance, patience, protection, and goodness in this life and the next.",
-  },
-  {
-    title: "Morning Adhkar",
-    text: "Morning remembrance for protection, gratitude, and steadiness at the start of the day.",
-  },
-  {
-    title: "Evening Adhkar",
-    text: "Evening remembrance for reflection, protection, and peace before the night.",
   },
 ];
 
@@ -201,30 +185,6 @@ export default function SourcesPage() {
       </section>
 
       <section className="space-y-6 border-t border-[var(--border-soft)] pt-6">
-        <div className="max-w-3xl space-y-3">
-          <p className="eyebrow">Site content map</p>
-          <h2 className="font-display text-3xl text-[var(--foreground)] sm:text-4xl">
-            What each section contains
-          </h2>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          {contentMapItems.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]"
-            >
-              <h3 className="text-xl font-semibold text-[var(--foreground)]">
-                {item.title}
-              </h3>
-              <p className="reading-copy mt-3 text-[var(--muted)]">
-                {item.text}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-6 border-t border-[var(--border-soft)] pt-6">
         <div className="space-y-6">
           <div className="max-w-3xl space-y-3">
             <p className="eyebrow">Trust principles</p>
@@ -284,7 +244,7 @@ export default function SourcesPage() {
           </h2>
         </div>
         <div className="grid gap-4">
-          {sourceReferences.map((source) => (
+          {sourceReferenceExamples.map((source) => (
             <article
               key={source.href}
               className="rounded-[26px] border border-[var(--border-soft)] bg-[var(--surface)] p-5 shadow-[0_18px_60px_rgba(8,24,19,0.06)]"
