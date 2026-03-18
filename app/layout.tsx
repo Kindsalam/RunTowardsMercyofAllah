@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Amiri, Amiri_Quran, Noto_Naskh_Arabic, Scheherazade_New } from "next/font/google";
+import { Amiri, Amiri_Quran, Noto_Naskh_Arabic } from "next/font/google";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 
@@ -11,16 +11,8 @@ import { defaultDescription, siteName, siteUrl } from "@/lib/seo";
 
 import "./globals.css";
 
-// Scheherazade New - specifically designed for Arabic with cv62 feature for correct shadda+kasra positioning
-const scheherazadeNew = Scheherazade_New({
-  subsets: ["arabic"],
-  weight: ["400"],
-  display: "swap",
-  preload: true,
-  variable: "--font-scheherazade-new",
-});
-
-// Amiri Quran - specifically designed for Quran typesetting with proper harakat
+// Amiri Quran - specifically designed for Quran typesetting with correct harakat positioning
+// Testing shows this font correctly renders shadda above and kasra below the base letter
 const amiriQuran = Amiri_Quran({
   subsets: ["arabic"],
   weight: ["400"],
@@ -101,7 +93,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${scheherazadeNew.variable} ${amiriQuran.variable} ${amiri.variable} ${notoNaskhArabic.variable} ${indoPakQuran.variable} ${quranUthmanicHafs.variable}`}
+        className={`${amiriQuran.variable} ${amiri.variable} ${notoNaskhArabic.variable} ${indoPakQuran.variable} ${quranUthmanicHafs.variable}`}
         suppressHydrationWarning
       >
         <SiteSettingsProvider>
