@@ -5,17 +5,28 @@ import { SacredArabicText } from "@/components/sacred-arabic-text";
 
 function ComputedFontDisplay({ id, label }: { id: string; label: string }) {
   const [computed, setComputed] = useState<string>("Loading...");
+  const [classInfo, setClassInfo] = useState<string>("Loading...");
 
   useEffect(() => {
-    const element = document.getElementById(id);
+    let element = document.getElementById(id);
     if (!element) return;
-    const style = window.getComputedStyle(element);
+
+    // If this is a wrapper, find the actual text element inside it
+    const textElement = element.querySelector("p") || element;
+    
+    const style = window.getComputedStyle(textElement);
     setComputed(style.fontFamily);
+    setClassInfo(textElement.className || "(no classes)");
   }, [id]);
 
   return (
-    <div className="mt-2 text-xs text-[var(--muted)]">
-      <span className="font-medium">Computed font:</span> {computed}
+    <div className="mt-2 space-y-1 text-xs text-[var(--muted)]">
+      <div>
+        <span className="font-medium">Computed font:</span> {computed}
+      </div>
+      <div>
+        <span className="font-medium">Classes:</span> {classInfo}
+      </div>
     </div>
   );
 }
