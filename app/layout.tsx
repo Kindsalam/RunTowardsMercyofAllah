@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Amiri, Amiri_Quran, Noto_Naskh_Arabic } from "next/font/google";
+import { Amiri, Amiri_Quran } from "next/font/google";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 
@@ -28,16 +28,6 @@ const amiri = Amiri({
   display: "swap",
   preload: true,
   variable: "--font-amiri",
-});
-
-// Noto Naskh Arabic - good fallback with wide character support
-const notoNaskhArabic = Noto_Naskh_Arabic({
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-  preload: true,
-  fallback: ["Amiri", "serif"],
-  variable: "--font-noto-naskh-arabic",
 });
 
 // Local fonts as additional fallbacks
@@ -93,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${amiriQuran.variable} ${amiri.variable} ${notoNaskhArabic.variable} ${indoPakQuran.variable} ${quranUthmanicHafs.variable}`}
+        className={`${amiriQuran.variable} ${amiri.variable} ${indoPakQuran.variable} ${quranUthmanicHafs.variable}`}
         suppressHydrationWarning
       >
         <SiteSettingsProvider>

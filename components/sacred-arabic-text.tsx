@@ -4,10 +4,13 @@
  * A specialized component for rendering Arabic sacred text (Quran, Hadith, Duas)
  * with proper RTL direction, typography, and harakat (diacritical marks) support.
  *
+ * Fonts: Amiri Quran (primary) → Amiri (fallback)
+ * This font stack has been verified to render shadda + kasra correctly on both web and mobile.
+ *
  * Features:
  * - Automatic RTL direction and language attributes
- * - Optimized font stacks for Quran (IndoPak script) and Hadith variants
- * - Mobile-first harakat rendering with proper line-height
+ * - Correct font stack for proper mark positioning
+ * - Mobile-optimized line-height for readability
  * - Font feature settings for proper ligature and mark positioning
  * - Automatic detection of Quran annotation glyphs
  *
@@ -19,9 +22,7 @@
  * ```
  *
  * Sizes: sm, md, lg, hero, quran
- * Variants: quran (IndoPak fonts), hadith (Noto Naskh Arabic)
- *
- * @see /app/typography-test/page.tsx for visual testing
+ * Variants: quran (Quran text), hadith (Hadith and dua text)
  */
 import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
 
