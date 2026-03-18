@@ -25,12 +25,12 @@
   --dua-scale: 1;
   --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-  --font-arabic: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", "Geeza Pro", "Noto Naskh Arabic", serif;
-  --font-arabic-display: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Geeza Pro", serif;
-  --font-arabic-sacred: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
-  /* Scheherazade New with cv62=1 (lowered kasra) is specifically designed for Quran typesetting with correct shadda+kasra positioning */
-  --font-arabic-quran: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
-  --font-arabic-annotation-safe: var(--font-scheherazade-new), "Scheherazade New", var(--font-amiri), "Amiri", serif;
+  --font-arabic: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", "Geeza Pro", "Noto Naskh Arabic", serif;
+  --font-arabic-display: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", "Geeza Pro", serif;
+  --font-arabic-sacred: var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  /* Amiri Quran is the working font for correct shadda+kasra positioning based on device testing */
+  --font-arabic-quran: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", var(--font-noto-naskh-arabic), "Noto Naskh Arabic", serif;
+  --font-arabic-annotation-safe: var(--font-amiri-quran), "Amiri Quran", var(--font-amiri), "Amiri", serif;
 }
 
 .dark {
@@ -325,8 +325,8 @@ button {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-kerning: normal;
-    /* cv62=1 (Scheherazade New): Lowers kasra below base letter when combined with shadda */
-    font-feature-settings: "rlig" 1, "calt" 1, "liga" 1, "ccmp" 1, "mark" 1, "mkmk" 1, "kern" 1, "cv62" 1;
+    /* Amiri Quran properly handles mark positioning without requiring cv62 */
+    font-feature-settings: "rlig" 1, "calt" 1, "liga" 1, "ccmp" 1, "mark" 1, "mkmk" 1, "kern" 1;
     font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
     letter-spacing: 0;
     word-spacing: 0.02em;
@@ -360,10 +360,8 @@ button {
   }
 
   /* ===========================================
-     NOTE: Previous CSS hacks for mobile harakat
-     spacing (line-height, padding, etc.) were
-     ineffective because the root issue was font
-     OpenType mark positioning, not CSS spacing.
-     This is now fixed by Scheherazade New + cv62.
+     Amiri Quran is the production font for sacred
+     Arabic text. Device testing confirms it renders
+     shadda + kasra positioning correctly.
      =========================================== */
 }
